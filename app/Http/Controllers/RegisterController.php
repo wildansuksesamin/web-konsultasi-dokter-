@@ -22,6 +22,7 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
+        dd($request->all());
         $validateDate = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email:dns|unique:users',

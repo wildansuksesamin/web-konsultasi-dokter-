@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
 </head>
 
@@ -19,19 +18,29 @@
                     Register
                 </h1>
 
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <p class="font-poppins mt-1">Already have an account? <span class="text-blue-600"> <a
-                            href="{{url('/login')}}" class="text-decoration-none">Login.</a></span> </p>
+                            href="{{ url('/login') }}" class="text-decoration-none">Login.</a></span> </p>
 
-                <form action="/register" class="mt-3" method="post">
+                <form action="{{ route('register') }}" class="mt-3" method="POST">
+                    @method('POST')
                     @csrf
-
                     <div>
-                        <label for="name" class="block text-gray-700">Name</label>
+                        <label for="name" class="block text-gray-700">Name anda</label>
                         <input type="text" name="name" id="name" placeholder="Enter your Name"
                             class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-500 focus:bg-white focus:outline-none"
                             autofocus autocomplete required>
                         @error('name')
-                        <div class="text-red-600 is-invalid">{{ $message }}</div>
+                            <div class="text-red-600 is-invalid">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mt-4">
@@ -49,7 +58,7 @@
                             class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-500 focus:bg-white focus:outline-none"
                             autofocus autocomplete required>
                         @error('password')
-                        <div class="text-red-600">{{ $message }}</div>
+                            <div class="text-red-600">{{ $message }}</div>
                         @enderror
                     </div>
 
@@ -60,7 +69,7 @@
                             class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-500 focus:bg-white focus:outline-none"
                             autofocus autocomplete required>
                         @error('password_confirmation')
-                        <div class="text-red-600">{{ $message }}</div>
+                            <div class="text-red-600">{{ $message }}</div>
                         @enderror
                     </div>
 

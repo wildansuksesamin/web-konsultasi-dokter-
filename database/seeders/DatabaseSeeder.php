@@ -24,9 +24,19 @@ class DatabaseSeeder extends Seeder
     {
         $permissions = Permission::all();
 
+        $this->call([
+            RoleSeeder::class,
+            PermissionSeeder::class,
+        ]);
+
+        // jalankan factory user
+        User::factory(10)->create();
+        // jalankan post factory
+        // Post::factory(10)->create();
+
         //get role admin
         //role admin ana neng id  5
-        $role = Role::find(5);
+        $role = Role::find(3);
 
         // masukna id 5 dengan nama role adin 
         //assign permission to role
@@ -39,16 +49,15 @@ class DatabaseSeeder extends Seeder
 
         //get role leader
         $role = Role::find(2);
-        $role->syncPermissions([
-            'artikel.index',
-            'artikel.create',
-            'artikel.edit',
-            'artikel.delete',
-            'konsultasi.index',
-            'konsultasi.create',
-            'konsultasi.edit',
-            'konsultasi.delete',
-
-        ]);
+        // $role->syncPermissions([
+        //     'artikel.index',
+        //     'artikel.create',
+        //     'artikel.edit',
+        //     'artikel.delete',
+        //     'konsultasi.index',
+        //     'konsultasi.create',
+        //     'konsultasi.edit',
+        //     'konsultasi.delete',
+        // ]);
     }
 }

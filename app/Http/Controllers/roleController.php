@@ -15,7 +15,7 @@ class roleController extends Controller
     {
         $user = $request->user();
 
-        if ($request->role != 'pengguna' && $request->role != 'dokter') {
+        if ($request->role != 'user' && $request->role != 'dokter') {
             return redirect()->back();
         } else {
             $user->assignRole($request->role);
