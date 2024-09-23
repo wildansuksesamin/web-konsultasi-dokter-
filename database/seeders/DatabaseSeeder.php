@@ -35,8 +35,8 @@ class DatabaseSeeder extends Seeder
         // Post::factory(10)->create();
 
         //get role admin
-        //role admin ana neng id  5
-        $role = Role::find(3);
+        //role admin ana neng id  1
+        $role = Role::find(1);
 
         // masukna id 5 dengan nama role adin 
         //assign permission to role
