@@ -18,14 +18,14 @@
                     <li class="mr-2" role="presentation">
                         <button
                             class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-md text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
-                            id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab"
-                            aria-controls="dashboard" aria-selected="false">Judul</button>
+                            id="pengertian-jenis-tab" data-tabs-target="#pengertian-jenis" type="button" role="tab"
+                            aria-controls="pengertian-jenis" aria-selected="false">Pengertian dan Jenis Narkoba</button>
                     </li>
                     <li class="mr-2" role="presentation">
                         <button
                             class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-md text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
                             id="settings-tab" data-tabs-target="#settings" type="button" role="tab"
-                            aria-controls="settings" aria-selected="false">Pengertian & Jenis Narkoba</button>
+                            aria-controls="settings" aria-selected="false">Faktor Penggunaan Narkoba</button>
                     </li>
                     <li role="presentation">
                         <button
@@ -41,11 +41,9 @@
                 </div>
 
 
-                <div class="hidden p-4  rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                    <h1 class=" text-xl">Penyebab TBC </h1>
-                    <img src="img/3.jpg" class="float-left" width="400px" alt="">
-                    <p class="text-base  text-gray-500 ">{!! get_meta_value('isi') !!} </p>
-
+                <div class="text-justify hidden p-4 rounded-lg" id="pengertian-jenis" role="tabpanel"
+                    aria-labelledby="pengertian-jenis-tab">
+                    @include('ayo-jauhi-narkoba.pengertian-jenis-narkoba')
                 </div>
 
 

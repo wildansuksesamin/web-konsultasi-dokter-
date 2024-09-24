@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="img/virus.png">
+    <link rel="icon" href="{{ asset('img/game-icons--self-love.svg') }}">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Mengenal Aku</title>
 
