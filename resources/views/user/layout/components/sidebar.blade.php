@@ -10,7 +10,7 @@
         </svg>
     </button>
     <div id="navbar-default" class="mx-auto py-10 hidden md:block md:fixed md:px-16">
-        <h1 class="text-2xl font-bold mb-10 cursor-pointer text-[#44B564] duration-150 font-Poppins">Aceptor</h1>
+        <h1 class="text-2xl font-bold mb-10 cursor-pointer text-[#44B564] duration-150 font-Poppins overflow-scroll">Mengenal Aku</h1>
         <ul>
             <li class="flex space-x-2 mt-10 cursor-pointer active:text-[#EC5252] hover:text-[#EC5252] duration-150">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"

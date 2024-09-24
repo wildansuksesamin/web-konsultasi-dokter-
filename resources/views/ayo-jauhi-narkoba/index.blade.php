@@ -8,37 +8,39 @@
             <div class="mb-4 border-b border-gray-200  text-lg">
                 <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab"
                     data-tabs-toggle="#myTabContent" role="tablist">
+
                     <li class="mr-2" role="presentation">
                         <button
-                            class="inline-block p-4 rounded-t-lg border-b-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 text-lg dark:border-blue-500"
+                            class="inline-block p-4 rounded-t-lg border-b-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 text-md dark:border-blue-500"
                             id="profile-tab" data-tabs-target="#profile" type="button" role="tab"
-                            aria-controls="profile" aria-selected="true">Judul</button>
+                            aria-controls="profile" aria-selected="true">Materi Narkoba</button>
                     </li>
                     <li class="mr-2" role="presentation">
                         <button
-                            class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-lg text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
+                            class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-md text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
                             id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab"
                             aria-controls="dashboard" aria-selected="false">Judul</button>
                     </li>
                     <li class="mr-2" role="presentation">
                         <button
-                            class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-lg text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
+                            class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-md text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
                             id="settings-tab" data-tabs-target="#settings" type="button" role="tab"
                             aria-controls="settings" aria-selected="false">Pengertian & Jenis Narkoba</button>
                     </li>
                     <li role="presentation">
                         <button
-                            class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-lg text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
+                            class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-md text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
                             id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab"
                             aria-controls="contacts" aria-selected="false">Faktor Penyebab Penggunaan Narkoba</button>
                     </li>
                 </ul>
             </div>
             <div id="myTabContent">
-                <div class="p-4 text-white  rounded-lg dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <h1>testing</h1>
+                <div class="p-4 rounded-lg" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    @include('ayo-jauhi-narkoba.materi-narkoba')
                 </div>
-                
+
+
                 <div class="hidden p-4  rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                     <h1 class=" text-xl">Penyebab TBC </h1>
                     <img src="img/3.jpg" class="float-left" width="400px" alt="">

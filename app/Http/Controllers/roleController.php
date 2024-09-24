@@ -20,7 +20,7 @@ class roleController extends Controller
         } else {
             $user->assignRole($request->role);
             // dd($user->assignRole($request->role));
-            return redirect()->intended('/apa-itu-tbc');
+            return redirect()->intended('/ayo-jauhi-narkoba');
         }
     }
 }
