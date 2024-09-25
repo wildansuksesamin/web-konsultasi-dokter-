@@ -66,7 +66,8 @@
                         </div>
                         <ul class="py-1 text-sm text-gray-700 " aria-labelledby="avatarButton">
                             <li>
-                                <a href="/apa-itu-tbc" class="block py-2 px-4 hover:bg-gray-100 ">Dashboard</a>
+                                <a href="{{ route('ayo-jauhi-narkoba') }}"
+                                    class="block py-2 px-4 hover:bg-gray-100 ">Dashboard</a>
                             </li>
                             <li>
                                 <a href="#" class="block py-2 px-4 hover:bg-gray-100 ">Settings</a>
