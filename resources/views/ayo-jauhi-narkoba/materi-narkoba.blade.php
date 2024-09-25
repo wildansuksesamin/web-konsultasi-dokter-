@@ -1,6 +1,8 @@
 {{-- @dd($jawaban->soal_1) --}}
+{{-- @dd($soal_jawaban) --}}
 
-<p class="mb-5 text-lg text-justify"> <span class="text-red-500 uppercase text-3xl font-bold">Narkoba</span> merupakan istilah yang digunakan untuk menyebut
+<p class="mb-5 text-lg text-justify"> <span class="text-red-500 uppercase text-3xl font-bold">Narkoba</span> merupakan
+    istilah yang digunakan untuk menyebut
     narkotika, psikotropika, dan zat-zat berbahaya lainnya. Selain istilah
     narkoba, dikenal juga singkatan NAPZA, yakni narkotika, alkohol,
     psikotropika, dan zat berbahaya lainnya. . Kali ini, kita akan belajar
@@ -16,11 +18,42 @@
 
 <h1 class="text-xl mt-9">Soal Narkoba</h1>
 
-<form action="{{ route('jawab-materi-narkoba') }}" method="POST" class="space-y-5">
+<form action="{{ route('ayo-jauhi-narkoba.store') }}" method="POST" class="space-y-5">
     @csrf
-    <div class="soal">
+
+    @foreach ($soal_jawaban as $key => $soal)
+        <div class="soal">
+            <p class="text-base  text-gray-500 mt-5">{{ $loop->iteration }}. {{ $soal['pertanyaan'] }}</p>
+
+            @foreach ($soal['pilihan'] as $key2 => $pilihan)
+            
+                @php
+                    $bgColor = '';
+                    if (isset($show_jawaban)) {
+                        if ($soal['jawaban_benar'] == $key2) {
+                            $bgColor = 'bg-green-500';
+                        } elseif ($soal['jawaban_user'] == $key2) {
+                            $bgColor = 'bg-red-500';
+                        }
+                    }
+                @endphp
+
+                <div class="flex items-center mt-3 rounded-md {{ $bgColor }}">
+                    <input type="radio" id="{{ $key . '_' . $key2 }}" name="{{ $key }}"
+                        value="{{ $key2 }}"
+                        {{ isset($show_jawaban) && $soal['jawaban_user'] == $key2 ? 'checked' : '' }}>
+                    <label for="{{ $key . '_' . $key2 }}" class="ml-2">
+                        {{ $key2 }}. {{ $pilihan }}
+                    </label>
+                </div>
+            @endforeach
+
+
+        </div>
+    @endforeach
+
+    {{-- <div class="soal">
         <p class="text-base  text-gray-500 mt-5">1. Apa yang dimaksud dengan narkoba?</p>
-        {{-- multiple option a b c d --}}
         <div
             class="flex items-center mt-3 rounded-md {{ isset($jawaban) && $jawaban->soal_1 == 'a' ? 'bg-green-500' : '' }}">
             <input type="radio" id="1-a" name="soal-1" value="a">
@@ -44,60 +77,7 @@
             </label>
         </div>
 
-    </div>
-
-    <div class="soal">
-        <p class="text-base  text-gray-500 mt-5">2.
-            Mengapa narkoba sangat berbahaya bagi kesehatan tubuh?</p>
-
-        {{-- multiple option a b c d --}}
-        <div class="flex items-center mt-3 rounded-md">
-            <input type="radio" id="2-a" name="soal-2" value="a">
-            <label for="2-a" class="ml-2">
-                A. Karena narkoba dapat merusak organ tubuh, seperti hati, ginjal, dan otak
-            </label>
-        </div>
-        <div
-            class="flex items-center mt-3 rounded-md {{ isset($jawaban) && $jawaban->soal_2 == 'b' ? 'bg-green-500' : '' }}">
-            <input type="radio" id="2-b" name="soal-2" value="b">
-            <label for="2-b" class="ml-2">
-                B. Karena narkoba dapat menyebabkan ketergantungan dan merusak organ tubuh
-            </label>
-        </div>
-        <div class="flex items-center mt-3 rounded-md">
-            <input type="radio" id="2-c" name="soal-2" value="c">
-            <label for="2-c" class="ml-2">
-                C. Karena narkoba dapat menyebabkan ketergantungan dan merusak organ tubuh
-            </label>
-        </div>
-    </div>
-
-    <div class="soal">
-        <p class="text-base  text-gray-500 mt-5">
-            Sebutkan Jenis-jenis narkoba yang ada di Indonesia
-        </p>
-
-        {{-- multiple option a b c d --}}
-        <div class="flex items-center mt-3 rounded-md">
-            <input type="radio" id="3-a" name="soal-3" value="a">
-            <label for="3-a" class="ml-2">
-                A. Jenis narkoba yang ada di Indonesia adalah ganja, sabu-sabu, ekstasi, dan heroin
-            </label>
-        </div>
-        <div class="flex items-center mt-3 rounded-md">
-            <input type="radio" id="3-b" name="soal-3" value="b">
-            <label for="3-b" class="ml-2">
-                B. Jenis narkoba yang ada di Indonesia adalah Happydent
-            </label>
-        </div>
-        <div
-            class="flex items-center mt-3 rounded-md {{ isset($jawaban) && $jawaban->soal_3 == 'c' ? 'bg-green-500' : '' }}">
-            <input type="radio" id="3-c" name="soal-3" value="c">
-            <label for="3-c" class="ml-2">
-                C. Jenis narkoba yang ada di indonesia adalah seblak
-            </label>
-        </div>
-    </div>
+    </div> --}}
 
     {{-- button --}}
     <button type="submit" class="bg-green-500 text-white p-2 rounded-lg">Submit</button>

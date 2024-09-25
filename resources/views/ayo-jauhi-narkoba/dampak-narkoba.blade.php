@@ -1,27 +1,44 @@
-<h1 class=" text-xl">Dampak Narkoba </h1>
-<img src="{{ asset('img/close-up-woman-s-hand-holding-blister-pack-with-medicines-wooden-desk.jpg') }}" class="float-left"
-    width="400px" alt="">
-<p class="text-base pt-5 text-gray-500 mt-5">Pengobatan tuberkulosis (TBC) adalah dengan patuh minum
-    obat selama jangka waktu yang dianjurkan oleh dokter. Jika pasien berhenti minum obat sebelum waktu
-    yang disarankan, bakteri TBC berpotensi kebal terhadap obat yang biasa diberikan. Akibatnya, TBC
-    menjadi lebih berbahaya dan akan lebih sulit diobati.
-    <br> <br>
-    Obat yang diminum merupakan kombinasi dari dua atau empat obat berikut:
-</p>
-<ul class="list-disc px-10 text-base  text-gray-500 mt-3">
-    <li>Isoniazid</li>
-    <li>Rifampicin</li>
-    <li>Pyrazinamide</li>
-    <li>Ethambutol</li>
-</ul>
-<br> <br> <br>
-<p class="text-base  text-gray-500 mt-3">Obat tersebut harus diminum secara rutin selama 6–9 bulan.
-    Sama seperti obat-obat lain, obat TBC juga memiliki efek samping, antara lain:
-</p>
-<ul class="list-disc px-10 text-base  text-gray-500 mt-3">
-    <li>Warna urine menjadi kemerahan</li>
-    <li>Penurunan efektivitas pil KB, KB suntik, atau susuk</li>
-    <li>Gangguan penglihatan</li>
-    <li>Gangguan saraf</li>
-    <li>Gangguan fungsi hati</li>
-</ul>
+<h1 class=" text-xl font-bold mb-3">Dampak Narkoba </h1>
+<img src="{{ asset('img/close-up-woman-s-hand-holding-blister-pack-with-medicines-wooden-desk.jpg') }}"
+    class="float-left mr-4 mb-4" width="400px" height="400px" alt="">
+
+<div class="text-justify indent-8 pl-0">
+    <p class="text-base pt-3 lg:pt-0">
+        Menurut Damanik (2020), dampak dari penyalahgunaan narkoba
+        pada seseorang sangat bervariasi tergantung pada jenis narkoba yang
+        digunakan (Pramesti dkk, 2022). Dampak fisik meliputi:
+    </p>
+    <ol class="space-y-1 list-decimal list-inside indent-8">
+        <li>Gangguan pada sistem saraf (neurologis), seperti kejang-kejang,
+            halusinasi, gangguan kesadaran, dan kerusakan pada saraf tepi</li>
+        <li> Gangguan pada jantung dan pembuluh darah (kardiovaskuler),
+            seperti infeksi akut otot jantung.</li>
+        <li>Gangguan pada kulit (dermatologis), seperti reaksi alergi dan
+            eksim</li>
+        <li>Gangguan pada paru-paru (pulmoner), seperti penurunan
+            fungsi pernapasan, kesulitan bernafas, dan pengerasan jaringan
+            paru-paru</li>
+        <li>Gejala umum seperti sakit kepala, mual, muntah, dan gangguan
+            tidur</li>
+        <li>Gangguan pada kesehatan reproduksi, termasuk penurunan
+            fungsi hormon reproduksi dan gangguan fungsi seksual</li>
+    </ol>
+
+    <p class="indent-0">Adapun dampak <span class="font-semibold text-red-600 uppercase text-lg"> psikis dan sosial</span> meliputi : </p>
+
+    <ol class="space-y-1 list-decimal list-inside indent-8">
+        <li>Keterlambatan dalam pekerjaan, kecerobohan, ketegangan, dan
+            kegelisahan</li>
+        <li> Hilangnya kepercayaan diri, apati, khayalan berlebihan, dan
+            kecurigaan.</li>
+        <li>Perilaku agresif dan brutal</li>
+        <li>Kesulitan berkonsentrasi, merasa tertekan, dan marah</li>
+        <li>Kecenderungan menyakiti diri sendiri, bahkan memiliki
+            keinginan untuk bunuh diri</li>
+        <li>Gangguan mental dan perilaku anti sosial</li>
+        <li>Menjadi beban bagi keluarga dan merepotkan mereka
+        </li>
+        <li>Gangguan dalam pendidikan dan berpotensi merusak masa
+            depan</li>
+    </ol>
+</div>

@@ -66,7 +66,7 @@
                         </div>
                         <ul class="py-1 text-sm text-gray-700 " aria-labelledby="avatarButton">
                             <li>
-                                <a href="{{ route('ayo-jauhi-narkoba') }}"
+                                <a href="{{ route('ayo-jauhi-narkoba.index') }}"
                                     class="block py-2 px-4 hover:bg-gray-100 ">Dashboard</a>
                             </li>
                             <li>

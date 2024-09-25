@@ -1,3 +1,5 @@
+
+
 @extends('user.layout.layout')
 
 @section('content')
@@ -27,17 +29,17 @@
                             id="faktor-tab" data-tabs-target="#faktor" type="button" role="tab" aria-controls="faktor"
                             aria-selected="false">Faktor Penyebab Penggunaan Narkoba</button>
                     </li>
-                    <li role="presentation">
+                    <li class="mr-2" role="presentation">
                         <button
                             class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-md text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
-                            id="dampak-tab" data-tabs-target="#dampak" type="button" role="tab"
-                            aria-controls="dampak" aria-selected="false">Dampak Penggunaan Narkoba</button>
+                            id="dampak-tab" data-tabs-target="#dampak" type="button" role="tab" aria-controls="dampak"
+                            aria-selected="false">Dampak Penggunaan Narkoba</button>
                     </li>
                     <li role="presentation">
                         <button
                             class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-md text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
-                            id="pencegahan-tab" data-tabs-target="#pencegahan" type="button" role="tab" aria-controls="pencegahan"
-                            aria-selected="false">Bentuk Pencegahan Narkoba</button>
+                            id="pencegahan-tab" data-tabs-target="#pencegahan" type="button" role="tab"
+                            aria-controls="pencegahan" aria-selected="false">Bentuk Pencegahan Narkoba</button>
                     </li>
                 </ul>
             </div>
@@ -62,29 +64,11 @@
                 </div>
 
                 <div class="p-4 rounded-lg" id="pencegahan" role="tabpanel" aria-labelledby="pencegahan-tab">
-                    pencegahan
+                    @include('ayo-jauhi-narkoba.bentuk-pencegahan')
                 </div>
 
             </div>
-
-
-
-
-
-
-
-
-
-
         </div>
-
-
-
-
-
-
-
-
 
     </div>
 @endsection

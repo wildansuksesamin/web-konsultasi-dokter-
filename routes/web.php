@@ -176,7 +176,10 @@ Route::get('/detail-konsultasi', function () {
 
 // ARJUN UPDATE
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/ayo-jauhi-narkoba', [AyoJauhiNarkoba::class, 'index'])->name('ayo-jauhi-narkoba');
-    Route::post('/jawab-materi-narkoba', [AyoJauhiNarkoba::class, 'jawabanMateri'])->name('jawab-materi-narkoba');
+    Route::resources([
+        '/ayo-jauhi-narkoba' => AyoJauhiNarkoba::class,
+    ]);
+
+    
     Route::get('/ayo-mengenali-aku', [AyoMengenaliAku::class, 'index'])->name('ayo-mengenali-aku');
 });
