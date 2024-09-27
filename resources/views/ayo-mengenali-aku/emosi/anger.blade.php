@@ -31,6 +31,15 @@
                         <th>Pengelolaan Emosi</th>
                         <td>{{ $emosi['pengelolaan'] }}</td>
                     </tr>
+                    <tr>
+                        <th>Potensi Penggunaan Narkoba</th>
+                        <td>{{ $emosi['potensi_penggunaan_narkoba'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Studi Kasus</th>
+                        {{-- {!! $html_data !!} --}}
+                        <td class="indent-8">{!! $emosi['studi_kasus'] !!}</td>
+                    </tr>
                 @endif
             @endforeach
             {{-- <tr>

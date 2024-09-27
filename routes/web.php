@@ -178,8 +178,6 @@ Route::get('/detail-konsultasi', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resources([
         '/ayo-jauhi-narkoba' => AyoJauhiNarkoba::class,
+        '/ayo-mengenali-aku' => AyoMengenaliAku::class,
     ]);
-
-    
-    Route::get('/ayo-mengenali-aku', [AyoMengenaliAku::class, 'index'])->name('ayo-mengenali-aku');
 });
