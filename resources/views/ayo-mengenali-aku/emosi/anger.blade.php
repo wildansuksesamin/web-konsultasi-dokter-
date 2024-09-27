@@ -1,8 +1,8 @@
 <div>
-    <table class="table-auto overflow-auto w-full border-separate border-spacing-y-3 border-spacing-x-4">
-        <tbody class="">
-            @foreach ($emosis as $key => $emosi)
-                @if ($emosi['nama_emosi'] == 'Amarah')
+    @foreach ($emosis as $keyz => $emosi)
+        @if ($emosi['nama_emosi'] == 'Amarah')
+            <table class="table-auto overflow-auto w-full border-separate border-spacing-y-3 border-spacing-x-4">
+                <tbody class="">
                     <tr>
                         <th>Jenis Emosi:</th>
                         <td>{{ $emosi['nama_emosi'] }}</td>
@@ -40,9 +40,34 @@
                         {{-- {!! $html_data !!} --}}
                         <td class="indent-8">{!! $emosi['studi_kasus'] !!}</td>
                     </tr>
-                @endif
-            @endforeach
-            {{-- <tr>
+                </tbody>
+            </table>
+
+            <div class="my-4 -translate-x-8">
+                <h1 class="font-semibold text-lg">Jawablah Soal Di bawah ini</h1>
+
+                <form action="#" class="space-y-5">
+                    @foreach ($emosi['pertanyaan'] as $key => $soal)
+                        <p class="text-base  text-gray-500 mt-5">{{ $loop->iteration }}. {{ $soal['pertanyaan'] }}</p>
+
+                        @foreach ($soal['pilihan'] as $key2 => $pilihan)
+                            <div class="flex items-center mt-3 rounded-md">
+                                <input type="radio" id="{{ $key . '_' . $key2 }}" name="{{ $key }}"
+                                    value="{{ $key2 }}"
+                                    {{ isset($show_jawaban) && $soal['jawaban_user'] == $key2 ? 'checked' : '' }}>
+                                <label for="{{ $key . '_' . $key2 }}" class="ml-2">
+                                    {{ $key2 }}. {{ $pilihan }}
+                                </label>
+                            </div>
+                        @endforeach
+                    @endforeach
+
+                    <button type="submit" class="bg-green-500 text-white p-2 rounded-lg">Submit</button>
+                </form>
+            </div>
+        @endif
+    @endforeach
+    {{-- <tr>
                 <th>Jenis Emosi:</th>
                 <td>Emosi Negatif</td>
             </tr>
@@ -77,6 +102,5 @@
                     serta hindari hal-hal yang bisa memicu
                     kemarahan</td>
             </tr> --}}
-        </tbody>
-    </table>
+
 </div>
