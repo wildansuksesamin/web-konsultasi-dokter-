@@ -129,13 +129,71 @@ class AyoMengenaliAku extends Controller
                     ]
                 ]
             ]
-
         ];
 
+        $cinta = [
+            'nama_emosi' => 'Cinta',
+            'jenis_emosi' => 'Emosi Positif',
+            'penjelasan' => 'Cinta (Love) merupakan salah satu emosi positif yang menggambarkan perasaan keterikatan, kasih sayang, dan kepedulian yang kuat terhadap seseorang atau sesuatu. Emosi ini bisa diarahkan kepada orang terdekat, seperti keluarga dan teman, maupun aktivitas atau hobi yang disukai. Cinta menghasilkan perasaan bahagia, nyaman, dan damai. Ketika merasakan cinta, seseorang biasanya lebih bersemangat, optimis, dan merasa aman.',
+            'penyebab' => 'Perasaan cinta bisa berasal dari rasa dihargai, dibutuhkan atau membutuhkan orang lain. Cinta juga bisa muncul karena adanya ketertarikan terhadap kepribadian baik seseorang atau keterlibatan dalam kegiatan yang menyenangkan.',
+            'reaksi' => 'Biasanya ditandai dengan meningkatnya rasa percaya diri, kebahagiaan, keinginan untuk menghabiskan waktu bersama, dan sering kali diekspresikan dengan senyuman. Emosi cinta cenderung membuat seseorang fokus pada sisi positif dari hal-hal atau orang yang mereka cintai.',
+            'dampak' => 'Meningkatnya rasa percaya diri dan optimisme. Selain itu, cinta juga mendorong seseorang untuk menjaga dan melindungi hal-hal yang mereka cintai, tanpa terobsesi berlebihan.',
+            'pengelolaan' => 'Menjaga keseimbangan dalam hubungan atau aktivitas yang dicintai, menghargai momen bersama, dan tidak terlalu terikat secara obsesif pada orang atau hal-hal yang dicintai.',
+            'potensi_penggunaan_narkoba' => 'Cinta sebagai emosi positif tidak memiliki potensi langsung menyebabkan penggunaan narkoba, melainkan bisa menjadi motivasi untuk menjaga kesejahteraan pribadi dan orang-orang di sekitar.',
+            'studi_kasus' => 'Rina adalah seorang remaja yang sangat mencintai dunia musik. Sejak kecil, ia sudah terbiasa mendengarkan berbagai jenis musik dan belajar memainkan gitar. Musik menjadi pelarian bagi Rina ketika ia merasa sedih, stres, atau bosan. Bermain gitar dan menciptakan lagu-lagu sederhana membuatnya merasa tenang dan bahagia. Setiap kali ia pulang dari sekolah, hal pertama yang ia lakukan adalah mengambil gitarnya dan mulai memainkan lagu favoritnya. Cinta Rina terhadap musik bahkan membuatnya bergabung dengan sebuah band di sekolahnya, dan ia sangat menikmati setiap kesempatan untuk tampil di depan teman-temannya. Suatu hari, ibunya meminta Rina untuk mengurangi waktu yang dihabiskan bermain gitar dan lebih fokus pada tugas sekolahnya, karena nilainya mulai menurun. Rina merasa terjebak di antara cintanya terhadap musik dan kewajibannya untuk belajar lebih keras. Ia merasa bahwa bermain musik adalah bagian penting dari dirinya dan sulit baginya untuk mengurangi waktu yang ia habiskan dengan gitarnya. Ia mulai merasa frustrasi karena tidak dapat menyeimbangkan hobinya dan tanggung jawabnya sebagai siswa.',
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Apa penyebab utama dilema yang dialami Rina dalam situasi ini?',
+                    'pilihan' => [
+                        'a' => 'Rina ingin bergabung dengan band yang lebih besar',
+                        'b' => 'Nilai Rina menurun akibat terlalu banyak bermain musik',
+                        'c' => 'Rina tidak memiliki cukup waktu untuk berlatih gitar',
+                        'd' => 'Teman-teman Rina tidak mendukung hobinya',
+                    ]
+                ],
+                '2' => [
+                    'pertanyaan' => 'Bagaimana perasaan cinta Rina terhadap musik mempengaruhi kehidupannya secara keseluruhan?',
+                    'pilihan' => [
+                        'a' => 'Musik membuat Rina merasa tenang dan bahagia',
+                        'b' => 'Musik membuat Rina mudah marah dan kecewa',
+                        'c' => 'Musik membuat Rina lebih fokus pada tugas sekolah',
+                        'd' => 'Musik tidak memiliki dampak pada kehidupan Rina',
+                    ]
+                ],
+                '3' => [
+                    'pertanyaan' => 'Apa dampak dari hobi Rina terhadap kinerjanya di sekolah?',
+                    'pilihan' => [
+                        'a' => 'Rina mendapat nilai yang lebih tinggi',
+                        'b' => 'Rina mengabaikan band sekolahnya',
+                        'c' => 'Rina mengalami penurunan nilai karena lebih banyak bermain gitar',
+                        'd' => 'Rina menjadi lebih populer di sekolah',
+                    ]
+                ],
+                '4' => [
+                    'pertanyaan' => 'Jika Rina tidak dapat menemukan keseimbangan antara hobinya dan kewajibannya, bagaimana ini dapat memengaruhi kesehatannya secara emosional dan akademik?',
+                    'pilihan' => [
+                        'a' => 'Rina mungkin akan merasa lebih stres dan tertekan',
+                        'b' => 'Rina akan menjadi lebih sukses secara akademik',
+                        'c' => 'Rina akan berhenti bermain musik sepenuhnya',
+                        'd' => 'Rina akan memiliki lebih banyak waktu untuk bersosialisasi',
+                    ]
+                ],
+                '5' => [
+                    'pertanyaan' => 'Berikan saran mengenai cara-cara yang dapat dilakukan Rina untuk tetap mencintai musiknya tanpa mengorbankan tanggung jawabnya di sekolah?',
+                    'pilihan' => [
+                        'a' => 'Rina dapat meninggalkan musik agar fokus pada sekolah',
+                        'b' => 'Rina dapat membuat jadwal yang seimbang antara bermain musik dan belajar',
+                        'c' => 'Rina dapat meminta teman-temannya untuk menggantikan tugas sekolahnya',
+                        'd' => 'Rina harus berhenti dari band sekolah',
+                    ]
+                ]
+            ]
+        ];
 
         $emosis = [
             $amarah,
-            $cemburu
+            $cemburu,
+            $cinta
         ];
         return view('ayo-mengenali-aku.index', compact('emosis'));
     }
@@ -164,6 +222,14 @@ class AyoMengenaliAku extends Controller
             '2' => 'b',
             '3' => 'a',
             '4' => 'c'
+        ];
+
+        $jwb_love = [
+            '1' => 'b',
+            '2' => 'a',
+            '3' => 'c',
+            '4' => 'a',
+            '5' => 'b'
         ];
 
         $score = 0;
@@ -205,6 +271,26 @@ class AyoMengenaliAku extends Controller
             return response()->json([
                 'jawaban_old' => $jawaban,
                 'jawaban_benar' => $jwb_jealousy,
+                'score' => $score,
+                'message' => $message
+            ]);
+        } else if ($request->emosi == 'Cinta') {
+            foreach ($jawaban as $key => $value) {
+                if ($value == $jwb_love[$key]) {
+                    $score += 1;
+                }
+            }
+
+            if ($score == 5) {
+                $message = 'Selamat! Anda telah menjawab semua pertanyaan dengan benar.';
+            } else {
+                $message = 'Anda belum menjawab semua pertanyaan dengan benar. Silahkan coba lagi.';
+            }
+
+            // return jawaban lama, jawaban benar, dan score
+            return response()->json([
+                'jawaban_old' => $jawaban,
+                'jawaban_benar' => $jwb_love,
                 'score' => $score,
                 'message' => $message
             ]);

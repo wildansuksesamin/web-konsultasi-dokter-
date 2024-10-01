@@ -109,7 +109,7 @@
         </div>
 
         <div class="hidden p-4 rounded-lg" id="love" role="tabpanel" aria-labelledby="love-tab">
-            {{-- @include('ayo-mengenali-aku.emosi.love') --}}
+            @include('ayo-mengenali-aku.emosi.love')
         </div>
 
         <div class="hidden p-4 rounded-lg" id="envy" role="tabpanel" aria-labelledby="envy-tab">
@@ -141,11 +141,3 @@
         </div>
     </div>
 </div>
-
-
-@push('custom-script')
-    <script>
-        $('button[role="tab"]').on('click', function() {
-        })
-    </script>
-@endpush
