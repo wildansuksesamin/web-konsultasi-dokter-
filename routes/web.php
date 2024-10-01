@@ -173,7 +173,6 @@ Route::get('/detail-konsultasi', function () {
 //     return view('detail-konsultasi');
 // });
 
-
 // ARJUN UPDATE
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resources([

@@ -3,15 +3,19 @@
     <div class="md:flex items-center justify-between mb-5">
 
         {{-- button jurnal emosi --}}
-        <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-3 md:mb-0">Jurnal
+        <a href="#"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-3 md:mb-0">Jurnal
             Emosi</a>
 
         {{-- button jurnal mindfullness --}}
-        <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-3 md:mb-0">Jurnal
+        <a href="#"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-3 md:mb-0">Jurnal
             Mindfullness</a>
 
         {{-- button lihat video mindfullneess --}}
-        <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-3 md:mb-0">Lihat Video Mindfullness</a>
+        <a href="#"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-3 md:mb-0">Lihat
+            Video Mindfullness</a>
 
     </div>
     <h1 class="font-bold text-xl italic">Emotional Awareness / <span class="not-italic">Kesadaran Emosional</span> </h1>
@@ -101,8 +105,7 @@
         </div>
 
         <div class="hidden p-4 rounded-lg" id="jealousy" role="tabpanel" aria-labelledby="jealousy-tab">
-            {{-- @include('ayo-mengenali-aku.emosi.jealousy') --}}
-            ini adalah halaman cemburu
+            @include('ayo-mengenali-aku.emosi.jealous')
         </div>
 
         <div class="hidden p-4 rounded-lg" id="love" role="tabpanel" aria-labelledby="love-tab">
@@ -138,3 +141,11 @@
         </div>
     </div>
 </div>
+
+
+@push('custom-script')
+    <script>
+        $('button[role="tab"]').on('click', function() {
+        })
+    </script>
+@endpush

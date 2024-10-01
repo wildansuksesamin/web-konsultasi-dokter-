@@ -1,6 +1,6 @@
 <div>
     @foreach ($emosis as $keyz => $emosi)
-        @if ($emosi['nama_emosi'] == 'Amarah')
+        @if ($emosi['nama_emosi'] == 'Cemburu')
             <table class="table-auto overflow-auto w-full border-separate border-spacing-y-3 border-spacing-x-4">
                 <tbody class="">
                     <tr>
@@ -16,20 +16,20 @@
                         <td>{{ $emosi['penyebab'] }}</td>
                     </tr>
                     <tr>
+                        <th>Ciri-ciri:</th>
+                        <td>{{ $emosi['ciri_ciri'] }}</td>
+                    </tr>
+                    <tr>
                         <th>Contoh:</th>
                         <td>{{ $emosi['contoh'] }}</td>
                     </tr>
                     <tr>
-                        <th>Reaksi terhadap Amarah:</th>
+                        <th>Reaksi terhadap cemburu:</th>
                         <td>{{ $emosi['reaksi'] }}</td>
                     </tr>
                     <tr>
-                        <th>Akibat Amarah</th>
-                        <td>{{ $emosi['akibat'] }}</td>
-                    </tr>
-                    <tr>
                         <th>Pengelolaan Emosi</th>
-                        <td>{{ $emosi['pengelolaan'] }}</td>
+                        <td>{!! $emosi['pengelolaan'] !!}</td>
                     </tr>
                     <tr>
                         <th>Potensi Penggunaan Narkoba</th>
@@ -46,16 +46,16 @@
             <div class="my-4 -translate-x-8">
                 <h1 class="font-semibold text-lg">Jawablah Soal Di bawah ini</h1>
 
-                <form action="{{ route('ayo-mengenali-aku.index') }}" class="space-y-5" id="form-anger">
+                <form action="{{ route('ayo-mengenali-aku.index') }}" class="space-y-5" id="form-jealous">
                     @foreach ($emosi['pertanyaan'] as $key => $soal)
                         <p class="text-base  text-gray-500 mt-5">{{ $loop->iteration }}. {{ $soal['pertanyaan'] }}</p>
 
                         @foreach ($soal['pilihan'] as $key2 => $pilihan)
                             <div class="flex items-center mt-3 rounded-md">
-                                <input type="radio" id="{{ $key . '_' . $key2 . '_anger' }}"
+                                <input type="radio" id="{{ $key . '_' . $key2 . '_jealous' }}"
                                     name="{{ $key }}" value="{{ $key2 }}"
                                     {{ isset($show_jawaban) && $soal['jawaban_user'] == $key2 ? 'checked' : '' }}>
-                                <label for="{{ $key . '_' . $key2 . '_anger' }}" class="ml-2">
+                                <label for="{{ $key . '_' . $key2 . '_jealous' }}" class="ml-2">
                                     {{ $key2 }}. {{ $pilihan }}
                                 </label>
                             </div>
@@ -72,7 +72,7 @@
 
 @push('custom-script')
     <script>
-        $('#form-anger').submit(function(e) {
+        $('#form-jealous').submit(function(e) {
             e.preventDefault();
             let data = $(this).serializeArray();
             let jawaban = [];
@@ -81,14 +81,14 @@
             });
 
             // check if all question is answered
-            if (jawaban.length < 6) {
+            if (jawaban.length < 4) {
                 swal("Error!", "Please answer all question!", "error");
                 return;
             }
 
             axios.post("{{ route('ayo-mengenali-aku.store') }}", {
                     jawaban: jawaban,
-                    emosi: 'Amarah'
+                    emosi: 'Cemburu'
                 })
                 .then((response) => {
                     swal("Success!", response.data.message, "success");
@@ -98,12 +98,12 @@
                         const jawabanBenar = response.data.jawaban_benar[questionNumber];
 
                         // Define the IDs for old answer and correct answer input fields
-                        const oldAnswerId = `#${questionNumber}_${jawabanOld}_anger`;
-                        const correctAnswerId = `#${questionNumber}_${jawabanBenar}_anger`;
+                        const oldAnswerId = `#${questionNumber}_${jawabanOld}_jealous`;
+                        const correctAnswerId = `#${questionNumber}_${jawabanBenar}_jealous`;
 
                         // Define the corresponding label selectors using the 'for' attribute
-                        const oldLabel = `label[for='${questionNumber}_${jawabanOld}_anger']`;
-                        const correctLabel = `label[for='${questionNumber}_${jawabanBenar}_anger']`;
+                        const oldLabel = `label[for='${questionNumber}_${jawabanOld}_jealous']`;
+                        const correctLabel = `label[for='${questionNumber}_${jawabanBenar}_jealous']`;
 
                         // If the old answer is correct, apply green background to input and label
                         if (jawabanOld === jawabanBenar) {
