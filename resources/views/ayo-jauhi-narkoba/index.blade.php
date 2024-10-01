@@ -17,7 +17,8 @@
                             id="profile-tab" data-tabs-target="#profile" type="button" role="tab"
                             aria-controls="profile" aria-selected="true">Materi Narkoba</button>
                     </li>
-                    <li class="mr-2" role="presentation">
+                    
+                    {{-- <li class="mr-2" role="presentation">
                         <button
                             class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-md text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
                             id="pengertian-jenis-tab" data-tabs-target="#pengertian-jenis" type="button" role="tab"
@@ -40,7 +41,7 @@
                             class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-md text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
                             id="pencegahan-tab" data-tabs-target="#pencegahan" type="button" role="tab"
                             aria-controls="pencegahan" aria-selected="false">Bentuk Pencegahan Narkoba</button>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             <div id="myTabContent">
@@ -51,20 +52,20 @@
 
                 <div class="text-justify hidden p-4 rounded-lg" id="pengertian-jenis" role="tabpanel"
                     aria-labelledby="pengertian-jenis-tab">
-                    @include('ayo-jauhi-narkoba.pengertian-jenis-narkoba')
+                    {{-- @include('ayo-jauhi-narkoba.pengertian-jenis-narkoba') --}}
                 </div>
 
 
                 <div class="hidden p-4  rounded-lg " id="faktor" role="tabpanel" aria-labelledby="faktor-tab">
-                    @include('ayo-jauhi-narkoba.faktor-penyebab')
+                    {{-- @include('ayo-jauhi-narkoba.faktor-penyebab') --}}
                 </div>
 
                 <div class="hidden p-4  rounded-lg " id="dampak" role="tabpanel" aria-labelledby="dampak-tab">
-                    @include('ayo-jauhi-narkoba.dampak-narkoba')
+                    {{-- @include('ayo-jauhi-narkoba.dampak-narkoba') --}}
                 </div>
 
                 <div class="p-4 rounded-lg" id="pencegahan" role="tabpanel" aria-labelledby="pencegahan-tab">
-                    @include('ayo-jauhi-narkoba.bentuk-pencegahan')
+                    {{-- @include('ayo-jauhi-narkoba.bentuk-pencegahan') --}}
                 </div>
 
             </div>

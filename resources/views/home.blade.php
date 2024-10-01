@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
-    <link rel="icon" href="img/virus.png">
+    <link rel="icon" href="{{ asset('img/game-icons--self-love.svg') }}">
     <title>Mengenal aku : Platform Belajar Self Awareness sebagai Pencegahan Penggunaan Narkoba</title>
 
     <!-- @TODO: replace SET_YOUR_CLIENT_KEY_HERE with your client key -->
@@ -46,8 +46,8 @@
     <nav class="bg-white px-2 sm:px-4 md:px-28  py-2.5  fixed w-full z-20 top-0 left-0 border-b border-gray-200 ">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
             <a href="" class="flex items-center font-Poppins">
-                <img src="img/virus.png" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo">
-                <span class="self-center text-xl font-semibold whitespace-nowrap text-teal-600 ">Aceptor</span>
+                <img src="{{ asset('img/game-icons--self-love.svg') }}" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo">
+                <span class="self-center text-xl font-semibold whitespace-nowrap text-teal-600 ">Mengenal Aku</span>
             </a>
             <div class="flex md:order-2">
 
@@ -122,16 +122,16 @@
                     </li>
                     <li>
                         <a href="#gejala"
-                            class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Gejala</a>
+                            class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Tentang Kami</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#pencegahan"
                             class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Pencegahan</a>
                     </li>
                     <li>
                         <a href="#harga"
                             class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Harga</a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a href="#kontak"
                             class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Kontak</a>
@@ -153,17 +153,14 @@
                 <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
                 </svg>
-                Tuberkulosis
+                Jauhi Narkoba
             </h5>
             <h2 class="text-[30px]  md:text-6xl  px-3 md:px-0 text-[#333333] font-bold font-Poppins md:text-left">
-                Ayo Cegah
-                Penularan TBC</h2>
+                Mengenal Aku</h2>
 
-            <p class="text-[#333333] px-5  md:px-0 text-base md:text-lg font-Inter md:text-left md:pt-3"> Tuberkulosis
-                (TBC) atau TB
-                adalah
-                penyakit menular akibat infeksi bakteri. TBC umumnya menyerang paru-paru, tetapi juga dapat menyerang
-                organ tubuh lain, seperti ginjal, tulang belakang, dan otak.</p>
+            <p class="text-[#333333] px-5  md:px-0 text-base md:text-lg font-Inter md:text-left md:pt-3"> Adalah
+                Platform Pembelajaran Self Awareness sebagai Upaya Pencegahan Dini terhadap Penggunaan Narkoba dan
+                Penguatan Kesehatan Mental di Kalangan Remaja dan Dewasa Muda</p>
 
 
             <button type="button"
@@ -177,7 +174,7 @@
         </div>
 
         <div class="">
-            <img src="img/amico.png" class="hidden md:block" alt="" />
+            <img src="{{ asset('img/Self confidence-amico.svg') }}" class="hidden md:block" alt="" />
         </div>
     </div>
     <div>
