@@ -542,6 +542,67 @@ class AyoMengenaliAku extends Controller
             ]
         ];
 
+        $fear = [
+            'nama_emosi' => 'Takut',
+            'jenis_emosi' => 'Emosi Negatif',
+            'penjelasan' => 'Perasaan takut adalah respons emosional terhadap situasi atau lingkungan yang dirasa membahayakan atau tidak diketahui. Ketakutan adalah mekanisme alami untuk melindungi diri dari ancaman. Rasa takut sering kali muncul ketika seseorang berada di tempat atau menghadapi situasi baru yang belum pernah dialami, seperti pindah ke lingkungan baru atau mencoba hal baru.',
+            'penyebab' => "Berada di lingkungan atau situasi yang belum pernah dialami, Melihat seseorang disakiti atau diancam",
+            'contoh' => "Merasa takut terhadap ancaman yang dapat membahayakan diri, Ketakutan saat mencoba aktivitas baru atau hobi yang belum pernah dilakukan sebelumnya, Merasa cemas dan takut saat harus pindah ke lingkungan baru yang tidak dikenal",
+            'reaksi' => "Jantung berdetak cepat, Sesak napas, Mual, berkeringat, atau panik, Merasa kacau atau tidak nyaman, Keinginan untuk lari atau berteriak",
+            'dampak' => 'Bersikap was-was dan menarik diri dari interaksi sosial',
+            'pengelolaan' => "Menghadapi ketakutan yang dimiliki dengan keberanian, Menjauhkan diri dari situasi atau hal yang memang berbahaya, Selalu berdoa kepada Tuhan dan berpikiran positif, Fokus pada tujuan yang ingin dicapai agar tidak terus menerus memikirkan ketakutan",
+            'potensi_penggunaan_narkoba' => 'Beberapa orang mungkin mencari pelarian dari perasaan takut atau kecemasan dengan menggunakan narkoba, meskipun hal ini bukanlah solusi yang sehat atau efektif untuk mengatasi ketakutan.',
+            'studi_kasus' => "Aldi adalah seorang siswa baru yang baru saja pindah ke sekolah baru di kota lain. Pada hari pertama sekolah, dia merasa gugup karena tidak mengenal siapa pun. Saat guru meminta Aldi untuk memperkenalkan diri di depan kelas, dia mulai merasa jantungnya berdebar kencang, tangannya berkeringat, dan dia merasa ingin lari dari situasi tersebut. Aldi akhirnya memperkenalkan diri, tetapi dia berbicara dengan suara sangat pelan dan tergagap.",
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Apa penyebab utama perasaan takut yang dialami oleh Aldi?',
+                    'pilihan' => [
+                        'a' => 'Tidak mendapat nilai tinggi di sekolah',
+                        'b' => 'Bertemu dengan teman lama',
+                        'c' => 'Berada di lingkungan baru yang belum dikenalnya',
+                        'd' => 'Menerima pujian dari guru',
+                    ],
+                ],
+                '2' => [
+                    'pertanyaan' => 'Bagaimana reaksi fisik Aldi saat dia merasakan takut?',
+                    'pilihan' => [
+                        'a' => 'Merasa tenang dan nyaman',
+                        'b' => 'Tersenyum dan berbicara dengan lantang',
+                        'c' => 'Tertawa dan berbicara dengan teman-temannya',
+                        'd' => 'Berdebar kencang, berkeringat, dan merasa ingin lari',
+                    ],
+                ],
+                '3' => [
+                    'pertanyaan' => 'Apa akibat dari perasaan takut yang dialami oleh Aldi selama perkenalan?',
+                    'pilihan' => [
+                        'a' => 'Dia berbicara dengan percaya diri di depan kelas',
+                        'b' => 'Dia merasa bahagia dan santai',
+                        'c' => 'Dia bersemangat untuk mengenal teman-temannya',
+                        'd' => 'Dia menarik diri dari lingkungan sosial',
+                    ],
+                ],
+                '4' => [
+                    'pertanyaan' => 'Bagaimana Aldi dapat mengelola perasaan takutnya agar lebih nyaman dalam menghadapi situasi baru di sekolah?',
+                    'pilihan' => [
+                        'a' => 'Mencoba menghadapi ketakutannya dengan percaya diri dan berpikiran positif',
+                        'b' => 'Menghindari perkenalan diri dan bersembunyi di kelas',
+                        'c' => 'Tidak berbicara sama sekali di kelas',
+                        'd' => 'Menarik diri dari interaksi sosial dengan teman-teman sekelas',
+                    ],
+                ],
+                '5' => [
+                    'pertanyaan' => 'Apa potensi risiko jika Aldi tidak berhasil mengelola perasaan takutnya dengan baik?',
+                    'pilihan' => [
+                        'a' => 'Dia menjadi lebih terbuka dan percaya diri',
+                        'b' => 'Dia mulai menarik diri secara sosial dan mencari pelarian melalui penggunaan narkoba',
+                        'c' => 'Dia mencari pelarian dari rasa takut dengan berfokus pada tujuan akademisnya',
+                        'd' => 'Dia menjadi siswa yang paling populer di kelas',
+                    ],
+                ],
+            ]
+        ];
+
+
 
         $emosis = [
             $amarah,
@@ -552,7 +613,8 @@ class AyoMengenaliAku extends Controller
             $sadness,
             $shame,
             $disgust,
-            $guilty
+            $guilty,
+            $fear
         ];
         return view('ayo-mengenali-aku.index', compact('emosis'));
     }
@@ -637,6 +699,14 @@ class AyoMengenaliAku extends Controller
             '3' => 'b',
             '4' => 'a',
             '5' => 'd'
+        ];
+
+        $jwb_fear = [
+            '1' => 'c',
+            '2' => 'd',
+            '3' => 'd',
+            '4' => 'a',
+            '5' => 'b'
         ];
 
         $score = 0;
@@ -818,6 +888,26 @@ class AyoMengenaliAku extends Controller
             return response()->json([
                 'jawaban_old' => $jawaban,
                 'jawaban_benar' => $jwb_guilty,
+                'score' => $score,
+                'message' => $message
+            ]);
+        } else if ($request->emosi == 'Takut') {
+            foreach ($jawaban as $key => $value) {
+                if ($value == $jwb_fear[$key]) {
+                    $score += 1;
+                }
+            }
+
+            if ($score == 5) {
+                $message = 'Selamat! Anda telah menjawab semua pertanyaan dengan benar.';
+            } else {
+                $message = 'Anda belum menjawab semua pertanyaan dengan benar. Silahkan coba lagi.';
+            }
+
+            // return jawaban lama, jawaban benar, dan score
+            return response()->json([
+                'jawaban_old' => $jawaban,
+                'jawaban_benar' => $jwb_fear,
                 'score' => $score,
                 'message' => $message
             ]);
