@@ -309,13 +309,74 @@ class AyoMengenaliAku extends Controller
             ]
         ];
 
+        $sadness = [
+            'nama_emosi' => 'Kesedihan',
+            'jenis_emosi' => 'Emosi Negatif',
+            'penjelasan' => 'Kesedihan muncul ketika seseorang kehilangan sesuatu atau seseorang yang sangat berarti dalam hidupnya. Perasaan ini juga bisa muncul ketika tujuan yang diharapkan tidak tercapai, atau ketika menghadapi situasi yang tidak berjalan sesuai harapan. Selain itu, kesedihan bisa dipicu oleh kehilangan hubungan atau kematian seseorang yang dekat, serta akibat dari situasi yang menyakitkan secara emosional, seperti diabaikan atau di bully.',
+            'contoh' => 'Mendapatkan nilai buruk dalam ujian atau tugas yang sangat penting; Kehilangan teman atau anggota keluarga tercinta; Mengalami pengabaian atau di bully oleh teman-teman.',
+            'reaksi' => 'Fisik: Merasa lelah, sesak napas, menangis, merasa kosong, atau pusing; Psikologis: Murung, merasa putus asa, bingung, gelisah, dan depresi. Individu yang mengalami kesedihan cenderung menarik diri dari interaksi sosial dan aktivitas yang biasanya menyenangkan.',
+            'dampak' => 'Kesedihan yang tidak dikelola dengan baik bisa memengaruhi kesejahteraan mental seseorang. Mereka mungkin merasa sulit untuk tersenyum, merasa tidak berdaya, depresi, atau bahkan mengalami gangguan tidur dan makan. Perasaan ini juga bisa menyebabkan seseorang menyalahkan diri sendiri atau terus-menerus memikirkan kejadian buruk di masa lalu.',
+            'pengelolaan' => 'Menerima dan mengakui perasaan sedih tanpa berlarut-larut; Melakukan kegiatan positif atau bertemu dengan orang-orang yang dicintai untuk mendapatkan dukungan emosional; Mencari bantuan dari ahli profesional seperti psikolog jika diperlukan; Berusaha untuk tetap berpikir positif dan mencari makna atau hikmah dari pengalaman menyedihkan tersebut.',
+            'potensi_penggunaan_narkoba' => 'Individu yang tidak mampu mengatasi kesedihan secara sehat mungkin mencari pelarian melalui penggunaan narkoba sebagai cara untuk menghindari perasaan sedih atau depresi yang mereka rasakan.',
+            'studi_kasus' => 'Budi adalah seorang siswa yang sangat menikmati bermain sepak bola bersama teman-temannya di sekolah. Namun, suatu hari saat berlatih, Budi mengalami cedera pada kakinya yang membuatnya tidak bisa bermain sepak bola selama beberapa bulan. Ketika dokter memberitahu bahwa ia harus istirahat total dan melewatkan turnamen tersebut, Budi merasa sangat sedih dan kecewa. Kesedihan ini membuatnya kehilangan semangat untuk melakukan kegiatan lain, menjadi murung, dan jarang berbicara dengan teman-temannya, bahkan tidak tertarik untuk menonton pertandingan sepak bola.',
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Apa penyebab utama kesedihan Budi dalam situasi ini?',
+                    'pilihan' => [
+                        'a' => 'Budi harus menghadapi ujian sekolah yang sulit',
+                        'b' => 'Budi tidak bisa bermain sepak bola karena cedera',
+                        'c' => 'Budi merasa tertekan oleh tugas sekolah yang menumpuk',
+                        'd' => 'Budi tidak lagi bersemangat belajar di sekolah',
+                    ]
+                ],
+                '2' => [
+                    'pertanyaan' => 'Bagaimana kesedihan memengaruhi sikap Budi terhadap kegiatan lain?',
+                    'pilihan' => [
+                        'a' => 'Budi menjadi lebih aktif dalam kegiatan selain sepak bola',
+                        'b' => 'Budi mencoba fokus pada hobinya yang lain untuk mengalihkan perhatiannya',
+                        'c' => 'Budi kehilangan minat terhadap kegiatan lain yang biasanya ia sukai',
+                        'd' => 'Budi lebih sering berlatih sepak bola sendirian meskipun sedang cedera',
+                    ]
+                ],
+                '3' => [
+                    'pertanyaan' => 'Bagaimana teman-teman dan keluarga Budi merespons kesedihan yang ia alami?',
+                    'pilihan' => [
+                        'a' => 'Mereka mencoba menghiburnya dan memberikan dukungan emosional',
+                        'b' => 'Mereka memarahi Budi karena tidak mau berusaha',
+                        'c' => 'Mereka mengabaikan Budi karena dia tidak bisa bermain sepak bola',
+                        'd' => 'Mereka memaksa Budi untuk bermain sepak bola meskipun cedera',
+                    ]
+                ],
+                '4' => [
+                    'pertanyaan' => 'Apa dampak dari kesedihan yang dialami Budi terhadap hubungan sosialnya?',
+                    'pilihan' => [
+                        'a' => 'Budi menjadi lebih dekat dengan teman-temannya',
+                        'b' => 'Budi semakin aktif berpartisipasi dalam kegiatan sosial di luar sekolah',
+                        'c' => 'Budi mencari teman-teman baru yang tidak bermain sepak bola',
+                        'd' => 'Budi jarang berbicara dengan teman-temannya dan lebih suka menyendiri',
+                    ]
+                ],
+                '5' => [
+                    'pertanyaan' => 'Apa saran yang dapat diberikan kepada Budi agar ia bisa bangkit dari kesedihannya?',
+                    'pilihan' => [
+                        'a' => 'Budi sebaiknya fokus pada kesedihannya dan menjauh dari orang lain',
+                        'b' => 'Budi harus berhenti memikirkan cedera dan segera kembali bermain meskipun belum sembuh',
+                        'c' => 'Budi sebaiknya tidak mencari bantuan dan mencoba mengatasi masalahnya sendirian',
+                        'd' => 'Budi harus mencari kegiatan baru yang tidak memerlukan aktivitas fisik seperti sepak bola',
+                    ]
+                ],
+            ]
+        ];
+
+
 
         $emosis = [
             $amarah,
             $cemburu,
             $cinta,
             $iri,
-            $happiness
+            $happiness,
+            $sadness
         ];
         return view('ayo-mengenali-aku.index', compact('emosis'));
     }
@@ -367,6 +428,14 @@ class AyoMengenaliAku extends Controller
             '2' => 'a',
             '3' => 'c',
             '4' => 'b',
+            '5' => 'd'
+        ];
+
+        $jwb_sadness = [
+            '1' => 'b',
+            '2' => 'c',
+            '3' => 'a',
+            '4' => 'd',
             '5' => 'd'
         ];
 
@@ -469,6 +538,26 @@ class AyoMengenaliAku extends Controller
             return response()->json([
                 'jawaban_old' => $jawaban,
                 'jawaban_benar' => $jwb_happiness,
+                'score' => $score,
+                'message' => $message
+            ]);
+        } else if ($request->emosi == 'Kesedihan') {
+            foreach ($jawaban as $key => $value) {
+                if ($value == $jwb_sadness[$key]) {
+                    $score += 1;
+                }
+            }
+
+            if ($score == 4) {
+                $message = 'Selamat! Anda telah menjawab semua pertanyaan dengan benar.';
+            } else {
+                $message = 'Anda belum menjawab semua pertanyaan dengan benar. Silahkan coba lagi.';
+            }
+
+            // return jawaban lama, jawaban benar, dan score
+            return response()->json([
+                'jawaban_old' => $jawaban,
+                'jawaban_benar' => $jwb_sadness,
                 'score' => $score,
                 'message' => $message
             ]);
