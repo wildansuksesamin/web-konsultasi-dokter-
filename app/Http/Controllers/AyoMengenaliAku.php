@@ -368,7 +368,121 @@ class AyoMengenaliAku extends Controller
             ]
         ];
 
+        $shame = [
+            'nama_emosi' => 'Malu',
+            'jenis_emosi' => 'Emosi Negatif',
+            'penjelasan' => 'Emosi malu adalah perasaan tidak nyaman yang muncul ketika kita merasa tidak sesuai dengan standar sosial atau ketika tindakan, perilaku, atau kondisi kita diketahui oleh orang lain. Perasaan malu seringkali berkaitan dengan kesadaran diri yang tinggi tentang kesalahan atau kegagalan yang kita alami di hadapan orang lain. Malu juga bisa dipicu oleh rasa takut ditolak, merasa kurang atau berbeda dari orang lain, atau mengalami kegagalan dalam hal yang dirasa penting.',
+            'penyebab' => "- Ditolak oleh seseorang yang disayangi, - Orang lain mengetahui kesalahan yang kita buat, - Merasa tidak sesuai dengan standar yang ada di masyarakat, - Dikhianati oleh seseorang yang dipercaya, - Gagal dalam suatu hal yang dirasa mampu atau seharusnya berhasil",
+            'reaksi' => "Merasa takut, Ingin menghilang atau bersembunyi, Menundukkan kepala dan menghindari kontak mata",
+            'dampak' => "Menyalahkan diri sendiri, Berkecenderungan untuk menarik diri dari interaksi sosial, Potensi munculnya konflik dengan orang lain",
+            'pengelolaan' => "Menerima dan mengakui perasaan malu yang hadir, Mengakui kesalahan dan introspeksi diri, Meminta maaf jika ada kesalahan, Berusaha mengubah perilaku yang tidak sesuai dengan norma atau standar sosial",
+            'potensi_penggunaan_narkoba' => 'Orang yang mengalami malu dapat mencari pelarian melalui narkoba untuk menghindari perasaan malu atau kegagalan yang dirasakan.',
+            'studi_kasus' => "Dina adalah seorang siswa SMP yang sangat menyukai menari dan sering berlatih untuk mengikuti kompetisi. Setelah berbulan-bulan mempersiapkan diri, ia akhirnya tampil di depan seluruh sekolah dalam sebuah pertunjukan besar. Namun ketika Dina mulai menari, ia melakukan kesalahan besar dan hampir terjatuh. Penonton memberikan tepuk tangan, tetapi Dina merasa sangat malu. Ia terus teringat pada kesalahan itu dan merasa semua orang menertawakannya di belakang. Dina mulai menghindari latihan menari dan bahkan menolak tawaran untuk tampil lagi. Ia khawatir bahwa setiap orang menganggapnya penari yang buruk dan tidak kompeten.",
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Apa penyebab utama rasa malu yang dialami Dina dalam situasi ini?',
+                    'pilihan' => [
+                        'a' => 'Dina tidak berlatih cukup untuk pertunjukan',
+                        'b' => 'Dina merasa malu karena melakukan kesalahan saat tampil di depan umum',
+                        'c' => 'Penonton mengkritik Dina secara terbuka',
+                        'd' => 'Dina dipaksa untuk tampil di acara tersebut',
+                    ]
+                ],
+                '2' => [
+                    'pertanyaan' => 'Bagaimana rasa malu yang dirasakan Dina mempengaruhi tindakannya setelah kejadian tersebut?',
+                    'pilihan' => [
+                        'a' => 'Dina menjadi lebih percaya diri dan bersemangat untuk berlatih',
+                        'b' => 'Dina melupakan kesalahan itu dan langsung berlatih untuk kompetisi berikutnya',
+                        'c' => 'Dina menghindari latihan menari dan menolak tawaran untuk tampil lagi',
+                        'd' => 'Dina menjadi lebih giat berlatih agar tidak melakukan kesalahan lagi',
+                    ]
+                ],
+                '3' => [
+                    'pertanyaan' => 'Apa dampak dari rasa malu Dina terhadap persepsinya tentang dirinya sendiri?',
+                    'pilihan' => [
+                        'a' => 'Dina merasa bahwa semua orang mendukungnya dan melihat potensinya',
+                        'b' => 'Dina merasa bahwa kesalahannya tidak berarti dan ia tetap percaya diri',
+                        'c' => 'Dina merasa bahwa orang-orang mengabaikan penampilannya dan fokus pada hal lain',
+                        'd' => 'Dina merasa bahwa dirinya adalah penari yang buruk dan tidak kompeten',
+                    ]
+                ],
+                '4' => [
+                    'pertanyaan' => 'Apa yang dapat Dina lakukan untuk mengelola rasa malu yang dirasakannya?',
+                    'pilihan' => [
+                        'a' => 'Berbicara dengan teman atau mentor tentang perasaannya dan meminta saran yang positif atau membangun',
+                        'b' => 'Mengabaikan kejadian tersebut dan berhenti menari sepenuhnya',
+                        'c' => 'Menyalahkan penonton karena tidak cukup mendukungnya',
+                        'd' => 'Menolak berbicara tentang kejadian itu dan tetap merasa malu',
+                    ]
+                ],
+                '5' => [
+                    'pertanyaan' => 'Bagaimana cara Dina bisa kembali menemukan kepercayaan dirinya setelah kejadian ini?',
+                    'pilihan' => [
+                        'a' => 'Menghindari tampil di depan umum untuk mengurangi risiko kesalahan',
+                        'b' => 'Menerima bahwa kesalahan adalah bagian dari proses belajar dan kembali berlatih dengan semangat',
+                        'c' => 'Menyalahkan orang lain atas rasa malu yang dialaminya',
+                        'd' => 'Menunggu hingga orang lain melupakan kesalahannya sebelum tampil lagi',
+                    ]
+                ],
+            ]
+        ];
 
+        $disgust = [
+            'nama_emosi' => 'Menjijikkan',
+            'jenis_emosi' => 'Emosi Negatif',
+            'penjelasan' => 'Emosi menjijikkan adalah salah satu jenis emosi negatif yang muncul ketika seseorang merasa tidak nyaman terhadap objek, peristiwa, atau situasi tertentu yang dianggap kotor, tercemar, atau tidak pantas. Perasaan ini bisa dipicu oleh berbagai hal, seperti melihat kotoran, mencium bau yang tidak sedap, atau menyaksikan perilaku yang dianggap merendahkan atau menjijikkan.',
+            'reaksi' => "Perasaan mual, Merasa kotor, Menghindari makanan atau minuman, Mencuci tangan, Menutup hidung dan mulut, Menunjukkan ekspresi wajah yang tidak menyenangkan, Orang yang merasa jijik mungkin juga berbicara secara sinis",
+            'pengelolaan' => "Menjauhkan diri dari pemicu yang menyebar rasa jijik, Menjaga perasaan orang lain yang mungkin menjadi penyebab rasa ini, Berempati dengan orang yang melakukan hal yang dianggap menjijikkan, Tidak melontarkan kata-kata kasar kepada mereka",
+            'potensi_penggunaan_narkoba' => 'Dari emosi ini tidak langsung terlihat, karena emosi menjijikkan lebih terkait dengan kepekaan terhadap hal-hal yang dianggap kotor atau tidak pantas, sehingga tidak menyebabkan seseorang mencari narkoba sebagai pelarian.',
+            'studi_kasus' => "Budi adalah seorang siswa SMP yang sangat gemar bereksperimen dengan berbagai resep masakan di rumah. Ia sangat menyukai memasak dan sering mencoba berbagai hidangan baru. Suatu hari, Budi memutuskan untuk membuat hidangan laut yang belum pernah ia coba sebelumnya. Namun, ketika ia mulai mempersiapkan bahan-bahannya, Budi merasa sangat jijik dengan bau amis dan tekstur dari seafood yang akan ia gunakan. Meskipun ia mencoba bertahan, rasa mual yang diakibatkan oleh bau dan penampilan makanan tersebut membuatnya semakin tidak nyaman. Akibatnya, Budi merasa jijik dan memutuskan untuk tidak melanjutkan memasak hidangan tersebut. Setelah kejadian itu, ia menjadi ragu untuk mencoba memasak hidangan laut lainnya, bahkan ketika ada yang menyarankan resep yang lebih sederhana.",
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Apa penyebab utama rasa jijik yang dirasakan Budi?',
+                    'pilihan' => [
+                        'a' => 'Budi tidak menyukai masakan laut secara umum',
+                        'b' => 'Budi merasa jijik dengan bau amis dan tekstur seafood yang ia persiapkan',
+                        'c' => 'Budi merasa terburu-buru dan tidak sempat mempersiapkan bahan-bahannya dengan benar',
+                        'd' => 'Budi tidak tahu cara memasak seafood dengan baik',
+                    ]
+                ],
+                '2' => [
+                    'pertanyaan' => 'Bagaimana rasa jijik mempengaruhi tindakan Budi setelah kejadian ini?',
+                    'pilihan' => [
+                        'a' => 'Budi memutuskan untuk berhenti mencoba memasak hidangan laut',
+                        'b' => 'Budi semakin bersemangat untuk bereksperimen dengan resep lainnya',
+                        'c' => 'Budi melupakan kejadian itu dan mencoba memasak hidangan lain keesokan harinya',
+                        'd' => 'Budi meminta bantuan orang lain untuk menyelesaikan masakan tersebut',
+                    ]
+                ],
+                '3' => [
+                    'pertanyaan' => 'Apa dampak dari rasa jijik yang dirasakan Budi terhadap persepsi dan keyakinannya dalam memasak?',
+                    'pilihan' => [
+                        'a' => 'Budi tetap percaya diri dan menganggap kejadian tersebut hanya kebetulan',
+                        'b' => 'Budi menganggap dirinya tidak berbakat dalam memasak dan berhenti memasak sepenuhnya',
+                        'c' => 'Budi merasa tidak berpengalaman dan mulai belajar lebih banyak tentang memasak seafood',
+                        'd' => 'Budi menjadi lebih takut untuk bereksperimen dengan hidangan yang belum pernah ia coba',
+                    ]
+                ],
+                '4' => [
+                    'pertanyaan' => 'Apa yang dapat Budi lakukan untuk mengatasi rasa jijik yang ia alami?',
+                    'pilihan' => [
+                        'a' => 'Menghindari makanan laut sepenuhnya agar tidak merasa jijik',
+                        'b' => 'Menyalahkan hidangan laut tersebut dan memutuskan untuk tidak pernah memasaknya lagi',
+                        'c' => 'Mencari resep yang lebih sederhana dan mempersiapkan diri secara mental untuk mencoba lagi',
+                        'd' => 'Menyerah pada hobi memasaknya karena rasa jijik yang ia alami',
+                    ]
+                ],
+                '5' => [
+                    'pertanyaan' => 'Bagaimana cara Budi agar dapat kembali menikmati hobi memasaknya tanpa merasa jijik?',
+                    'pilihan' => [
+                        'a' => 'Menghindari mencoba masakan baru agar tidak merasa jijik lagi',
+                        'b' => 'Mempelajari lebih dalam tentang cara mengatasi bau dan tekstur yang menjijikkan dalam memasak seafood',
+                        'c' => 'Menyerahkan tugas memasak makanan laut kepada orang lain',
+                        'd' => 'Berhenti memasak sementara hingga ia merasa nyaman kembali',
+                    ]
+                ],
+            ]
+        ];
 
         $emosis = [
             $amarah,
@@ -376,7 +490,9 @@ class AyoMengenaliAku extends Controller
             $cinta,
             $iri,
             $happiness,
-            $sadness
+            $sadness,
+            $shame,
+            $disgust
         ];
         return view('ayo-mengenali-aku.index', compact('emosis'));
     }
@@ -437,6 +553,22 @@ class AyoMengenaliAku extends Controller
             '3' => 'a',
             '4' => 'd',
             '5' => 'd'
+        ];
+
+        $jwb_shame = [
+            '1' => 'b',
+            '2' => 'c',
+            '3' => 'd',
+            '4' => 'a',
+            '5' => 'b'
+        ];
+
+        $jwb_disgust = [
+            '1' => 'b',
+            '2' => 'a',
+            '3' => 'd',
+            '4' => 'c',
+            '5' => 'b'
         ];
 
         $score = 0;
@@ -558,6 +690,46 @@ class AyoMengenaliAku extends Controller
             return response()->json([
                 'jawaban_old' => $jawaban,
                 'jawaban_benar' => $jwb_sadness,
+                'score' => $score,
+                'message' => $message
+            ]);
+        } else if ($request->emosi == 'Malu') {
+            foreach ($jawaban as $key => $value) {
+                if ($value == $jwb_shame[$key]) {
+                    $score += 1;
+                }
+            }
+
+            if ($score == 4) {
+                $message = 'Selamat! Anda telah menjawab semua pertanyaan dengan benar.';
+            } else {
+                $message = 'Anda belum menjawab semua pertanyaan dengan benar. Silahkan coba lagi.';
+            }
+
+            // return jawaban lama, jawaban benar, dan score
+            return response()->json([
+                'jawaban_old' => $jawaban,
+                'jawaban_benar' => $jwb_shame,
+                'score' => $score,
+                'message' => $message
+            ]);
+        } else if ($request->emosi == 'Menjijikkan') {
+            foreach ($jawaban as $key => $value) {
+                if ($value == $jwb_disgust[$key]) {
+                    $score += 1;
+                }
+            }
+
+            if ($score == 4) {
+                $message = 'Selamat! Anda telah menjawab semua pertanyaan dengan benar.';
+            } else {
+                $message = 'Anda belum menjawab semua pertanyaan dengan benar. Silahkan coba lagi.';
+            }
+
+            // return jawaban lama, jawaban benar, dan score
+            return response()->json([
+                'jawaban_old' => $jawaban,
+                'jawaban_benar' => $jwb_disgust,
                 'score' => $score,
                 'message' => $message
             ]);
