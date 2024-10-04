@@ -190,10 +190,71 @@ class AyoMengenaliAku extends Controller
             ]
         ];
 
+        $iri = [
+            'nama_emosi' => 'Iri',
+            'jenis_emosi' => 'Emosi Negatif',
+            'penjelasan' => 'Perasaan iri muncul ketika seseorang menginginkan apa yang dimiliki oleh orang lain, seperti kekayaan, prestasi, atau penampilan. Emosi ini sering muncul karena perbandingan diri sendiri dengan orang lain yang memiliki kelebihan tertentu',
+            'penyebab' => '- Merasa hidup tidak adil dan tidak dihargai <br> - Membandingkan diri dengan orang lain yang dianggap lebih sukses, beruntung, atau memiliki sesuatu yang diinginkan (misalnya, materi, prestasi, atau pengakuan)',
+            'contoh' => '- Merasa iri ketika melihat teman selalu mendapatkan nilai tertinggi di kelas <br> - Iri pada teman yang lebih populer dan memiliki banyak teman di sekolah',
+            'reaksi' => '- Iri sering memicu perasaan marah, frustrasi, rendah diri, atau bahkan kebencian terhadap orang yang menjadi target iri <br> -  Bisa mengarah pada tindakan negatif seperti merendahkan orang lain, bersikap dingin, atau mencari cara untuk menyaingi mereka',
+            'dampak' => '- Terlalu fokus pada pencapaian orang lain <br> - Tidak dapat melihat apa yang telah dimiliki <br> - Merusak hubungan sosial dan memicu konflik antar individu <br> - Menyebabkan stres, kecemasan, dan penurunan harga diri yang berlebihan',
+            'pengelolaan' => '- Bersyukur dengan apa yang dimiliki <br> - Berusaha berpikir positif <br> - Fokus pada diri sendiri dan mengembangkan potensi yang dimiliki <br> - Menjauh dari lingkungan yang toxic',
+            'potensi_penggunaan_narkoba' => 'Menggunakan narkoba sebagai pelarian dari perasaan iri atau ketidakpuasan terhadap diri sendiri',
+            'studi_kasus' => 'Budi adalah seorang siswa yang rajin dan selalu berusaha keras dalam belajar. Namun, ia merasa kecewa karena meskipun sudah berusaha sebaik mungkin, nilainya masih belum memuaskan. Di sisi lain, teman sekelasnya, Doni, tampaknya selalu mendapatkan nilai yang tinggi tanpa perlu usaha yang terlalu keras. Budi mulai merasa iri terhadap Doni. Ia merasa bahwa tidak adil bahwa Doni bisa mendapatkan nilai yang lebih baik dengan usaha yang lebih sedikit. Setiap kali Doni mendapatkan pujian dari guru atau teman-temannya karena prestasinya, Budi merasa kesal dan semakin tidak puas dengan dirinya sendiri. <br> Perasaan iri ini mulai mempengaruhi hubungan Budi dengan Doni. Budi mulai menjauhi Doni, enggan berbicara dengannya, dan bahkan merasa senang jika Doni melakukan kesalahan kecil. Perasaan ini membuat Budi sulit untuk fokus pada tugastugas sekolahnya, dan ia mulai meragukan kemampuan dirinya sendiri.',
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Apa penyebab utama rasa iri yang dialami oleh Budi?',
+                    'pilihan' => [
+                        'a' => 'Budi merasa bahwa Doni tidak berhak mendapatkan pujian',
+                        'b' => 'Budi merasa bahwa usahanya tidak dihargai sebanding dengan hasilnya',
+                        'c' => 'Doni sering merendahkan Budi di depan teman-temannya',
+                        'd' => 'Budi iri karena Doni sering bermain video game',
+                    ]
+                ],
+                '2' => [
+                    'pertanyaan' => 'Bagaimana perasaan iri Budi mempengaruhi hubungannya dengan Doni?',
+                    'pilihan' => [
+                        'a' => 'Budi menjadi lebih dekat dengan Doni',
+                        'b' => 'Budi mulai menjauhi dan enggan berbicara dengan Doni',
+                        'c' => ' Budi berusaha membantu Doni agar lebih sukses',
+                        'd' => 'Budi mengabaikan perasaan irinya dan tetap bersahabat dengan Doni',
+                    ]
+                ],
+                '3' => [
+                    'pertanyaan' => 'Apa dampak dari perasaan iri Budi terhadap kinerjanya di sekolah?',
+                    'pilihan' => [
+                        'a' => ' Budi menjadi lebih fokus dan termotivasi untuk belajar',
+                        'b' => 'Budi semakin sulit fokus pada tugastugas sekolahnya',
+                        'c' => 'Budi meraih prestasi yang lebih tinggi daripada sebelumnya',
+                        'd' => 'Budi mulai mengerjakan tugas bersama dengan Doni',
+                    ]
+                ],
+                '4' => [
+                    'pertanyaan' => 'Jika Budi tidak dapat mengelola rasa irinya, bagaimana ini dapat mempengaruhi kesehatan emosionalnya?',
+                    'pilihan' => [
+                        'a' => 'Budi mungkin akan merasa lebih stres dan cemas',
+                        'b' => 'Budi akan menjadi lebih percaya diri dan optimis',
+                        'c' => 'Budi akan merasa lebih damai dan tenang',
+                        'd' => 'Budi akan mengembangkan hubungan yang lebih baik dengan Doni ',
+                    ]
+                ],
+                '5' => [
+                    'pertanyaan' => 'Berikan saran mengenai cara-cara yang dapat dilakukan Budi untuk mengatasi rasa irinya dan tetap fokus pada pengembangan dirinya?',
+                    'pilihan' => [
+                        'a' => 'Budi dapat berhenti belajar dan menyerah pada situasinya',
+                        'b' => 'Budi dapat terus membandingkan dirinya dengan Doni untuk meningkatkan motivasinya',
+                        'c' => 'Budi harus menghindari Doni dan teman-temannya agar tidak merasa iri lagi',
+                        'd' => 'Budi dapat membicarakan perasaannya dengan Doni dan mencoba memahami perjuangan Doni',
+                    ]
+                ]
+            ]
+        ];
+
         $emosis = [
             $amarah,
             $cemburu,
-            $cinta
+            $cinta,
+            $iri
         ];
         return view('ayo-mengenali-aku.index', compact('emosis'));
     }
@@ -230,6 +291,14 @@ class AyoMengenaliAku extends Controller
             '3' => 'c',
             '4' => 'a',
             '5' => 'b'
+        ];
+
+        $jwb_envy = [
+            '1' => 'b',
+            '2' => 'b',
+            '3' => 'b',
+            '4' => 'a',
+            '5' => 'd'
         ];
 
         $score = 0;
@@ -291,6 +360,26 @@ class AyoMengenaliAku extends Controller
             return response()->json([
                 'jawaban_old' => $jawaban,
                 'jawaban_benar' => $jwb_love,
+                'score' => $score,
+                'message' => $message
+            ]);
+        } else if ($request->emosi == 'Iri') {
+            foreach ($jawaban as $key => $value) {
+                if ($value == $jwb_envy[$key]) {
+                    $score += 1;
+                }
+            }
+
+            if ($score == 5) {
+                $message = 'Selamat! Anda telah menjawab semua pertanyaan dengan benar.';
+            } else {
+                $message = 'Anda belum menjawab semua pertanyaan dengan benar. Silahkan coba lagi.';
+            }
+
+            // return jawaban lama, jawaban benar, dan score
+            return response()->json([
+                'jawaban_old' => $jawaban,
+                'jawaban_benar' => $jwb_envy,
                 'score' => $score,
                 'message' => $message
             ]);

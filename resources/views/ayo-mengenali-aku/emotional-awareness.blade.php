@@ -113,7 +113,7 @@
         </div>
 
         <div class="hidden p-4 rounded-lg" id="envy" role="tabpanel" aria-labelledby="envy-tab">
-            {{-- @include('ayo-mengenali-aku.emosi.envy') --}}
+            @include('ayo-mengenali-aku.emosi.envy')
         </div>
 
         <div class="hidden p-4 rounded-lg" id="happiness" role="tabpanel" aria-labelledby="happiness-tab">
