@@ -117,11 +117,11 @@
         </div>
 
         <div class="hidden p-4 rounded-lg" id="happiness" role="tabpanel" aria-labelledby="happiness-tab">
-            {{-- @include('ayo-mengenali-aku.emosi.happiness') --}}
+            @include('ayo-mengenali-aku.emosi.happiness')
         </div>
 
         <div class="hidden p-4 rounded-lg" id="sadness" role="tabpanel" aria-labelledby="sadness-tab">
-            {{-- @include('ayo-mengenali-aku.emosi.sadness') --}}
+            @include('ayo-mengenali-aku.emosi.sadness')
         </div>
 
         <div class="hidden p-4 rounded-lg" id="shame" role="tabpanel" aria-labelledby="shame-tab">

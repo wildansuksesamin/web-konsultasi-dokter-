@@ -250,11 +250,72 @@ class AyoMengenaliAku extends Controller
             ]
         ];
 
+        $happiness = [
+            'nama_emosi' => 'Kebahagiaan',
+            'jenis_emosi' => 'Emosi Positif',
+            'penjelasan' => 'Kebahagiaan (Happiness) adalah salah satu jenis emosi positif yang muncul ketika seseorang merasa senang, tenang, dan puas terhadap sesuatu hal atau seseorang. Emosi ini sering terjadi saat seseorang menerima kejutan yang menyenangkan, mendapatkan hasil yang diinginkan setelah berusaha keras, atau mendapatkan kasih sayang dari orang-orang di sekitar mereka.',
+            'penyebab' => "- Mendapatkan hasil yang memuaskan dari usaha atau kerja keras, - Menerima kejutan yang luar biasa, - Mendapatkan kasih sayang dan perhatian",
+            'reaksi' => "- Wajah cerah dan tersenyum, - Merasa tenang dan damai, - Berbicara dengan nada positif dan penuh antusiasme",
+            'dampak' => "- Meningkatkan rasa percaya diri dan optimisme, - Meningkatkan kesejahteraan fisik dan mental, - Membuat seseorang lebih terbuka dan ramah terhadap orang lain",
+            'pengelolaan' => "- Bersyukur kepada Tuhan atas segala hal yang membuat bahagia, - Menghargai dan menyadari bahwa kebahagiaan mungkin tidak selalu bertahan selamanya, dan itu adalah hal yang wajar, - Berbagi kebahagiaan dengan orang lain, misalnya melalui tindakan kebaikan atau sedekah",
+            'potensi_penggunaan_narkoba' => 'Tidak ada potensi penggunaan narkoba langsung dari emosi ini, karena kebahagiaan cenderung membawa seseorang pada tindakan positif.',
+            'studi_kasus' => 'Siti adalah seorang siswa yang sangat menyukai seni melukis. Setiap kali ia meluangkan waktu untuk melukis, ia merasa tenang dan bahagia. Suatu hari, sekolahnya mengadakan lomba melukis antar kelas, dan Siti dengan penuh semangat ikut berpartisipasi. Setelah berhari-hari bekerja keras menyempurnakan lukisannya, akhirnya ia memenangkan juara pertama dalam lomba tersebut. Kemenangan ini membuat Siti sangat bahagia. Ia merasa dihargai atas hasil karyanya dan bangga bisa membuktikan kemampuan dirinya. Tidak hanya itu, teman-temannya juga memberikan ucapan selamat dan guru seni mengapresiasi kerja kerasnya. Perasaan bahagia Siti membuatnya semakin percaya diri. Ia mulai merencanakan untuk terus mengembangkan bakat melukisnya dan bahkan berpikir untuk berpartisipasi dalam kompetisi-kompetisi melukis yang lebih besar di masa mendatang. Kebahagiaan yang ia rasakan juga membuatnya lebih terbuka dengan teman-temannya, dan ia merasa lebih termotivasi untuk berprestasi di bidang lain.',
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Apa penyebab utama kebahagiaan yang dirasakan oleh Siti?',
+                    'pilihan' => [
+                        'a' => 'Siti memenangkan lomba melukis antar kelas di sekolahnya',
+                        'b' => 'Siti mendapat pujian dari teman-teman dan gurunya',
+                        'c' => 'Siti merasa tenang setiap kali melukis',
+                        'd' => 'Siti bisa meluangkan waktu untuk hobinya',
+                    ]
+                ],
+                '2' => [
+                    'pertanyaan' => 'Bagaimana kebahagiaan memengaruhi sikap Siti setelah memenangkan lomba?',
+                    'pilihan' => [
+                        'a' => 'Siti menjadi lebih percaya diri dan bersemangat untuk melukis',
+                        'b' => 'Siti berhenti melukis karena merasa sudah mencapai puncak kariernya',
+                        'c' => 'Siti mulai meremehkan prestasi teman-temannya yang lain',
+                        'd' => 'Siti mengabaikan saran gurunya dan menjadi sombong',
+                    ]
+                ],
+                '3' => [
+                    'pertanyaan' => 'Apa dampak kebahagiaan yang dirasakan Siti terhadap hubungan sosialnya?',
+                    'pilihan' => [
+                        'a' => 'Siti menjadi lebih tertutup terhadap teman-temannya',
+                        'b' => 'Siti merasa tidak perlu lagi menjalin hubungan dengan teman-teman',
+                        'c' => 'Siti menjadi lebih terbuka dan ramah terhadap teman-temannya',
+                        'd' => 'Siti mulai bersikap tidak peduli dengan lingkungan sekitarnya',
+                    ]
+                ],
+                '4' => [
+                    'pertanyaan' => 'Jika Siti terus merasakan kebahagiaan dan motivasi ini, apa yang mungkin terjadi pada masa depannya?',
+                    'pilihan' => [
+                        'a' => 'Siti mungkin akan kehilangan minat pada melukis',
+                        'b' => 'Siti mungkin akan meraih lebih banyak prestasi dalam seni dan bidang lainnya',
+                        'c' => 'Siti mungkin akan menjadi lebih malas untuk berprestasi',
+                        'd' => 'Siti mungkin akan berhenti mencoba hal-hal baru karena terlalu puas dengan keberhasilannya',
+                    ]
+                ],
+                '5' => [
+                    'pertanyaan' => 'Apa saran yang dapat diberikan kepada Siti agar ia dapat terus merasakan kebahagiaan dalam mengejar hobinya?',
+                    'pilihan' => [
+                        'a' => 'Siti harus berhenti melukis untuk mencari hobi baru',
+                        'b' => 'Siti harus mulai membandingkan karyanya dengan orang lain untuk melihat sejauh mana ia bisa bersaing',
+                        'c' => 'Siti harus mengabaikan pujian dan berusaha sendirian',
+                        'd' => 'Siti dapat terus mengikuti kompetisi dan mencari tantangan baru dalam melukis',
+                    ]
+                ]
+            ]
+        ];
+
+
         $emosis = [
             $amarah,
             $cemburu,
             $cinta,
-            $iri
+            $iri,
+            $happiness
         ];
         return view('ayo-mengenali-aku.index', compact('emosis'));
     }
@@ -298,6 +359,14 @@ class AyoMengenaliAku extends Controller
             '2' => 'b',
             '3' => 'b',
             '4' => 'a',
+            '5' => 'd'
+        ];
+
+        $jwb_happiness = [
+            '1' => 'a',
+            '2' => 'a',
+            '3' => 'c',
+            '4' => 'b',
             '5' => 'd'
         ];
 
@@ -380,6 +449,26 @@ class AyoMengenaliAku extends Controller
             return response()->json([
                 'jawaban_old' => $jawaban,
                 'jawaban_benar' => $jwb_envy,
+                'score' => $score,
+                'message' => $message
+            ]);
+        } else if ($request->emosi == 'Kebahagiaan') {
+            foreach ($jawaban as $key => $value) {
+                if ($value == $jwb_happiness[$key]) {
+                    $score += 1;
+                }
+            }
+
+            if ($score == 4) {
+                $message = 'Selamat! Anda telah menjawab semua pertanyaan dengan benar.';
+            } else {
+                $message = 'Anda belum menjawab semua pertanyaan dengan benar. Silahkan coba lagi.';
+            }
+
+            // return jawaban lama, jawaban benar, dan score
+            return response()->json([
+                'jawaban_old' => $jawaban,
+                'jawaban_benar' => $jwb_happiness,
                 'score' => $score,
                 'message' => $message
             ]);
