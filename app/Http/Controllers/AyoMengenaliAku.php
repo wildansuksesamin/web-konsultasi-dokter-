@@ -484,6 +484,65 @@ class AyoMengenaliAku extends Controller
             ]
         ];
 
+        $guilty = [
+            'nama_emosi' => 'Rasa Bersalah',
+            'jenis_emosi' => 'Emosi Negatif',
+            'penjelasan' => 'Rasa bersalah adalah salah satu bentuk emosi negatif yang muncul ketika seseorang merasa telah melakukan sesuatu yang salah atau melanggar nilai dan norma yang berlaku. Perasaan ini sering disertai dengan rasa tanggung jawab, penyesalan, dan kesedihan. Rasa bersalah biasanya muncul ketika seseorang merasa telah menyebabkan kerugian atau kerusakan pada orang lain, melanggar janji, atau ketika diingatkan tentang kesalahan yang dilakukan di masa lalu.',
+            'contoh' => "Berbohong kepada orang tua atau teman dekat; Tidak membantu teman yang sedang kesulitan; Gagal memenuhi harapan atau ekspektasi dari orang tua atau keluarga",
+            'reaksi' => "Wajah memerah, Merasa gugup, Meminta maaf dan mengakui kesalahan",
+            'pengelolaan' => "Untuk mengatasi rasa bersalah, penting untuk introspeksi diri; Meminta maaf dengan tulus apabila telah melakukan kesalahan; Berusaha menjaga perilaku sesuai dengan norma dan adat yang berlaku; Seseorang juga bisa mencari bantuan dari orang lain untuk membantu mengatasi perasaan bersalah dan membuat resolusi untuk berubah menjadi lebih baik",
+            'potensi_penggunaan_narkoba' => 'Ada kemungkinan orang yang merasa bersalah mencari pelarian melalui penggunaan narkoba sebagai cara untuk menghindari perasaan bersalah atau penyesalan yang mendalam. Oleh karena itu, penting untuk memberikan dukungan emosional dan bantuan agar orang yang merasa bersalah tidak jatuh ke dalam jeratan narkoba.',
+            'studi_kasus' => "Ali adalah seorang siswa yang sangat dihormati oleh teman-temannya karena kejujurannya. Suatu hari, Ali mendapatkan nilai yang sangat buruk pada ujian matematika. Dia merasa sangat malu dan takut orang lain akan menilai dia buruk. Ketika teman dekatnya, Budi, bertanya apakah dia sudah mempelajari materi ujian, Ali berbohong dan mengatakan bahwa dia sebenarnya tidak belajar sama sekali, meskipun sebenarnya dia sudah belajar keras tetapi tetap gagal. Setelah beberapa hari, Ali merasa bersalah karena telah berbohong kepada Budi dan tidak jujur tentang usahanya. Dia juga mulai merasa tertekan karena khawatir teman-temannya akan tahu bahwa dia berbohong.",
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Apa penyebab utama dari perasaan bersalah yang dialami Ali?',
+                    'pilihan' => [
+                        'a' => 'Karena Ali tidak belajar untuk ujian',
+                        'b' => 'Karena Ali gagal dalam ujian matematika',
+                        'c' => 'Karena Ali berbohong kepada temannya tentang usahanya',
+                        'd' => 'Karena Ali merasa teman-temannya tidak akan menyukai dia lagi',
+                    ],
+                ],
+                '2' => [
+                    'pertanyaan' => 'Bagaimana reaksi yang mungkin muncul dari perasaan bersalah Ali?',
+                    'pilihan' => [
+                        'a' => 'Merasa bangga dengan nilai ujian',
+                        'b' => 'Merasa lega setelah berbohong kepada Budi',
+                        'c' => 'Merasa gugup dan tertekan karena telah berbohong',
+                        'd' => 'Merasa bahagia karena teman-temannya tidak mengetahui kebenaran',
+                    ],
+                ],
+                '3' => [
+                    'pertanyaan' => 'Apa langkah pertama yang bisa Ali lakukan untuk mengelola perasaan bersalahnya?',
+                    'pilihan' => [
+                        'a' => 'Menghindari berbicara dengan Budi dan teman-temannya',
+                        'b' => 'Meminta maaf kepada Budi dan mengakui bahwa dia berbohong',
+                        'c' => 'Mengalihkan perhatian dengan belajar lebih giat untuk ujian berikutnya',
+                        'd' => 'Membiarkan perasaan bersalah berlalu dengan sendirinya tanpa melakukan apa-apa',
+                    ],
+                ],
+                '4' => [
+                    'pertanyaan' => 'Apa potensi bahaya jika Ali tidak mengatasi perasaan bersalahnya dengan baik?',
+                    'pilihan' => [
+                        'a' => 'Ali mungkin akan menggunakan narkoba sebagai pelarian dari perasaan bersalah',
+                        'b' => 'Ali akan menjadi lebih rajin belajar',
+                        'c' => 'Ali akan merasa lebih dekat dengan teman-temannya',
+                        'd' => 'Ali akan melupakan kejadian tersebut tanpa ada konsekuensi lebih lanjut',
+                    ],
+                ],
+                '5' => [
+                    'pertanyaan' => 'Apa yang dapat membantu Ali untuk merasa lebih baik setelah mengatasi perasaan bersalahnya?',
+                    'pilihan' => [
+                        'a' => 'Menghindari berbicara tentang kejadian tersebut dengan siapa pun',
+                        'b' => 'Mengabaikan perasaan bersalahnya dan bersikap seolah tidak ada yang terjadi',
+                        'c' => 'Mengisolasi diri dari teman-temannya agar tidak merasa malu',
+                        'd' => 'Menyadari kesalahannya, belajar dari situasi tersebut, dan berusaha untuk jujur ke depannya',
+                    ],
+                ],
+            ]
+        ];
+
+
         $emosis = [
             $amarah,
             $cemburu,
@@ -492,7 +551,8 @@ class AyoMengenaliAku extends Controller
             $happiness,
             $sadness,
             $shame,
-            $disgust
+            $disgust,
+            $guilty
         ];
         return view('ayo-mengenali-aku.index', compact('emosis'));
     }
@@ -569,6 +629,14 @@ class AyoMengenaliAku extends Controller
             '3' => 'd',
             '4' => 'c',
             '5' => 'b'
+        ];
+
+        $jwb_guilty = [
+            '1' => 'c',
+            '2' => 'c',
+            '3' => 'b',
+            '4' => 'a',
+            '5' => 'd'
         ];
 
         $score = 0;
@@ -660,7 +728,7 @@ class AyoMengenaliAku extends Controller
                 }
             }
 
-            if ($score == 4) {
+            if ($score == 5) {
                 $message = 'Selamat! Anda telah menjawab semua pertanyaan dengan benar.';
             } else {
                 $message = 'Anda belum menjawab semua pertanyaan dengan benar. Silahkan coba lagi.';
@@ -680,7 +748,7 @@ class AyoMengenaliAku extends Controller
                 }
             }
 
-            if ($score == 4) {
+            if ($score == 5) {
                 $message = 'Selamat! Anda telah menjawab semua pertanyaan dengan benar.';
             } else {
                 $message = 'Anda belum menjawab semua pertanyaan dengan benar. Silahkan coba lagi.';
@@ -700,7 +768,7 @@ class AyoMengenaliAku extends Controller
                 }
             }
 
-            if ($score == 4) {
+            if ($score == 5) {
                 $message = 'Selamat! Anda telah menjawab semua pertanyaan dengan benar.';
             } else {
                 $message = 'Anda belum menjawab semua pertanyaan dengan benar. Silahkan coba lagi.';
@@ -720,7 +788,7 @@ class AyoMengenaliAku extends Controller
                 }
             }
 
-            if ($score == 4) {
+            if ($score == 5) {
                 $message = 'Selamat! Anda telah menjawab semua pertanyaan dengan benar.';
             } else {
                 $message = 'Anda belum menjawab semua pertanyaan dengan benar. Silahkan coba lagi.';
@@ -730,6 +798,26 @@ class AyoMengenaliAku extends Controller
             return response()->json([
                 'jawaban_old' => $jawaban,
                 'jawaban_benar' => $jwb_disgust,
+                'score' => $score,
+                'message' => $message
+            ]);
+        } else if ($request->emosi == 'Bersalah') {
+            foreach ($jawaban as $key => $value) {
+                if ($value == $jwb_guilty[$key]) {
+                    $score += 1;
+                }
+            }
+
+            if ($score == 5) {
+                $message = 'Selamat! Anda telah menjawab semua pertanyaan dengan benar.';
+            } else {
+                $message = 'Anda belum menjawab semua pertanyaan dengan benar. Silahkan coba lagi.';
+            }
+
+            // return jawaban lama, jawaban benar, dan score
+            return response()->json([
+                'jawaban_old' => $jawaban,
+                'jawaban_benar' => $jwb_guilty,
                 'score' => $score,
                 'message' => $message
             ]);

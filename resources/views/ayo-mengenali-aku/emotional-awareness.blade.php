@@ -133,7 +133,7 @@
         </div>
 
         <div class="hidden p-4 rounded-lg" id="guilt" role="tabpanel" aria-labelledby="guilt-tab">
-            {{-- @include('ayo-mengenali-aku.emosi.guilt') --}}
+            @include('ayo-mengenali-aku.emosi.guilty')
         </div>
 
         <div class="hidden p-4 rounded-lg" id="fear" role="tabpanel" aria-labelledby="fear-tab">
