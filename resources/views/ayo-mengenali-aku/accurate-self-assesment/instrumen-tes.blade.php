@@ -120,7 +120,7 @@
                             </table>
                         </div>
 
-                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4">Submit</button>
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4">Submit</button>
 
                     </form>
                 </div>
