@@ -33,6 +33,15 @@
                 id="studi-3-tab" data-tabs-target="#studi-3" type="button" role="tab" aria-controls="studi-3"
                 aria-selected="false">Studi Kasus 3</button>
         </li>
+
+        {{-- instrumen tes --}}
+        <li role="presentation">
+            <button
+                class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-md text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
+                id="instrumen-tes-tab" data-tabs-target="#instrumen-tes" type="
+                button" role="tab"
+                aria-controls="instrumen-tes" aria-selected="false">Instrumen Tes</button>
+        </li>
     </div>
 
     <div id="myTabContent">
@@ -46,6 +55,10 @@
 
         <div class="hidden p-4 rounded-lg" id="studi-3" role="tabpanel" aria-labelledby="studi-3-tab">
             @include('ayo-mengenali-aku.accurate-self-assesment.studi_3')
+        </div>
+
+        <div class="hidden p-4 rounded-lg" id="instrumen-tes" role="tabpanel" aria-labelledby="instrumen-tes-tab">
+            @include('ayo-mengenali-aku.accurate-self-assesment.instrumen-tes')
         </div>
 
     </div>

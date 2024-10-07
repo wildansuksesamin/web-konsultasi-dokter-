@@ -8,7 +8,7 @@
             <div class="my-4 -translate-x-8">
                 <h1 class="font-semibold text-lg">Jawablah Soal Di bawah ini</h1>
 
-                <form action="{{ route('accurate-self-assesmen-post') }}" class="space-y-5" id="form-studkas2">
+                <form action="{{ route('accurate-self-assesment.store') }}" class="space-y-5" id="form-studkas2">
                     @foreach ($studi['pertanyaan'] as $key => $soal)
                         <p class="text-base  text-gray-500 mt-5">{{ $loop->iteration }}. {{ $soal['pertanyaan'] }}</p>
 
@@ -53,7 +53,7 @@
                 return;
             }
 
-            axios.post("{{ route('accurate-self-assesmen-post') }}", {
+            axios.post("{{ route('accurate-self-assesment.store') }}", {
                     jawaban: jawaban,
                     studi_kasus: 2
                 })

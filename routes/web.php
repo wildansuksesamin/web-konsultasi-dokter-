@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccurateSelfAssesment;
 use App\Models\page;
 use App\Models\User;
 use App\Models\admin;
@@ -178,7 +179,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resources([
         '/ayo-jauhi-narkoba' => AyoJauhiNarkoba::class,
         '/ayo-mengenali-aku' => AyoMengenaliAku::class,
+        '/accurate-self-assesment' => AccurateSelfAssesment::class,
     ]);
-
-    Route::post('/ayo-mengenali-aku/accurate-self-assesmen', [AyoMengenaliAku::class, 'accurateSelfAssesmen'])->name('accurate-self-assesmen-post');
 });
