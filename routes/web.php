@@ -179,4 +179,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         '/ayo-jauhi-narkoba' => AyoJauhiNarkoba::class,
         '/ayo-mengenali-aku' => AyoMengenaliAku::class,
     ]);
+
+    Route::post('/ayo-mengenali-aku/accurate-self-assesmen', [AyoMengenaliAku::class, 'accurateSelfAssesmen'])->name('accurate-self-assesmen-post');
 });

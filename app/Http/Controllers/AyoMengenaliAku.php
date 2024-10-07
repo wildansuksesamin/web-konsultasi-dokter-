@@ -602,6 +602,54 @@ class AyoMengenaliAku extends Controller
             ]
         ];
 
+        $stud_kas_1 = [
+            'nama' => 'studi kasus 1',
+            'judul' => 'Refleksi Diri dalam Menghadapi Tekanan Sosial',
+            'deskripsi' => 'Rina adalah seorang siswa yang merasa tertekan karena teman-temannya sering memintanya ikut dalam kegiatan yang ia rasa tidak nyaman, seperti merokok atau nongkrong larut malam. Ia mulai merasa bahwa dirinya terlalu lemah karena tidak bisa menolak ajakan teman-temannya. Setelah merenung, Rina mencoba melakukan refleksi diri dengan melihat kelebihan dan kekurangannya. Ia menyadari bahwa ia sebenarnya kuat dalam bertahan dari tekanan, tetapi perlu belajar lebih baik dalam mengekspresikan keputusannya dengan tegas.',
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Bagaimana Rina seharusnya memanfaatkan refleksi diri untuk menilai situasinya dengan lebih baik?',
+                    'pilihan' => [
+                        'a' => 'Menerima ajakan teman-temannya karena itu bagian dari pergaulan',
+                        'b' => 'Menghindari semua teman-temannya agar tidak merasa tertekan lagi',
+                        'c' => 'Berusaha menjadi seperti teman-temannya agar bisa diterima dalam kelompok',
+                        'd' => 'Menyadari kekuatan yang dimilikinya dalam menolak tekanan sosial dan bekerja pada kelemahan dalam menyampaikan keputusannya',
+                    ],
+                ],
+                '2' => [
+                    'pertanyaan' => 'Apa langkah pertama yang bisa dilakukan Rina untuk mengatasi kelemahannya?',
+                    'pilihan' => [
+                        'a' => 'Mencari cara untuk memperkuat keterampilan berbicara tegas, seperti mengikuti pelatihan komunikasi asertif',
+                        'b' => 'Mengabaikan refleksi diri karena itu hanya membuatnya lebih khawatir',
+                        'c' => 'Menerima kenyataan bahwa ia tidak bisa menolak tekanan dari teman-temannya',
+                        'd' => 'Terus merenung tanpa mengambil Tindakan',
+                    ],
+                ],
+                '3' => [
+                    'pertanyaan' => 'Bagaimana Rina dapat menilai keberhasilannya dalam memperbaiki keterampilan menolak ajakan negatif?',
+                    'pilihan' => [
+                        'a' => 'Melihat apakah teman-temannya masih mencoba menekan dia untuk melakukan hal-hal yang tidak nyaman',
+                        'b' => 'Menunggu sampai orang lain menyadari perubahannya',
+                        'c' => 'Mengukur seberapa sering ia berhasil menolak ajakan yang tidak sesuai dengan nilai-nilainya',
+                        'd' => 'Mengabaikan hasil dari usahanya',
+                    ],
+                ],
+                '4' => [
+                    'pertanyaan' => 'Apa langkah selanjutnya yang bisa dilakukan Rina untuk memperbaiki kelemahannya?',
+                    'pilihan' => [
+                        'a' => 'Tetap merenungkan kekurangannya tanpa mencoba mencari Solusi',
+                        'b' => 'Melakukan latihan berbicara dengan tegas dan berani menolak ajakan yang tidak sesuai dengan nilai-nilainya',
+                        'c' => 'Menghindari situasi sosial yang memaksanya untuk membuat Keputusan',
+                        'd' => 'Berhenti berusaha memperbaiki diri karena merasa situasinya tidak akan berubah',
+                    ],
+                ],
+            ],
+        ];
+
+        $acc_self_as = [
+            $stud_kas_1
+        ];
+
 
 
         $emosis = [
@@ -616,7 +664,7 @@ class AyoMengenaliAku extends Controller
             $guilty,
             $fear
         ];
-        return view('ayo-mengenali-aku.index', compact('emosis'));
+        return view('ayo-mengenali-aku.index', compact('emosis', 'acc_self_as'));
     }
 
     public function store(Request $request)
@@ -908,6 +956,61 @@ class AyoMengenaliAku extends Controller
             return response()->json([
                 'jawaban_old' => $jawaban,
                 'jawaban_benar' => $jwb_fear,
+                'score' => $score,
+                'message' => $message
+            ]);
+        }
+    }
+
+
+    // update function
+    public function update(Request $request)
+    {
+        // 
+    }
+
+    public function destroy($id)
+    {
+        //
+    }
+
+    public function accurateSelfAssesmen(Request $request)
+    {
+        // dd($request->all());
+        $jawaban = $request->jawaban;
+
+        // modif key $request->jawaban + 1
+        $jawaban = array_combine(range(1, count($jawaban)), array_values($jawaban));
+
+        $score = 0;
+        $message_lulus = "Selamat! Anda telah menjawab semua pertanyaan dengan benar.";
+        $message_gagal = "Anda belum menjawab semua pertanyaan dengan benar. Silahkan coba lagi.";
+        $message = "";
+
+        $jwb_stud_kas_1 = [
+            '1' => 'd',
+            '2' => 'a',
+            '3' => 'c',
+            '4' => 'b'
+        ];
+
+        if ($request->studi_kasus == 1) {
+            foreach ($jawaban as $key => $value) {
+                if ($value == $jwb_stud_kas_1[$key]) {
+                    $score += 1;
+                }
+            }
+
+            if ($score == 5) {
+                $message = $message_lulus;
+            } else {
+                $message = $message_gagal;
+            }
+
+            // return jawaban lama, jawaban benar, dan score
+            return response()->json([
+                'jawaban_old' => $jawaban,
+                'jawaban_benar' => $jwb_stud_kas_1,
                 'score' => $score,
                 'message' => $message
             ]);

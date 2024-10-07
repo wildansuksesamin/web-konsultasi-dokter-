@@ -70,6 +70,9 @@
     <script>
         $('#form-shame').submit(function(e) {
             e.preventDefault();
+            // remove all bg color
+            $('input[type="radio"]').removeClass('bg-green-500 bg-red-500');
+            $('label').removeClass('bg-green-500 bg-red-500');
             let data = $(this).serializeArray();
             let jawaban = [];
             data.forEach((item) => {

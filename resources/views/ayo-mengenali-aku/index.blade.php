@@ -36,9 +36,11 @@
                 </div>
 
                 <div class="hidden p-4  rounded-lg " id="accurate" role="tabpanel" aria-labelledby="accurate-tab">
-                    <h1 class=" text-xl">Penyebab TBC </h1>
+                    {{-- <h1 class=" text-xl">Penyebab TBC </h1>
                     <img src="img/3.jpg" class="float-left" width="400px" alt="">
-                    <p class="text-base  text-gray-500 ">{!! get_meta_value('isi') !!} </p>
+                    <p class="text-base  text-gray-500 ">{!! get_meta_value('isi') !!} </p> --}}
+
+                    @include('ayo-mengenali-aku.accurate-self-asses')
 
                 </div>
 

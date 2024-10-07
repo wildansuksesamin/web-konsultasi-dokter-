@@ -13,7 +13,7 @@
                     </tr>
                     <tr>
                         <th>Penyebab:</th>
-                        <td >{!! $emosi['penyebab'] !!}</td>
+                        <td>{!! $emosi['penyebab'] !!}</td>
                     </tr>
                     <tr>
                         <th>Contoh:</th>
@@ -52,8 +52,8 @@
 
                         @foreach ($soal['pilihan'] as $key2 => $pilihan)
                             <div class="flex items-center mt-3 rounded-md">
-                                <input type="radio" id="{{ $key . '_' . $key2 . '_envy' }}"
-                                    name="{{ $key }}" value="{{ $key2 }}"
+                                <input type="radio" id="{{ $key . '_' . $key2 . '_envy' }}" name="{{ $key }}"
+                                    value="{{ $key2 }}"
                                     {{ isset($show_jawaban) && $soal['jawaban_user'] == $key2 ? 'checked' : '' }}>
                                 <label for="{{ $key . '_' . $key2 . '_envy' }}" class="ml-2">
                                     {{ $key2 }}. {{ $pilihan }}
@@ -74,6 +74,10 @@
     <script>
         $('#form-envy').submit(function(e) {
             e.preventDefault();
+            // remove all bg color
+            $('input[type="radio"]').removeClass('bg-green-500 bg-red-500');
+            $('label').removeClass('bg-green-500 bg-red-500');
+            
             let data = $(this).serializeArray();
             let jawaban = [];
             data.forEach((item) => {

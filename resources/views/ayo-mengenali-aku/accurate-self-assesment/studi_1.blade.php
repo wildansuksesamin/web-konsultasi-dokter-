@@ -1,57 +1,23 @@
-<div>
-    @foreach ($emosis as $keyz => $emosi)
-        @if ($emosi['nama_emosi'] == 'Cinta')
-            <table class="table-auto overflow-auto w-full border-separate border-spacing-y-3 border-spacing-x-4">
-                <tbody class="">
-                    <tr>
-                        <th>Jenis Emosi:</th>
-                        <td>{{ $emosi['nama_emosi'] }}</td>
-                    </tr>
-                    <tr>
-                        <th>Penjelasan:</th>
-                        <td>{{ $emosi['penjelasan'] }}</td>
-                    </tr>
-                    <tr>
-                        <th>Penyebab:</th>
-                        <td>{{ $emosi['penyebab'] }}</td>
-                    </tr>
-                    <tr>
-                        <th>Reaksi terhadap Cinta:</th>
-                        <td>{{ $emosi['reaksi'] }}</td>
-                    </tr>
-                    <tr>
-                        <th>Dampak Cinta:</th>
-                        <td>{{ $emosi['dampak'] }}</td>
-                    </tr>
-                    <tr>
-                        <th>Pengelolaan Emosi</th>
-                        <td>{!! $emosi['pengelolaan'] !!}</td>
-                    </tr>
-                    <tr>
-                        <th>Potensi Penggunaan Narkoba</th>
-                        <td>{{ $emosi['potensi_penggunaan_narkoba'] }}</td>
-                    </tr>
-                    <tr>
-                        <th>Studi Kasus</th>
-                        {{-- {!! $html_data !!} --}}
-                        <td class="indent-8">{!! $emosi['studi_kasus'] !!}</td>
-                    </tr>
-                </tbody>
-            </table>
+<div class="space-y-5 text-justify">
+    @foreach ($acc_self_as as $studi)
+        @if ($studi['nama'] === 'studi kasus 1')
+            <h1 class="font-bold text-2xl">{{ $studi['nama'] . ' : ' . $studi['judul'] }}</h1>
+
+            <p class="text-base indent-8">{{ $studi['deskripsi'] }}</p>
 
             <div class="my-4 -translate-x-8">
                 <h1 class="font-semibold text-lg">Jawablah Soal Di bawah ini</h1>
 
-                <form action="{{ route('ayo-mengenali-aku.index') }}" class="space-y-5" id="form-love">
-                    @foreach ($emosi['pertanyaan'] as $key => $soal)
+                <form action="{{ route('accurate-self-assesmen-post') }}" class="space-y-5" id="form-studkas1">
+                    @foreach ($studi['pertanyaan'] as $key => $soal)
                         <p class="text-base  text-gray-500 mt-5">{{ $loop->iteration }}. {{ $soal['pertanyaan'] }}</p>
 
                         @foreach ($soal['pilihan'] as $key2 => $pilihan)
                             <div class="flex items-center mt-3 rounded-md">
-                                <input type="radio" id="{{ $key . '_' . $key2 . '_love' }}"
+                                <input type="radio" id="{{ $key . '_' . $key2 . '_studkas1' }}"
                                     name="{{ $key }}" value="{{ $key2 }}"
                                     {{ isset($show_jawaban) && $soal['jawaban_user'] == $key2 ? 'checked' : '' }}>
-                                <label for="{{ $key . '_' . $key2 . '_love' }}" class="ml-2">
+                                <label for="{{ $key . '_' . $key2 . '_studkas1' }}" class="ml-2">
                                     {{ $key2 }}. {{ $pilihan }}
                                 </label>
                             </div>
@@ -63,16 +29,18 @@
             </div>
         @endif
     @endforeach
-
 </div>
+
 
 @push('custom-script')
     <script>
-        $('#form-love').submit(function(e) {
+        $('#form-studkas1').submit(function(e) {
             e.preventDefault();
+
             // remove all bg color
             $('input[type="radio"]').removeClass('bg-green-500 bg-red-500');
             $('label').removeClass('bg-green-500 bg-red-500');
+
             let data = $(this).serializeArray();
             let jawaban = [];
             data.forEach((item) => {
@@ -80,14 +48,14 @@
             });
 
             // check if all question is answered
-            if (jawaban.length < 5) {
+            if (jawaban.length < 4) {
                 swal("Error!", "Please answer all question!", "error");
                 return;
             }
 
-            axios.post("{{ route('ayo-mengenali-aku.store') }}", {
+            axios.post("{{ route('accurate-self-assesmen-post') }}", {
                     jawaban: jawaban,
-                    emosi: 'Cinta'
+                    studi_kasus: 1
                 })
                 .then((response) => {
                     swal("Success!", response.data.message, "success");
@@ -97,12 +65,12 @@
                         const jawabanBenar = response.data.jawaban_benar[questionNumber];
 
                         // Define the IDs for old answer and correct answer input fields
-                        const oldAnswerId = `#${questionNumber}_${jawabanOld}_love`;
-                        const correctAnswerId = `#${questionNumber}_${jawabanBenar}_love`;
+                        const oldAnswerId = `#${questionNumber}_${jawabanOld}_studkas1`;
+                        const correctAnswerId = `#${questionNumber}_${jawabanBenar}_studkas1`;
 
                         // Define the corresponding label selectors using the 'for' attribute
-                        const oldLabel = `label[for='${questionNumber}_${jawabanOld}_love']`;
-                        const correctLabel = `label[for='${questionNumber}_${jawabanBenar}_love']`;
+                        const oldLabel = `label[for='${questionNumber}_${jawabanOld}_studkas1']`;
+                        const correctLabel = `label[for='${questionNumber}_${jawabanBenar}_studkas1']`;
 
                         // If the old answer is correct, apply green background to input and label
                         if (jawabanOld === jawabanBenar) {
