@@ -41,11 +41,11 @@
         </div>
 
         <div class="hidden p-4 rounded-lg" id="studi-2" role="tabpanel" aria-labelledby="studi-2-tab">
-            ini studi 2
+            @include('ayo-mengenali-aku.accurate-self-assesment.studi_2')
         </div>
 
         <div class="hidden p-4 rounded-lg" id="studi-3" role="tabpanel" aria-labelledby="studi-3-tab">
-            ini studi 3
+            @include('ayo-mengenali-aku.accurate-self-assesment.studi_3')
         </div>
 
     </div>

@@ -646,11 +646,99 @@ class AyoMengenaliAku extends Controller
             ],
         ];
 
-        $acc_self_as = [
-            $stud_kas_1
+        $stud_kas_2 = [
+            'nama' => 'studi kasus 2',
+            'judul' => 'Menghadapi Kritik dalam Pengembangan Diri',
+            'deskripsi' => 'Ardi adalah seorang siswa yang sering mendapat pujian atas prestasinya di sekolah, tetapi saat ia mengikuti lomba debat, gurunya memberikan kritik bahwa Ardi terlalu terburu-buru dalam memberikan argumen tanpa mempertimbangkan pandangan lawan. Ardi awalnya merasa tidak nyaman dengan kritik ini karena ia selalu merasa percaya diri dengan kemampuannya. Namun, setelah merenung, ia mulai menyadari pentingnya kritik tersebut dan mencari cara untuk memperbaiki gaya debatnya.',
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Apa yang seharusnya menjadi respons Ardi terhadap kritik yang diterimanya?',
+                    'pilihan' => [
+                        'a' => 'Mengabaikan kritik tersebut karena merasa dirinya sudah cukup baik',
+                        'b' => 'Marah kepada gurunya karena merasa kritik tersebut tidak adil',
+                        'c' => 'Memahami bahwa kritik tersebut merupakan peluang untuk pengembangan diri dan mencari cara untuk memperbaiki kelemahan dalam debat',
+                        'd' => 'Berhenti mengikuti lomba debat karena merasa tidak mampu lagi',
+                    ],
+                ],
+                '2' => [
+                    'pertanyaan' => 'Bagaimana Ardi bisa memanfaatkan kritik dari gurunya untuk meningkatkan performa debatnya di masa mendatang?',
+                    'pilihan' => [
+                        'a' => 'Menghindari kritik karena itu membuatnya merasa tidak nyaman',
+                        'b' => 'Menggunakan kritik sebagai umpan balik yang konstruktif untuk menganalisis kelemahan dan memperbaikinya',
+                        'c' => 'Berfokus hanya pada hal-hal yang ia anggap sudah baik',
+                        'd' => 'Membiarkan kritik tersebut memengaruhi kepercayaan dirinya secara negatif',
+                    ],
+                ],
+                '3' => [
+                    'pertanyaan' => 'Apa langkah konkrit yang bisa Ardi lakukan untuk meningkatkan keterampilannya berdasarkan kritik yang ia terima?',
+                    'pilihan' => [
+                        'a' => 'Menghindari lomba debat agar tidak menerima kritik lagi',
+                        'b' => 'Menerima bahwa dia tidak bisa memperbaiki kelemahan tersebut',
+                        'c' => 'Berusaha untuk lebih cepat menyampaikan argumennya tanpa mempedulikan lawan debat',
+                        'd' => 'Menghadiri sesi latihan debat lebih sering dan berlatih untuk memperhatikan argumen lawan dengan lebih cermat',
+                    ],
+                ],
+                '4' => [
+                    'pertanyaan' => 'Bagaimana Ardi bisa mengukur keberhasilannya dalam meningkatkan kemampuan debatnya?',
+                    'pilihan' => [
+                        'a' => 'Menilai dari jumlah pujian yang diterimanya di debat berikutnya',
+                        'b' => 'Menanyakan pendapat gurunya setelah setiap sesi debat',
+                        'c' => 'Menghindari menerima umpan balik lebih lanjut karena takut mendapat kritik lagi',
+                        'd' => 'Melihat apakah ia lebih mampu mempertimbangkan argumen lawan dengan matang sebelum merespon',
+                    ],
+                ],
+            ],
         ];
 
-
+        $stud_kas_3 = [
+            'nama' => 'studi kasus 3',
+            'judul' => 'Menetapkan Tujuan Pengembangan Diri Berdasarkan Kelebihan dan Kekurangan',
+            'deskripsi' => 'Lina menyadari bahwa ia memiliki kelebihan dalam menulis esai, tetapi merasa kurang percaya diri saat berbicara di depan umum. Gurunya menyarankan agar Lina mengembangkan keterampilan berbicara di depan umum untuk menyeimbangkan kemampuan akademisnya. Lina kemudian membuat rencana pengembangan diri dengan menetapkan tujuan jangka pendek untuk mengikuti kursus berbicara di depan umum dan tujuan jangka panjang untuk menjadi lebih percaya diri saat presentasi di kelas.',
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Bagaimana Lina bisa menggunakan kelebihan dan kekurangannya untuk menetapkan tujuan pengembangan diri?',
+                    'pilihan' => [
+                        'a' => 'Fokus hanya pada kelebihannya dalam menulis dan mengabaikan kelemahan berbicara di depan umum',
+                        'b' => 'Menetapkan tujuan pengembangan diri berdasarkan kelemahannya dengan mengikuti kursus berbicara di depan umum dan meningkatkan kepercayaan diri',
+                        'c' => 'Menyerah untuk memperbaiki kelemahan berbicara di depan umum dan berfokus pada penulisan saja',
+                        'd' => 'Menyembunyikan kelemahannya agar tidak terlihat oleh orang lain',
+                    ],
+                ],
+                '2' => [
+                    'pertanyaan' => 'Apa langkah pertama yang harus diambil Lina untuk mencapai tujuannya?',
+                    'pilihan' => [
+                        'a' => 'Menghindari tujuan jangka panjang karena tidak percaya diri',
+                        'b' => 'Menyalahkan diri sendiri atas kelemahannya',
+                        'c' => 'Berusaha menghindari situasi di mana ia perlu berbicara di depan umum',
+                        'd' => 'Menetapkan tujuan yang realistis dan terukur seperti mengikuti kursus berbicara di depan umum dalam beberapa bulan ke depan',
+                    ],
+                ],
+                '3' => [
+                    'pertanyaan' => 'Bagaimana Lina bisa memastikan bahwa ia mencapai tujuan jangka pendek dan jangka panjangnya?',
+                    'pilihan' => [
+                        'a' => 'Mencatat kemajuan setiap kali ia mengikuti kursus atau latihan berbicara di depan umum',
+                        'b' => 'Mengabaikan proses dan menunggu hasil akhir',
+                        'c' => 'Berfokus hanya pada tujuan jangka panjang tanpa mengevaluasi kemajuan jangka pendek',
+                        'd' => 'Menunggu sampai ada yang memberi tahu bahwa ia sudah cukup baik',
+                    ],
+                ],
+                '4' => [
+                    'pertanyaan' => 'Bagaimana Lina dapat mengevaluasi kemajuannya dalam meningkatkan kemampuan berbicara di depan umum?',
+                    'pilihan' => [
+                        'a' => 'Dengan menghindari situasi di mana ia harus berbicara agar tidak merasa gugup',
+                        'b' => 'Dengan membandingkan dirinya dengan orang lain yang lebih baik darinya',
+                        'c' => 'Dengan mengukur seberapa percaya dirinya saat berbicara di depan teman sekelas atau di kursus',
+                        'd' => 'Dengan tidak mempedulikan bagaimana perasaannya saat berbicara di depan umum',
+                    ],
+                ],
+            ],
+        ];
+        
+        $acc_self_as = [
+            $stud_kas_1,
+            $stud_kas_2,
+            $stud_kas_3
+        ];
 
         $emosis = [
             $amarah,
@@ -994,6 +1082,21 @@ class AyoMengenaliAku extends Controller
             '4' => 'b'
         ];
 
+        $jwb_stud_kas_2 = [
+            '1' => 'c',
+            '2' => 'b',
+            '3' => 'd',
+            '4' => 'd'
+        ];
+
+        $jwb_stud_kas_3 = [
+            // b d a c
+            '1' => 'b',
+            '2' => 'd',
+            '3' => 'a',
+            '4' => 'c'
+        ];
+
         if ($request->studi_kasus == 1) {
             foreach ($jawaban as $key => $value) {
                 if ($value == $jwb_stud_kas_1[$key]) {
@@ -1001,7 +1104,7 @@ class AyoMengenaliAku extends Controller
                 }
             }
 
-            if ($score == 5) {
+            if ($score == 4) {
                 $message = $message_lulus;
             } else {
                 $message = $message_gagal;
@@ -1011,6 +1114,46 @@ class AyoMengenaliAku extends Controller
             return response()->json([
                 'jawaban_old' => $jawaban,
                 'jawaban_benar' => $jwb_stud_kas_1,
+                'score' => $score,
+                'message' => $message
+            ]);
+        } else  if ($request->studi_kasus == 2) {
+            foreach ($jawaban as $key => $value) {
+                if ($value == $jwb_stud_kas_2[$key]) {
+                    $score += 1;
+                }
+            }
+
+            if ($score == 4) {
+                $message = $message_lulus;
+            } else {
+                $message = $message_gagal;
+            }
+
+            // return jawaban lama, jawaban benar, dan score
+            return response()->json([
+                'jawaban_old' => $jawaban,
+                'jawaban_benar' => $jwb_stud_kas_2,
+                'score' => $score,
+                'message' => $message
+            ]);
+        } else  if ($request->studi_kasus == 3) {
+            foreach ($jawaban as $key => $value) {
+                if ($value == $jwb_stud_kas_3[$key]) {
+                    $score += 1;
+                }
+            }
+
+            if ($score == 4) {
+                $message = $message_lulus;
+            } else {
+                $message = $message_gagal;
+            }
+
+            // return jawaban lama, jawaban benar, dan score
+            return response()->json([
+                'jawaban_old' => $jawaban,
+                'jawaban_benar' => $jwb_stud_kas_3,
                 'score' => $score,
                 'message' => $message
             ]);
