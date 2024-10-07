@@ -181,4 +181,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         '/ayo-mengenali-aku' => AyoMengenaliAku::class,
         '/accurate-self-assesment' => AccurateSelfAssesment::class,
     ]);
+
+    Route::post('/accurate-self-assesment/tes-instrumen', [AccurateSelfAssesment::class, 'tesInstrumen'])->name('accurate-self-assesment.tes-instrumen');
 });

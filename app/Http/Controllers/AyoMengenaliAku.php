@@ -733,11 +733,56 @@ class AyoMengenaliAku extends Controller
                 ],
             ],
         ];
-        
+
+        $tes_instrumen = [
+            'nama' => 'tes instrumen',
+            'pertanyaan' => [
+                'A' => [
+                    'judul' => 'Mengenali Kelebihan Diri',
+                    'pertanyaan' => [
+                        '1' => 'Saya dapat dengan mudah mengidentifikasi hal-hal yang saya kuasai dengan baik',
+                        '2' => 'Saya yakin dengan kelebihan diri dalam mengerjakan sesuatu',
+                        '3' => 'Orang lain sering mengakui keterampilan atau kelebihan yang saya juga sadari dalam diri saya',
+                        '4' => 'Saya merasa percaya diri ketika menggunakan kelebihan saya dalam situasi yang menantang',
+                    ],
+                ],
+                'B' => [
+                    'judul' => 'Mengenali Kelemahan Diri',
+                    'pertanyaan' => [
+                        '5' => 'Saya sadar akan bidang di mana saya membutuhkan perbaikan atau pengembangan diri lebih lanjut',
+                        '6' => 'Saya secara terbuka mengakui kekurangan saya dan melihatnya sebagai peluang untuk belajar',
+                        '7' => 'Saya merasa nyaman membahas kekurangan saya dengan orang lain yang bisa membantu saya memperbaikinya',
+                        '8' => 'Saya menganggap kekurangan saya sebagai bagian dari proses pertumbuhan diri',
+                    ],
+                ],
+                'C' => [
+                    'judul' => 'Penerimaan Kritik dan Saran',
+                    'pertanyaan' => [
+                        '9' => 'Saya terbuka terhadap kritik dan saran dari orang lain, baik yang positif maupun negatif',
+                        '10' => 'Saya menggunakan kritik konstruktif (membangun) untuk memperbaiki diri dan meningkatkan kinerja saya',
+                        '11' => 'Ketika menerima kritik, saya tidak sakit hati dan menggunakannya sebagai kesempatan untuk belajar',
+                        '12' => 'Saya sering meminta masukan dari orang lain untuk membantu saya memahami area yang perlu diperbaiki',
+                    ],
+                ],
+                'D' => [
+                    'judul' => 'Tindakan Perbaikan Diri',
+                    'pertanyaan' => [
+                        '13' => 'Saya secara konsisten mengambil langkah-langkah untuk memperbaiki kekurangan yang saya sadari',
+                        '14' => 'Saya sering melakukan refleksi diri untuk menilai perkembangan saya dalam mencapai tujuan perbaikan diri',
+                        '15' => 'Saya membuat rencana yang terstruktur untuk terus mengembangkan kelebihan dan mengatasi kekurangan saya',
+                        '16' => 'Saya meninjau kembali kemajuan saya secara teratur untuk memastikan saya berada di jalur yang benar dalam perbaikan diri',
+                    ],
+                ],
+            ]
+
+        ];
+
+
         $acc_self_as = [
             $stud_kas_1,
             $stud_kas_2,
-            $stud_kas_3
+            $stud_kas_3,
+            $tes_instrumen
         ];
 
         $emosis = [

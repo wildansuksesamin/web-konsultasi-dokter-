@@ -174,4 +174,30 @@ class AccurateSelfAssesment extends Controller
     {
         //
     }
+
+    public function tesInstrumen(Request $request)
+    {
+        // dd('tes instrumen');
+        // dd($request->all());
+        // dd($request->data);
+        $score = array_sum(array_map('intval', $request->data));
+        $message = "";
+
+        // if score 60 - 80, if 40 - 59, if 20 - 39, if < 20
+
+        if ($score >= 60 && $score <= 80) {
+            $message = "Anda memiliki tingkat Accurate Self-Assessment yang sangat baik. Anda mampu mengevaluasi kelebihan dan kekurangan Anda secara obyektif, terbuka terhadap kritik dan saran, dan secara aktif mengambil langkah-langkah untuk memperbaiki diri";
+        } else if ($score >= 40 && $score <= 59) {
+            $message = "Anda cukup baik dalam penilaian diri yang akurat, namun mungkin masih ada beberapa area di mana Anda bisa lebih proaktif dalam menerima kritik dan saran atau memperbaiki kekurangan diri";
+        } else if ($score >= 20 && $score <= 39) {
+            $message = "Anda mungkin perlu bekerja lebih keras dalam mengenali kelebihan, kekurangan, dan menggunakan kritik konstruktif atau membangun untuk pengembangan diri. Refleksi lebih lanjut dan tindakan perbaikan dapat membantu meningkatkan kemampuan Anda dalam penilaian diri";
+        } else if ($score < 20) {
+            $message = "Anda mungkin menghadapi kesulitan dalam menilai diri secara obyektif, mengenali kekurangan, atau menerima kritik. Mungkin ini saatnya untuk mempertimbangkan lebih banyak refleksi diri dan keterbukaan terhadap masukan dari orang lain.";
+        }
+
+        return response()->json([
+            'score' => $score,
+            'message' => $message
+        ]);
+    }
 }
