@@ -23,7 +23,8 @@ class AccurateSelfAssesment extends Controller
      */
     public function create()
     {
-        //
+        $refleksi = true;
+        return view('ayo-mengenali-aku.accurate-self-assesment.refleksi-diri', compact('refleksi'));
     }
 
     /**
@@ -194,6 +195,11 @@ class AccurateSelfAssesment extends Controller
         } else if ($score < 20) {
             $message = "Anda mungkin menghadapi kesulitan dalam menilai diri secara obyektif, mengenali kekurangan, atau menerima kritik. Mungkin ini saatnya untuk mempertimbangkan lebih banyak refleksi diri dan keterbukaan terhadap masukan dari orang lain.";
         }
+
+        // session(['refleksi' => true]);
+
+        // delete session
+        // session()->forget('refleksi');
 
         return response()->json([
             'score' => $score,

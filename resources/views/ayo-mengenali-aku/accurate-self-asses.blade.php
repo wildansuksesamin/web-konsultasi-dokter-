@@ -35,12 +35,20 @@
         </li>
 
         {{-- instrumen tes --}}
-        <li role="presentation">
+        <li role="presentation" class="mr-2">
             <button
                 class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-md text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
                 id="instrumen-tes-tab" data-tabs-target="#instrumen-tes" type="
                 button" role="tab"
                 aria-controls="instrumen-tes" aria-selected="false">Instrumen Tes</button>
+        </li>
+
+        {{-- refleksi diri --}}
+        <li role="presentation">
+            <button
+                class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-md text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
+                id="refleksi-diri-tab" data-tabs-target="#refleksi-diri" type="button" role="tab"
+                aria-controls="refleksi-diri" aria-selected="false">Refleksi Diri</button>
         </li>
     </div>
 
@@ -59,6 +67,10 @@
 
         <div class="hidden p-4 rounded-lg" id="instrumen-tes" role="tabpanel" aria-labelledby="instrumen-tes-tab">
             @include('ayo-mengenali-aku.accurate-self-assesment.instrumen-tes')
+        </div>
+
+        <div class="hidden p-4 rounded-lg" id="refleksi-diri" role="tabpanel" aria-labelledby="refleksi-diri-tab">
+            @include('ayo-mengenali-aku.accurate-self-assesment.refleksi-diri')
         </div>
 
     </div>

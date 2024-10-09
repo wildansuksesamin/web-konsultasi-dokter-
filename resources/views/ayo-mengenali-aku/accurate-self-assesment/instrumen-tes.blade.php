@@ -34,8 +34,7 @@
                         </ul>
                     </div>
 
-                    <form method="POST" action="#"
-                        id="form-instrumen-asa">
+                    <form method="POST" action="#" id="form-instrumen-asa">
                         @csrf
 
                         <div class="overflow-x-auto">
@@ -137,6 +136,20 @@
 
             let formData = $(this).serializeArray();
             let jawaban = [];
+
+            // check if all question has been answered
+            let totalQuestion = 0;
+            formData.forEach((item) => {
+                if (item.name.includes('q')) {
+                    totalQuestion++;
+                }
+            });
+
+            if (totalQuestion < 16) {
+                swal("Error!", "Please answer all question", "error");
+                return;
+            }
+
             formData.forEach((item) => {
                 jawaban.push(item.value);
             });
@@ -145,7 +158,16 @@
                     data: jawaban,
                 })
                 .then((response) => {
-                    swal("Success!", response.data.message, "success");
+
+                    swal("Success!", response.data.message, "success")
+                        .then(() => {
+                            // refleksi-diri-tab click
+                            // window.location.reload();
+                            // $('#accurate-tab').click();
+                            $('#refleksi-diri-tab').click();
+                            // set session refleksi-diri
+                            // window.location.href = "{{ route('accurate-self-assesment.create') }}";
+                        });
                 })
                 .catch((error) => {
                     swal("Error!", error.response.data.message, "error");

@@ -778,11 +778,51 @@ class AyoMengenaliAku extends Controller
         ];
 
 
+        $refleksi_diri = [
+            'nama' => 'refleksi diri',
+            'pertanyaan' => [
+                '1' => [
+                    'judul' => 'kelebihan',
+                    'pertanyaan' => [
+                        'a' => 'Aspek apa yang menunjukkan bahwa Anda memiliki kelebihan atau kemampuan yang baik? (misal: mengatasi stres)',
+                        'b' => 'Bagaimana Anda dapat memanfaatkan kelebihan ini dalam kehidupan sehari-hari? (misal: mempratikkan mindfulness meditasi)',
+                        'c' => 'Bagaimana kelebihan Anda dapat membantu dalam menolak menggunakan narkoba? (misal: ketika stres tidak menggunakan narkoba sebagai pelampiasan)'
+                    ]
+                ],
+                '2' => [
+                    'judul' => 'kekurangan',
+                    'pertanyaan' => [
+                        'a' => 'Aspek apa yang menunjukkan bahwa Anda perlu melakukan perbaikan? (misal: manajemen waktu)',
+                        'b' => 'Apa yang bisa Anda lakukan untuk mengatasi kekurangan ini? (misal: membuat jadwal kegiatan harian agar lebih tertata)'
+                    ]
+                ],
+                '3' => [
+                    'judul' => 'langkah_selanjutnya',
+                    'pertanyaan' => [
+                        'a' => 'Setelah mengetahui kelebihan dan kekurangan diri, rencana apa yang akan Anda lakukan terkait pengembangan diri? <br> Rencana jangka pendek: _______',
+                        'b' => 'Rencana jangka panjang: _______ <br>(misal: Rencana jangka pendek: mengembangkan aspek keterampilan sosial; Rencana jangka panjang: mengikuti pelatihan public speaking, mengikuti komunitas yang sesuai dengan kemampuan saya)'
+                    ]
+                ],
+                '4' => [
+                    'judul' => 'menerima_kritik_dan_saran',
+                    'pertanyaan' => [
+                        'a' => 'Apakah Anda senang mendengarkan kritik dan saran yang diberikan orang lain? Apa alasannya? _______ (misal: iya, karena saya senang ketika mendapatkan kritik dan saran dari orang lain yang membuat bisa menjadi lebih baik)',
+                        'b' => 'Apakah bentuk kritik yang positif atau bentuk kritik yang kritis, yang Anda sukai? _______ (misal: saya suka kritik yang disampaikan dengan kalimat-kalimat positif dan membangun)',
+                        'c' => 'Apakah Anda lebih suka guru, teman, atau orang tua yang memberikan kritik dan saran? (misal: saya lebih suka mendengarkan kritik dan saran dari ibu, karena saya lebih dekat dengan ibu)',
+                        'd' => 'Apakah Anda meminta orang lain untuk memberikan kritik dan saran tentang perkembangan diri Anda? (misal: iya, karena saya ingin mengetahui apakah saya sudah menjadi orang yang lebih baik)',
+                        'e' => 'Apakah Anda menerapkan kritik dan saran yang Anda terima untuk mengembangkan diri menjadi lebih baik? (misal: iya, karena saya ingin menjadi orang yang lebih baik di masa depan)'
+                    ]
+                ]
+            ]
+        ];
+
+
         $acc_self_as = [
             $stud_kas_1,
             $stud_kas_2,
             $stud_kas_3,
-            $tes_instrumen
+            $tes_instrumen,
+            $refleksi_diri
         ];
 
         $emosis = [
