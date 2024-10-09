@@ -816,6 +816,69 @@ class AyoMengenaliAku extends Controller
             ]
         ];
 
+        $stud_kas_1_self_con = [
+            'nama' => 'studi kasus 1',
+            'judul' => 'Berbicara di Depan Umum dengan Percaya Diri',
+            'deskripsi' => 'Bunga adalah seorang siswa yang diminta untuk memberikan presentasi tentang bahaya narkoba di depan kelas. Sebelumnya, dia merasa gugup karena khawatir teman-temannya akan menertawakan jika dia melakukan kesalahan. Namun, Bunga memutuskan untuk mempersiapkan materi dengan baik dan berlatih berbicara di depan cermin beberapa kali.',
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Bagaimana Bunga menunjukkan kepercayaan dirinya saat memberikan presentasi di depan kelas?',
+                    'pilihan' => [
+                        'a' => 'Bunga berbicara dengan suara tegas dan tenang',
+                        'b' => 'Bunga terlihat sangat cemas dan terus menundukkan kepala',
+                        'c' => 'Bunga berhenti berbicara di tengah-tengah karena lupa materinya',
+                        'd' => 'Bunga berbicara dengan suara tegas tetapi terus menundukkan kepala',
+                    ],
+                ],
+                '2' => [
+                    'pertanyaan' => 'Faktor apa yang membantu Bunga meningkatkan kepercayaan dirinya dalam situasi ini?',
+                    'pilihan' => [
+                        'a' => 'Persiapan yang matang dan latihan sebelumnya',
+                        'b' => 'Dukungan dari teman-teman',
+                        'c' => 'Ketidaktahuannya bahwa ia akan presentasi',
+                        'd' => 'Yakin terhadap kemampuan diri tanpa berlatih sebelumnya',
+                    ],
+                ],
+                '3' => [
+                    'pertanyaan' => 'Apa yang Bunga pelajari dari pengalaman ini tentang kepercayaan diri?',
+                    'pilihan' => [
+                        'a' => 'Tidak penting untuk mempersiapkan diri sebelum berbicara di depan umum',
+                        'b' => 'Rasa takut tidak bisa diatasi dan akan selalu muncul',
+                        'c' => 'Persiapan dan latihan dapat membantu mengatasi rasa gugup',
+                        'd' => 'Rasa takut membuat kepercayaan diri muncul',
+                    ],
+                ],
+                '4' => [
+                    'pertanyaan' => 'Apa langkah pertama yang Bunga lakukan untuk mengatasi rasa gugupnya?',
+                    'pilihan' => [
+                        'a' => 'Langsung berbicara tanpa persiapan',
+                        'b' => 'Berlatih di depan cermin',
+                        'c' => 'Menghindari presentasi',
+                        'd' => 'Menjauhi keramaian',
+                    ],
+                ],
+                '5' => [
+                    'pertanyaan' => 'Bagaimana Bunga bereaksi terhadap kritik yang dia terima setelah presentasinya?',
+                    'pilihan' => [
+                        'a' => 'Dia merasa kecewa dan berhenti mencoba',
+                        'b' => 'Dia tidak mendengarkan kritik sama sekali',
+                        'c' => 'Dia merasa kritik tidak penting',
+                        'd' => 'Dia menerima kritik dengan sikap positif dan menggunakannya untuk memperbaiki diri',
+                    ],
+                ],
+                '6' => [
+                    'pertanyaan' => 'Apa yang bisa Bunga lakukan jika dia masih merasa cemas saat presentasi?',
+                    'pilihan' => [
+                        'a' => 'Menghindari kontak mata dengan audiens',
+                        'b' => 'Mengambil napas dalam-dalam dan berbicara lebih lambat',
+                        'c' => 'Meminta bantuan teman untuk menggantikannya',
+                        'd' => 'Berbicara dengan kepala menunduk',
+                    ],
+                ],
+            ],
+        ];
+        
+
 
         $acc_self_as = [
             $stud_kas_1,
@@ -823,6 +886,10 @@ class AyoMengenaliAku extends Controller
             $stud_kas_3,
             $tes_instrumen,
             $refleksi_diri
+        ];
+
+        $self_conf = [
+            $stud_kas_1_self_con
         ];
 
         $emosis = [
@@ -837,7 +904,7 @@ class AyoMengenaliAku extends Controller
             $guilty,
             $fear
         ];
-        return view('ayo-mengenali-aku.index', compact('emosis', 'acc_self_as'));
+        return view('ayo-mengenali-aku.index', compact('emosis', 'acc_self_as', 'self_conf'));
     }
 
     public function store(Request $request)

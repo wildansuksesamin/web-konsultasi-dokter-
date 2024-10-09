@@ -47,26 +47,7 @@
 
                 <div class="hidden p-4  rounded-lg " id="self-confident" role="tabpanel"
                     aria-labelledby="self-confident-tab">
-                    <h1 class=" text-xl">Gejala TBC (Tuberkulosis) </h1>
-                    <img src="img/gejala.jpg" class="mx-auto mt-10" width="400px" alt="">
-                    <p class="text-base pt-5 text-gray-500 mt-5">Pada TBC laten, penderita umumnya tidak mengalami gejala.
-                        Umumnya, penderita baru menyadari dirinya menderita tuberkulosis setelah menjalani pemeriksaan untuk
-                        penyakit lain.
-                        <br> <br>
-                        Sementara bagi penderita TBC aktif, gejala yang muncul dapat berupa:
-                    </p>
-                    <ul class="list-disc px-10 text-base  text-gray-500 mt-3">
-                        <li>Batuk yang berlangsung lama (3 minggu atau lebih)</li>
-                        <li>Batuk biasanya disertai dengan dahak atau batuk darah</li>
-                        <li>Nyeri dada saat bernapas atau batuk</li>
-                        <li>Berkeringat di malam hari</li>
-                        <li>Hilang nafsu makan</li>
-                        <li>Penurunan berat badan</li>
-                        <li>Demam dan menggigil</li>
-                        <li>Kelelahan</li>
-                    </ul>
-
-
+                    @include('ayo-mengenali-aku.self-confident')
                 </div>
 
             </div>

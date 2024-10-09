@@ -68,6 +68,15 @@ class AccurateSelfAssesment extends Controller
             '4' => 'c'
         ];
 
+        $jwb_self_conf_stud_1 = [
+            '1' => 'a',
+            '2' => 'a',
+            '3' => 'c',
+            '4' => 'b',
+            '5' => 'd',
+            '6' => 'b',
+        ];
+
         if ($request->studi_kasus == 1) {
             foreach ($jawaban as $key => $value) {
                 if ($value == $jwb_stud_kas_1[$key]) {
@@ -125,6 +134,26 @@ class AccurateSelfAssesment extends Controller
             return response()->json([
                 'jawaban_old' => $jawaban,
                 'jawaban_benar' => $jwb_stud_kas_3,
+                'score' => $score,
+                'message' => $message
+            ]);
+        } else if ($request->studi_kasus == "selfconf_1") {
+            foreach ($jawaban as $key => $value) {
+                if ($value == $jwb_self_conf_stud_1[$key]) {
+                    $score += 1;
+                }
+            }
+
+            if ($score == 6) {
+                $message = $message_lulus;
+            } else {
+                $message = $message_gagal;
+            }
+
+            // return jawaban lama, jawaban benar, dan score
+            return response()->json([
+                'jawaban_old' => $jawaban,
+                'jawaban_benar' => $jwb_self_conf_stud_1,
                 'score' => $score,
                 'message' => $message
             ]);
