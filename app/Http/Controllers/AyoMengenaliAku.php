@@ -877,6 +877,131 @@ class AyoMengenaliAku extends Controller
                 ],
             ],
         ];
+
+        $stud_kas_2_self_con = [
+            'nama' => 'studi kasus 2',
+            'judul' => 'Mengambil Keputusan di Situasi Sulit',
+            'deskripsi' => 'Budi sering kali dihadapkan pada keputusan sulit ketika berada dalam kelompok belajar. Suatu hari, teman-temannya mengusulkan untuk mencontek saat ujian. Budi merasa tertekan tetapi yakin dengan kemampuannya sendiri dan memutuskan untuk tidak ikut serta.',
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Bagaimana Budi menunjukkan kepercayaan diri dalam menghadapi tekanan dari teman-temannya?',
+                    'pilihan' => [
+                        'a' => 'Budi ikut mencontek karena takut tidak lulus ujian',
+                        'b' => 'Budi berdiam diri dan membiarkan teman-temannya mencontek tanpa ikut',
+                        'c' => 'Dengan berani menyatakan penolakannya untuk mencontek',
+                        'd' => 'Budi mengiyakan ajakan temannya agar tidak dijauhi',
+                    ],
+                ],
+                '2' => [
+                    'pertanyaan' => 'Faktor apa yang mempengaruhi keputusan Budi untuk tidak mencontek?',
+                    'pilihan' => [
+                        'a' => 'Takut dimarahi guru',
+                        'b' => 'Tidak ingin ada konflik dengan teman-temannya',
+                        'c' => 'Tidak ingin dijauhi teman-temannya',
+                        'd' => 'Keyakinan pada kemampuannya sendiri untuk menghadapi ujian',
+                    ],
+                ],
+                '3' => [
+                    'pertanyaan' => 'Bagaimana pengalaman ini dapat meningkatkan kepercayaan diri Budi di masa depan?',
+                    'pilihan' => [
+                        'a' => 'Budi akan selalu takut jika berada dalam situasi sulit',
+                        'b' => 'Budi akan lebih yakin untuk membuat keputusan yang benar meskipun sulit',
+                        'c' => 'Budi akan menghindari tanggung jawab agar tidak harus mengambil keputusan',
+                        'd' => 'Budi akan selalu mendapatkan teman karena mengiyakan semua ajakan orang lain',
+                    ],
+                ],
+                '4' => [
+                    'pertanyaan' => 'Apa yang Budi lakukan untuk menjaga kepercayaannya pada diri sendiri?',
+                    'pilihan' => [
+                        'a' => 'Budi mengingat prinsip-prinsip moralnya',
+                        'b' => 'Budi menolak tanpa menjelaskan alasannya',
+                        'c' => 'Budi menghindari situasi tersebut',
+                        'd' => 'Budi membiarkan semua hal terjadi apa adanya',
+                    ],
+                ],
+                '5' => [
+                    'pertanyaan' => 'Apa yang bisa Budi lakukan jika tekanan dari teman-temannya meningkat?',
+                    'pilihan' => [
+                        'a' => 'Menyerah pada tekanan kelompok',
+                        'b' => 'Menghindari teman-temannya sama sekali',
+                        'c' => 'Berbicara dengan gurunya untuk mendapatkan bantuan',
+                        'd' => 'Tidak mau berteman lagi',
+                    ],
+                ],
+                '6' => [
+                    'pertanyaan' => 'Bagaimana Budi bisa menjaga hubungan baik dengan teman-temannya tanpa mengikuti mereka?',
+                    'pilihan' => [
+                        'a' => 'Menghindari semua interaksi dengan mereka',
+                        'b' => 'Bergabung dengan kelompok lain yang lebih mendukung',
+                        'c' => 'Menghargai pendapat mereka tetapi tetap setia pada prinsipnya',
+                        'd' => 'Mengiyakan semua ajakan temannya',
+                    ],
+                ],
+            ],
+        ];
+
+        $stud_kas_3_self_con = [
+            'nama' => 'studi kasus 3',
+            'judul' => 'Mengelola Ketidakpastian dan Risiko',
+            'deskripsi' => 'Siti ditawari menjadi ketua kelompok dalam sebuah proyek besar di sekolah, tetapi dia ragu-ragu karena khawatir akan gagal. Setelah merenung dan memikirkan keterampilannya, Siti memutuskan untuk mengambil tantangan tersebut dan melakukan yang terbaik.',
+            'pertanyaan' => [
+                '1' => [
+                    'pertanyaan' => 'Apa yang menunjukkan bahwa Siti memiliki kepercayaan diri dalam mengambil peran ketua kelompok?',
+                    'pilihan' => [
+                        'a' => 'Dia menolak dengan alasan tidak ingin gagal',
+                        'b' => 'Dia merasa tertekan dan menyerahkan tugas kepada teman lain',
+                        'c' => 'Dia menerima tanggung jawab dengan tenang dan penuh keyakinan',
+                        'd' => 'Dia merasa tidak ingin mengemban tanggung jawab besar',
+                    ],
+                ],
+                '2' => [
+                    'pertanyaan' => 'Bagaimana Siti mengatasi keraguannya terhadap kemampuan dirinya?',
+                    'pilihan' => [
+                        'a' => 'Dengan merenung dan menganalisis keterampilan yang dia miliki',
+                        'b' => 'Dengan melihat kemampuan teman dekatnya',
+                        'c' => 'Dengan meminta teman lain mengambil tanggung jawab',
+                        'd' => 'Dengan tidak melakukan apa-apa dan berharap hasilnya baik',
+                    ],
+                ],
+                '3' => [
+                    'pertanyaan' => 'Bagaimana hasil pengalaman ini dapat membantu Siti dalam menghadapi tantangan serupa di masa depan?',
+                    'pilihan' => [
+                        'a' => 'Siti akan lebih cenderung menghindari tantangan',
+                        'b' => 'Siti akan lebih berani menghadapi tanggung jawab besar dengan percaya diri',
+                        'c' => 'Siti tidak akan menerima lagi tugas besar',
+                        'd' => 'Siti dapat merasa lebih baik dibandingkan teman-temannya',
+                    ],
+                ],
+                '4' => [
+                    'pertanyaan' => 'Apa yang memotivasi Siti untuk menerima peran sebagai ketua?',
+                    'pilihan' => [
+                        'a' => 'Dorongan dari teman-temannya',
+                        'b' => 'Keyakinan bahwa ini adalah peluang untuk belajar',
+                        'c' => 'Ketakutan bahwa orang lain tidak bisa melakukannya',
+                        'd' => 'Agar tidak merasa tertinggal dari teman-temannya',
+                    ],
+                ],
+                '5' => [
+                    'pertanyaan' => 'Apa yang bisa dilakukan Siti jika menghadapi masalah yang tidak bisa dia selesaikan sendiri?',
+                    'pilihan' => [
+                        'a' => 'Meninggalkan proyek tanpa menyelesaikannya',
+                        'b' => 'Menyerahkan tanggung jawab kepada orang lain',
+                        'c' => 'Memaksakan diri untuk menyelesaikan sendiri',
+                        'd' => 'Meminta bantuan dari anggota kelompok',
+                    ],
+                ],
+                '6' => [
+                    'pertanyaan' => 'Apa yang bisa Siti lakukan untuk memastikan bahwa kelompoknya berhasil dalam proyek ini?',
+                    'pilihan' => [
+                        'a' => 'Mengerjakan semuanya sendiri untuk memastikan hasil yang sempurna',
+                        'b' => 'Menyerahkan keputusan kepada anggota kelompok yang lain',
+                        'c' => 'Membagi tugas dengan anggota lainnya dan memberikan arahan yang jelas',
+                        'd' => 'Menunggu anggota lain bertanya dan meminta arahan',
+                    ],
+                ],
+            ],
+        ];
+        
         
 
 
@@ -889,7 +1014,9 @@ class AyoMengenaliAku extends Controller
         ];
 
         $self_conf = [
-            $stud_kas_1_self_con
+            $stud_kas_1_self_con,
+            $stud_kas_2_self_con,
+            $stud_kas_3_self_con
         ];
 
         $emosis = [

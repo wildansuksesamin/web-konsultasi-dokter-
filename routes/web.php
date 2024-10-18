@@ -24,6 +24,7 @@ use App\Http\Controllers\artikelDokterController;
 use App\Http\Controllers\AyoJauhiNarkoba;
 use App\Http\Controllers\AyoMengenaliAku;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\SelfConfidence;
 use App\Models\Post; //tambahkan/ import model post yang akan digunakan
 
 /*
@@ -180,6 +181,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         '/ayo-jauhi-narkoba' => AyoJauhiNarkoba::class,
         '/ayo-mengenali-aku' => AyoMengenaliAku::class,
         '/accurate-self-assesment' => AccurateSelfAssesment::class,
+        '/self-confidence' => SelfConfidence::class,
     ]);
 
     Route::post('/accurate-self-assesment/tes-instrumen', [AccurateSelfAssesment::class, 'tesInstrumen'])->name('accurate-self-assesment.tes-instrumen');

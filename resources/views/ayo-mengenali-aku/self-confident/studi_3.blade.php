@@ -1,5 +1,5 @@
 <div class="space-y-5 text-justify">
-    @foreach ($acc_self_as as $studi)
+    @foreach ($self_conf as $studi)
         @if ($studi['nama'] === 'studi kasus 3')
             <h1 class="font-bold text-2xl">{{ $studi['nama'] . ' : ' . $studi['judul'] }}</h1>
 
@@ -8,16 +8,16 @@
             <div class="my-4 -translate-x-8">
                 <h1 class="font-semibold text-lg">Jawablah Soal Di bawah ini</h1>
 
-                <form action="{{ route('accurate-self-assesment.store') }}" class="space-y-5" id="form-studkas3">
+                <form action="{{ route('self-confidence.store') }}" class="space-y-5" id="form-studkas3-selfcon">
                     @foreach ($studi['pertanyaan'] as $key => $soal)
                         <p class="text-base  text-gray-500 mt-5">{{ $loop->iteration }}. {{ $soal['pertanyaan'] }}</p>
 
                         @foreach ($soal['pilihan'] as $key2 => $pilihan)
                             <div class="flex items-center mt-3 rounded-md">
-                                <input type="radio" id="{{ $key . '_' . $key2 . '_studkas3' }}"
+                                <input type="radio" id="{{ $key . '_' . $key2 . '_studkas3_selfconf' }}"
                                     name="{{ $key }}" value="{{ $key2 }}"
                                     {{ isset($show_jawaban) && $soal['jawaban_user'] == $key2 ? 'checked' : '' }}>
-                                <label for="{{ $key . '_' . $key2 . '_studkas3' }}" class="ml-2">
+                                <label for="{{ $key . '_' . $key2 . '_studkas3_selfconf' }}" class="ml-2">
                                     {{ $key2 }}. {{ $pilihan }}
                                 </label>
                             </div>
@@ -34,7 +34,7 @@
 
 @push('custom-script')
     <script>
-        $('#form-studkas3').submit(function(e) {
+        $('#form-studkas3-selfcon').submit(function(e) {
             e.preventDefault();
 
             // remove all bg color
@@ -48,12 +48,12 @@
             });
 
             // check if all question is answered
-            if (jawaban.length < 4) {
+            if (jawaban.length < 6) {
                 swal("Error!", "Please answer all question!", "error");
                 return;
             }
 
-            axios.post("{{ route('accurate-self-assesment.store') }}", {
+            axios.post("{{ route('self-confidence.store') }}", {
                     jawaban: jawaban,
                     studi_kasus: 3
                 })
@@ -65,12 +65,12 @@
                         const jawabanBenar = response.data.jawaban_benar[questionNumber];
 
                         // Define the IDs for old answer and correct answer input fields
-                        const oldAnswerId = `#${questionNumber}_${jawabanOld}_studkas3`;
-                        const correctAnswerId = `#${questionNumber}_${jawabanBenar}_studkas3`;
+                        const oldAnswerId = `#${questionNumber}_${jawabanOld}_studkas3_selfconf`;
+                        const correctAnswerId = `#${questionNumber}_${jawabanBenar}_studkas3_selfconf`;
 
                         // Define the corresponding label selectors using the 'for' attribute
-                        const oldLabel = `label[for='${questionNumber}_${jawabanOld}_studkas3']`;
-                        const correctLabel = `label[for='${questionNumber}_${jawabanBenar}_studkas3']`;
+                        const oldLabel = `label[for='${questionNumber}_${jawabanOld}_studkas3_selfconf']`;
+                        const correctLabel = `label[for='${questionNumber}_${jawabanBenar}_studkas3_selfconf']`;
 
                         // If the old answer is correct, apply green background to input and label
                         if (jawabanOld === jawabanBenar) {

@@ -40,7 +40,7 @@
                 class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-md text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
                 id="lk-self-con-1-tab" data-tabs-target="#lk-self-con-1" type="
                 button" role="tab"
-                aria-controls="lk-self-con-1" aria-selected="false">Instrumen Tes</button>
+                aria-controls="lk-self-con-1" aria-selected="false">L/K Praktik Penguatan Kepercayaan Diri </button>
         </li>
 
         {{-- refleksi diri --}}
@@ -53,23 +53,23 @@
     </div>
 
     <div id="self-confident-tab">
-        <div class="p-4 rounded-lg" id="studi-1-self-con" role="tabpanel" aria-labelledby="studi-1-self-con-tab">
+        <div class="md:p-4 rounded-lg" id="studi-1-self-con" role="tabpanel" aria-labelledby="studi-1-self-con-tab">
             @include('ayo-mengenali-aku.self-confident.studi_1')
         </div>
 
-        <div class="hidden p-4 rounded-lg" id="studi-2-self-con" role="tabpanel" aria-labelledby="studi-2-self-con-tab">
+        <div class="hidden md:p-4 rounded-lg" id="studi-2-self-con" role="tabpanel" aria-labelledby="studi-2-self-con-tab">
             @include('ayo-mengenali-aku.self-confident.studi_2')
         </div>
 
-        <div class="hidden p-4 rounded-lg" id="studi-3-self-con" role="tabpanel" aria-labelledby="studi-3-self-con-tab">
+        <div class="hidden md:p-4 rounded-lg" id="studi-3-self-con" role="tabpanel" aria-labelledby="studi-3-self-con-tab">
             @include('ayo-mengenali-aku.self-confident.studi_3')
         </div>
 
-        <div class="hidden p-4 rounded-lg" id="lk-self-con-1" role="tabpanel" aria-labelledby="lk-self-con-1-tab">
-            {{-- @include('ayo-mengenali-aku.self-confident.lk-self-con-1') --}}
+        <div class="hidden md:p-4 rounded-lg" id="lk-self-con-1" role="tabpanel" aria-labelledby="lk-self-con-1-tab">
+            @include('ayo-mengenali-aku.self-confident.lk_praktik_penguatan')
         </div>
 
-        <div class="hidden p-4 rounded-lg" id="lk-self-con-2" role="tabpanel" aria-labelledby="lk-self-con-2-tab">
+        <div class="hidden md:p-4 rounded-lg" id="lk-self-con-2" role="tabpanel" aria-labelledby="lk-self-con-2-tab">
             {{-- @include('ayo-mengenali-aku.self-confident.lk-self-con-2') --}}
         </div>
 
