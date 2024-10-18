@@ -1422,9 +1422,4 @@ class AyoMengenaliAku extends Controller
     {
         //
     }
-
-    public function jurnalEmosi()
-    {
-        return view('ayo-mengenali-aku.jurnal-emosi');
-    }
 }

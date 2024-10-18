@@ -24,6 +24,8 @@ use App\Http\Controllers\artikelDokterController;
 use App\Http\Controllers\AyoJauhiNarkoba;
 use App\Http\Controllers\AyoMengenaliAku;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\JurnalEmosi;
+use App\Http\Controllers\JurnalMindfulness;
 use App\Http\Controllers\SelfConfidence;
 use App\Models\Post; //tambahkan/ import model post yang akan digunakan
 
@@ -177,12 +179,13 @@ Route::get('/detail-konsultasi', function () {
 
 // ARJUN UPDATE
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/ayo-mengenali-aku/jurnal-emosi', [AyoMengenaliAku::class, 'jurnalEmosi'])->name('jurnal-emosi');
     Route::resources([
         '/ayo-jauhi-narkoba' => AyoJauhiNarkoba::class,
         '/ayo-mengenali-aku' => AyoMengenaliAku::class,
         '/accurate-self-assesment' => AccurateSelfAssesment::class,
         '/self-confidence' => SelfConfidence::class,
+        '/jurnal-emosi' => JurnalEmosi::class,
+        '/jurnal-mindfulness' => JurnalMindfulness::class,
     ]);
 
     Route::post('/accurate-self-assesment/tes-instrumen', [AccurateSelfAssesment::class, 'tesInstrumen'])->name('accurate-self-assesment.tes-instrumen');

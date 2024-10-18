@@ -3,12 +3,12 @@
     <div class="md:flex items-center justify-between mb-5">
 
         {{-- button jurnal emosi --}}
-        <a href="{{ route('jurnal-emosi') }}"
+        <a href="{{ route('jurnal-emosi.index') }}"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-3 md:mb-0">Jurnal
             Emosi</a>
 
         {{-- button jurnal mindfullness --}}
-        <a href="#"
+        <a href="{{ route('jurnal-mindfulness.index') }}"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-3 md:mb-0">Jurnal
             Mindfullness</a>
 
