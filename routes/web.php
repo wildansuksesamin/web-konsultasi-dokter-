@@ -177,6 +177,7 @@ Route::get('/detail-konsultasi', function () {
 
 // ARJUN UPDATE
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/ayo-mengenali-aku/jurnal-emosi', [AyoMengenaliAku::class, 'jurnalEmosi'])->name('jurnal-emosi');
     Route::resources([
         '/ayo-jauhi-narkoba' => AyoJauhiNarkoba::class,
         '/ayo-mengenali-aku' => AyoMengenaliAku::class,
