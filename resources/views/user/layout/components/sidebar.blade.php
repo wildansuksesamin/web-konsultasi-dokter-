@@ -35,7 +35,7 @@
 
 
             {{-- divider --}}
-            <div class="h-1 w-full bg-red-600 my-4"></div>
+            {{-- <div class="h-1 w-full bg-red-600 my-4"></div> --}}
             {{-- divider --}}
             {{-- <li class="flex space-x-2 cursor-pointer active:text-[#EC5252] hover:text-[#EC5252] duration-150">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"

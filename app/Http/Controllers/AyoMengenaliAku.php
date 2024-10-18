@@ -1001,9 +1001,90 @@ class AyoMengenaliAku extends Controller
                 ],
             ],
         ];
-        
-        
 
+        $lk_self_con = [
+            'nama' => 'LK SELF CONFIDENT',
+            'bagian_1' => [
+                'nama' => 'Refleksi Diri',
+                '1' => [
+                    'judul' => 'Keyakinan akan Kemampuan Diri',
+                    'pertanyaan' => [
+                        'a' => 'Sebutkan satu pencapaian terbesar yang telah kamu raih dalam enam bulan terakhir!<br>misal: saya berhasil memenangkan lomba sains tingkat provinsi)',
+                        'b' => 'Bagaimana perasaanmu terhadap pencapaian tersebut? <br>misal: saya merasa bangga dan senang',
+                        'c' => 'Apa usaha dan strategi yang kamu gunakan untuk mencapai pencapaian tersebut?<br>(misal: saya belajar setiap hari selama satu bulan, mengikuti bimbingan dari guru, dan juga mengikuti les sains',
+                    ],
+                ],
+                '2' => [
+                    'judul' => 'Keterampilan yang Dikuasai',
+                    'pertanyaan' => [
+                        'a' => 'Sebutkan tiga keterampilan yang kamu rasa paling kamu kuasai!<br>misal: keterampilan berbicara di depan umum, keterampilan manajemen waktu, keterampilan di bidang seni',
+                        'b' => 'Bagaimana kamu mengembangkan keterampilan tersebut?<br>(misal: saya sering berlatih presentasi di rumah, saya selalu membuat jadwal kegiatan harian, saya mengikuti kursus menggambar',
+                        'c' => 'Bagaimana keterampilan tersebut membantu dalam kehidupan sehari-hari atau dalam mencapai tujuanmu? <br>misal: Keterampilan berbicara di depan umum membantu saya dalam presentasi di sekolah, kemampuan manajemen waktu membantu saya menjadi seseorang yang disiplin, dan menggambar membantu saya mengekspresikan diri)',
+                    ],
+                ],
+                '3' => [
+                    'judul' => 'Tantangan yang Telah Diatasi',
+                    'pertanyaan' => [
+                        'a' => 'Sebutkan satu tantangan besar yang telah kamu hadapi dan atasi!<br>misal: saya pernah gagal dalam ujian matematika dan mendapat nilai paling rendah daripada teman sekelas lainnya',
+                        'b' => 'Apa yang kamu pelajari dari pengalaman tersebut?<br>(misal: saya belajar untuk tidak menyerah dan terus berusaha',
+                        'c' => 'Bagaimana cara kamu mengatasi tantangan tersebut?<br>(misal: saya meminta bantuan kepada teman dan guru, dan juga berlatih soal-soal matematika lebih sering',
+                    ],
+                ],
+                '4' => [
+                    'judul' => 'Pujian Diri',
+                    'pertanyaan' => [
+                        'a' => 'Tuliskan tiga hal positif tentang dirimu yang ingin kamu puji!<br>misal: saya adalah orang yang mandiri, saya selalu menjadi anak baik dan membantu teman yang membutuhkan pertolongan, saya tidak mudah menyerah',
+                        'b' => 'Mengapa kamu merasa hal tersebut patut dipuji?<br>misal: saya selalu berusaha menyelesaikan pekerjaan rumah ataupun membantu orang tua di rumah. Saya selalu diajarkan untuk berbuat baik dan saya berhasil menerapkannya dengan membantu teman yang membutuhkan bantuan. Saya selalu mencari solusi ketika menghadapi masalah dan tidak mudah menyerah',
+                    ],
+                ],
+                '5' => [
+                    'judul' => 'Pengakuan Usaha',
+                    'pertanyaan' => [
+                        'a' => 'Sebutkan satu usaha atau kerja keras yang telah kamu lakukan baru-baru ini!<br>misal: saya mengerjakan sendiri tugas melukis yang diberikan oleh guru selama tiga hari meskipun sangat sulit dan tidak pandai melukis',
+                        'b' => 'Bagaimana perasaanmu setelah berusaha keras meskipun hasilnya belum tentu memuaskan?<br>misal: saya tetap merasa puas dan bangga karena bisa menyelesaikan kewajiban saya terhadap tugas sekolah',
+                    ],
+                ],
+            ],
+            'bagian_2' => [
+                'nama' => 'Tenang Menghadapi Permasalahan',
+                '1' => [
+                    'pertanyaan' => 'Apakah permasalahan yang kamu hadapi hari ini?<br>Misal: terlambat datang ke sekolah sehingga dimarahi oleh guru',
+                ],
+                '2' => [
+                    'pertanyaan' => 'Bagaimana permasalahan tersebut dapat terjadi?<br>misal: hari ini saya terlambat ke sekolah karena pada malam harinya saat begadang menonton tv sehingga telat bangun di pagi harinya',
+                ],
+                '3' => [
+                    'pertanyaan' => 'Bagaimana perasaanmu pada saat itu?<br>misal: saya merasa sangat malu di depan teman-teman yang lain karena dimarahi dan saya juga merasa bersalah karena melanggar peraturan',
+                ],
+                '4' => [
+                    'pertanyaan' => 'Berdasarkan permasalahanmu tersebut, bagaimana kamu mencari solusinya?<br>misal: saya tidak akan begadang lagi di malam harinya supaya dapat bangun pagi/ saya akan mengatur jadwal kegiatan harian agar saya tidak terlambat lagi',
+                ],
+            ],
+            'bagian_3' => [
+                'nama' => 'Berani Mengambil Keputusan',
+                '1' => [
+                    'pertanyaan' => 'Ketika dihadapkan dengan permasalahan apa yang kamu lakukan?<br>misal: <br> - langsung mencari solusi <br> - bertanya<br> -tanya mengapa masalah ini harus menimpamu',
+                ],
+                '2' => [
+                    'pertanyaan' => 'Ketika kamu diharuskan mengambil keputusan, apa yang kamu lakukan?<br>misal: <br> - saya langsung melakukannya tanpa berpikir dua kali <br> - saya melakukan analisis terlebih dahulu agar tidak salah mengambil keputusan',
+                ],
+                '3' => [
+                    'pertanyaan' => 'Apakah kamu meminta bantuan orang lain dalam mengambil keputusan?<br>*misal: <br> - tidak, saya memutuskan sendiri <br> - saya meminta saran dari orang tua/ teman dekat/ guru',
+                ],
+                '4' => [
+                    'pertanyaan' => 'Bagaimana apabila kamu diharuskan segera mengambil keputusan pada saat itu juga?<br>misal: <br> - saya berusaha untuk tetap tenang, baru kemudian mengambil keputusan sambil memikirkan akibatnya <br> - saya langsung mengambil keputusan tanpa melihat akibatnya',
+                ],
+                '5' => [
+                    'pertanyaan' => 'Apakah keadaan di sekitarmu memengaruhi caramu mengambil keputusan?<br>misal: iya/ tidak',
+                ],
+                '6' => [
+                    'pertanyaan' => 'Pada keadaan seperti apa kamu dapat mengambil keputusan?<br>*misal: <br> - tidak ramai/ tenang <br> - berada di dekat orang yang disayangi <br> - merasa aman',
+                ],
+                '7' => [
+                    'pertanyaan' => 'Pada keadaan seperti apa kamu kesulitan mengambil keputusan?<br>misal: <br> - penuh dengan pertengkaran <br> - tidak fokus',
+                ],
+            ],
+        ];
 
         $acc_self_as = [
             $stud_kas_1,
@@ -1016,7 +1097,8 @@ class AyoMengenaliAku extends Controller
         $self_conf = [
             $stud_kas_1_self_con,
             $stud_kas_2_self_con,
-            $stud_kas_3_self_con
+            $stud_kas_3_self_con,
+            $lk_self_con
         ];
 
         $emosis = [
