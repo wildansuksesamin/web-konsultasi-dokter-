@@ -3,7 +3,7 @@
 @section('content')
     <div class="md:flex font-poppins font-Poppins">
 
-        <div class="  p-4 rounded-2xl  lg:mx-auto mx-5 mt-5 ">
+        <div class="md:p-4 rounded-2xl  lg:mx-auto mx-5 mt-5 ">
 
             <div class="mb-4 border-b border-gray-200  text-lg">
                 <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab"
@@ -30,12 +30,12 @@
                 </ul>
             </div>
             <div id="myTabContent">
-                <div class="p-4   rounded-lg " id="emotional-awareness" role="tabpanel"
+                <div class="md:p-4 rounded-lg " id="emotional-awareness" role="tabpanel"
                     aria-labelledby="emotional-awareness-tab">
                     @include('ayo-mengenali-aku.emotional-awareness')
                 </div>
 
-                <div class="hidden p-4  rounded-lg " id="accurate" role="tabpanel" aria-labelledby="accurate-tab">
+                <div class="hidden md:p-4  rounded-lg " id="accurate" role="tabpanel" aria-labelledby="accurate-tab">
                     {{-- <h1 class=" text-xl">Penyebab TBC </h1>
                     <img src="img/3.jpg" class="float-left" width="400px" alt="">
                     <p class="text-base  text-gray-500 ">{!! get_meta_value('isi') !!} </p> --}}
@@ -45,7 +45,7 @@
                 </div>
 
 
-                <div class="hidden p-4  rounded-lg " id="self-confident" role="tabpanel"
+                <div class="hidden md:p-4  rounded-lg " id="self-confident" role="tabpanel"
                     aria-labelledby="self-confident-tab">
                     @include('ayo-mengenali-aku.self-confident')
                 </div>

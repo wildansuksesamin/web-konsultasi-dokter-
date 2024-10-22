@@ -121,7 +121,7 @@
                             aria-current="page">Beranda</a>
                     </li>
                     <li>
-                        <a href="#gejala"
+                        <a href="#tentkami"
                             class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Tentang Kami</a>
                     </li>
                     {{-- <li>
@@ -182,7 +182,7 @@
     </div>
 
     <!-- total case -->
-    <div class="bg-white hidden md:block mx-28 mt-20 drop-shadow-lg rounded-xl"
+    {{-- <div class="bg-white hidden md:block mx-28 mt-20 drop-shadow-lg rounded-xl"
         style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px">
         <div class="grid grid-cols-4 gap-6 px-28 text-center py-10 font-Inter">
             <div class="">
@@ -216,24 +216,21 @@
                 <h1 class="text-[18px]">20% from total Cases</h1>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
 
     <img src="img/coro.png" class="absolute right-0 hidden md:block" alt="" />
 
-    <div id="gejala" class="md:mx-[120px] mb-36 md:grid md:grid-cols-2 md:gap-6 pt-20">
+    <div id="tentkami" class="md:mx-[120px] mb-36 md:grid md:grid-cols-2 md:gap-6 pt-20">
         <div class="w-[490px]  lg:pt-20">
-            <img src="img/do.png" class="w-96 md:w-[500px] mx-3  md:mx-0" alt="" />
+            <img src="{{ asset('img/undraw_showing_support_re_5f2v.svg') }}" class="w-96 md:w-[500px] mx-3  md:mx-0" alt="" />
         </div>
         <div class="lg:mt-20 lg:px-14 px-3">
-            <h2 class="font-Poppins font-semibold text-[30px]  md:text-4xl">Gejala TBC </h2>
-            <p class="text-[#555555] text-base  font-Inter md:text-base md:w-[440px] py-3">Pada TBC laten, penderita
-                umumnya tidak
-                mengalami gejala. Umumnya, penderita baru menyadari dirinya menderita tuberkulosis setelah menjalani
-                pemeriksaan untuk penyakit lain.Sementara bagi penderita TBC aktif, gejala yang muncul dapat berupa:</p>
+            <h2 class="font-Poppins font-semibold text-[30px]  md:text-4xl">Tentang Kami</h2>
+            <p class="text-[#555555] text-base  font-Inter md:text-base md:w-[440px] py-3">Aku adalah platform pembelajaran yang berfokus pada pengembangan kesadaran diri (self-awareness) sebagai langkah preventif terhadap penggunaan narkoba dan penguatan kesehatan mental. Kami berdedikasi untuk memberikan edukasi yang relevan bagi remaja dan dewasa muda, guna mendukung mereka dalam menjalani kehidupan yang lebih sehat dan bermakna. Melalui pendekatan yang inovatif dan inklusif, kami berupaya menciptakan generasi yang lebih sadar diri dan mampu menghadapi tantangan kehidupan dengan bijak.</p>
             <ul class="text-[#555555] font-Inter">
-                <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span
+                {{-- <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span
                         class="pl-2 pt-1">Batuk yang
                         berlangsung lama </span></li>
                 <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span
@@ -249,7 +246,7 @@
                         nafsu makan</span></li>
                 <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span
                         class="pl-2 pt-1">Penurunan
-                        berat badan</span></li>
+                        berat badan</span></li> --}}
                 <li class="flex pt-5 pl-2">
                     <img src="img/circle.png" class="absolute" width="30px" alt="" /> <span
                         class="pl-4 pt-1"><a href="/login" role="button" class="btn btn-primary btn-lg"
@@ -263,15 +260,15 @@
         </div>
     </div>
 
-    <div id="pencegahan" class="text-center font-Poppins mb-20 md:mb-0">
+    {{-- <div id="pencegahan" class="text-center font-Poppins mb-20 md:mb-0">
         <h1 class="text-[30px]  md:text-4xl text-[#333333] font-semibold">Pencegahan TBC (Tuberkulosis)</h1>
         <p class=" text-[#555555] font-Inter text-[20px] md:w-[840px] mx-auto px-3 md:px-0">Lindungi diri Anda dan
             orang
             lain di
             sekitar Anda dengan mengetahui fakta dan mengambil tindakan pencegahan yang tepat</p>
-    </div>
+    </div> --}}
 
-    <div class="md:pt-24 md:grid md:grid-cols-3 md:gap-4 md:pl-32 md:pr-32 mb-32">
+    {{-- <div class="md:pt-24 md:grid md:grid-cols-3 md:gap-4 md:pl-32 md:pr-32 mb-32">
         <div class="w-[330px] h-[330px] mx-auto md:mx-0 bg-white rounded-xl relative"
             style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px">
             <img src="img/mask.png" class="absolute mx-16 -top-14" alt="" />
@@ -292,7 +289,7 @@
             <p class="px-5 text-center">Maintain a safe distance especially from anyone who is coughinf or sneezing.
             </p>
         </div>
-    </div>
+    </div> --}}
 
     {{-- <div class="text-center font-Inter">
         <h1 class="text-[36px] text-[#333333] font-semibold">Symptoms</h1>
@@ -310,7 +307,7 @@
     </div> --}}
 
 
-    <section>
+    {{-- <section>
         <div class="relative items-center w-full py-24 mx-auto md:px-12 lg:px-16 max-w-7xl">
             <div class="flex flex-wrap items-start justify-center w-full gap-4 px-5 mx-auto lg:px-0">
                 <div class="w-full xl:w-1/3 lg:w-2/6 md:text-center lg:text-left">
@@ -487,18 +484,19 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
 
     <div id="kontak" class="md:w-[800px] px-3 md:px-0 mx-auto mb-10 rounded-2xl"
         style="box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset">
         <div class="text-center font-Inter">
-            <h1 class="text-[36px] text-[#333333] font-semibold pt-10">Need Help!</h1>
-            <p class="text-[20px] :md:w-[840px] mx-auto text-[#777777] lg:px-14">Protect yourself and others around you
-                by knowing the facts and taking appropriate precautions. Floow advice provided by your local health
-                authority.</p>
-            <img src="img/stay.png" class="mx-auto" alt="" />
+            <h1 class="text-[36px] text-[#333333] font-semibold pt-10">Kontak Kami!</h1>
+            <p class="text-[20px] :md:w-[840px] mx-auto text-[#777777] lg:px-14">Kami siap mendukung perjalanan Anda dalam meningkatkan kesadaran diri dan kesehatan mental. Jika Anda memiliki pertanyaan, memerlukan informasi lebih lanjut, atau ingin berkolaborasi dengan kami, jangan ragu untuk menghubungi kami melalui:</p>
+
+            {{-- div flex justify between email, whatsapp, instagram --}}
+
+            <img src="{{ asset('img/undraw_contact_us_re_4qqt.svg') }}" class="mx-auto" alt="" />
         </div>
 
         <form class="px-20 pt-10">

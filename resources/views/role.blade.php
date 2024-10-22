@@ -119,7 +119,7 @@
             </div>
         </div>
 
-        <div
+        {{-- <div
             class=" text-[#F2994A]  hover:text-white transition ease-in-out delay-150 bg-white hover:-translate-y-1 hover:scale-110 hover:bg-[#F2994A] duration-300  rounded-3xl shadow-xl w-[340px] mt-3   h-[500px]   mx-auto  sm:mx-4 mb-9 ">
             <div class="flex justify-items-center pt-10 px-5 sm:pt-8 md:pt-6 xl:pt-5 hover:text-white">
                 <div class="hover:text-white">
@@ -211,7 +211,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>

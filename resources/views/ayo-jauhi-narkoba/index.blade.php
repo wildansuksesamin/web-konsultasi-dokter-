@@ -5,7 +5,7 @@
 @section('content')
     <div class="md:flex font-poppins font-Poppins">
 
-        <div class="  p-4 rounded-2xl  lg:mx-auto mx-5 mt-5 ">
+        <div class="md:p-4 rounded-2xl  lg:mx-auto mx-5 mt-5 ">
 
             <div class="mb-4 border-b border-gray-200  text-lg">
                 <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab"
@@ -45,7 +45,7 @@
                 </ul>
             </div>
             <div id="myTabContent">
-                <div class="p-4 rounded-lg" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="md:p-4 rounded-lg" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     @include('ayo-jauhi-narkoba.materi-narkoba')
                 </div>
 
