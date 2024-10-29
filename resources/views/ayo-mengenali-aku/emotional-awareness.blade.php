@@ -13,11 +13,25 @@
             Mindfullness</a>
 
         {{-- button lihat video mindfullneess --}}
-        <a href="#"
+        <button onclick="my_modal_1.showModal()"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-3 md:mb-0">Lihat
-            Video Mindfullness</a>
-
+            Video Mindfullness</button>
     </div>
+
+    <dialog id="my_modal_1" class="daisy-modal">
+        <div class="daisy-modal-box w-full bg-white">
+            <form method="dialog">
+                <button class="daisy-btn daisy-btn-sm daisy-btn-circle daisy-btn-ghost daisy-absolute daisy-right-2 daisy-top-2">✕</button>
+            </form>
+            <div class="">
+                <iframe src="https://www.youtube.com/embed/rZ37na3Tvjo?si=ZBxQfgMztIsjfvYJ" class="min-w-full h-96"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </dialog>
+
     <h1 class="font-bold text-xl italic">Emotional Awareness / <span class="not-italic">Kesadaran Emosional</span> </h1>
 
 

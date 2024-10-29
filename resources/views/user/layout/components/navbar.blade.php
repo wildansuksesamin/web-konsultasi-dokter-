@@ -40,7 +40,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                     </svg>
-                    <span class="font-semibold"> <a href="{{url('/')}}">Home</a> </span>
+                    <span class="font-semibold"> <a href="{{ url('/') }}">Home</a> </span>
                 </li>
 
                 <li class="flex space-x-2 mt-10 cursor-pointer active:text-[#EC5252] hover:text-[#EC5252] duration-150">
@@ -49,7 +49,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    <span class="font-semibold active:text-[#EC5252] "><a href="{{ route('ayo-jauhi-narkoba.index') }}">Ayo Jauhi Narkoba
+                    <span class="font-semibold active:text-[#EC5252] "><a
+                            href="{{ route('ayo-jauhi-narkoba.index') }}">Ayo Jauhi Narkoba
                             ?</a></span>
                 </li>
 
@@ -59,7 +60,8 @@
                         <path fill="currentColor"
                             d="M18 14H14V18H10V14H6V10H10V6H14V10H18M20 2H4C2.9 2 2 2.9 2 4V20C2 21.1 2.9 22 4 22H20C21.1 22 22 21.1 22 20V4C22 2.9 21.1 2 20 2M20 20H4V4H20V20Z" />
                     </svg>
-                    <span class="font-semibold "><a href="{{ route('ayo-mengenali-aku.index') }}" class="">Ayo Mengenali Aku</span>
+                    <span class="font-semibold "><a href="{{ route('ayo-mengenali-aku.index') }}" class="">Ayo
+                            Mengenali Aku</span> </a>
                 </li>
 
 
@@ -112,7 +114,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
-                    <span class="font-semibold"><a href="{{url('/profile')}}">Profile</a></span>
+                    <span class="font-semibold"><a href="{{ url('/profile') }}">Profile</a></span>
                 </li>
 
                 {{-- <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
@@ -138,7 +140,7 @@
     <form action="/artikel" class="hidden md:block">
 
         @if (request('category'))
-        <input type="hidden" name="category" value="{{ request('category') }}">
+            <input type="hidden" name="category" value="{{ request('category') }}">
         @endif
         <div class="flex">
             <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only">Your

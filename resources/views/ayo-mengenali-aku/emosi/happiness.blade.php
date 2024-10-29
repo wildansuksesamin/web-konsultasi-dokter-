@@ -13,15 +13,15 @@
                     </tr>
                     <tr>
                         <th>Penyebab:</th>
-                        <td>{{ $emosi['penyebab'] }}</td>
+                        <td>{!! $emosi['penyebab'] !!}</td>
                     </tr>
                     <tr>
                         <th>Reaksi terhadap Kebahagiaan:</th>
-                        <td>{{ $emosi['reaksi'] }}</td>
+                        <td>{!! $emosi['reaksi'] !!}</td>
                     </tr>
                     <tr>
                         <th>Dampak Kebahagiaan:</th>
-                        <td>{{ $emosi['dampak'] }}</td>
+                        <td>{!! $emosi['dampak'] !!}</td>
                     </tr>
                     <tr>
                         <th>Pengelolaan Emosi</th>

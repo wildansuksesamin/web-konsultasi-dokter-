@@ -158,9 +158,7 @@
             <h2 class="text-[30px]  md:text-6xl  px-3 md:px-0 text-[#333333] font-bold font-Poppins md:text-left">
                 Mengenal Aku</h2>
 
-            <p class="text-[#333333] px-5  md:px-0 text-base md:text-lg font-Inter md:text-left md:pt-3"> Adalah
-                Platform Pembelajaran Self Awareness sebagai Upaya Pencegahan Dini terhadap Penggunaan Narkoba dan
-                Penguatan Kesehatan Mental di Kalangan Remaja dan Dewasa Muda</p>
+            <p class="text-[#333333] px-5  md:px-0 text-base md:text-lg font-Inter md:text-left md:pt-3"> Mengenal Aku: Platform Belajar Self Awareness sebagai Pencegahan Penyalahgunaan Penggunaan Narkoba</p>
 
 
             <button type="button"
@@ -228,7 +226,7 @@
         </div>
         <div class="lg:mt-20 lg:px-14 px-3">
             <h2 class="font-Poppins font-semibold text-[30px]  md:text-4xl">Tentang Kami</h2>
-            <p class="text-[#555555] text-base  font-Inter md:text-base md:w-[440px] py-3">Aku adalah platform pembelajaran yang berfokus pada pengembangan kesadaran diri (self-awareness) sebagai langkah preventif terhadap penggunaan narkoba dan penguatan kesehatan mental. Kami berdedikasi untuk memberikan edukasi yang relevan bagi remaja dan dewasa muda, guna mendukung mereka dalam menjalani kehidupan yang lebih sehat dan bermakna. Melalui pendekatan yang inovatif dan inklusif, kami berupaya menciptakan generasi yang lebih sadar diri dan mampu menghadapi tantangan kehidupan dengan bijak.</p>
+            <p class="text-[#555555] text-base  font-Inter md:text-base md:w-[440px] py-3">Selamat datang di website pembelajaran self awareness sebagai pencegahan penggunaan narkoba. Kita akan belajar untuk memerangi narkoba dengan memiliki kesadaran diri atau self awareness.</p>
             <ul class="text-[#555555] font-Inter">
                 {{-- <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span
                         class="pl-2 pt-1">Batuk yang
