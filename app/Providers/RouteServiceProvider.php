@@ -29,12 +29,20 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
+            // Define API routes
             Route::middleware('api')
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));
 
+            // Define Web routes
             Route::middleware('web')
-                ->group(base_path('routes/web.php'));
+                ->group(function () {
+                    // Tambahkan resource route untuk angkets
+                    Route::resource('angkets', \App\Http\Controllers\AngketController::class);
+                    
+                    // Muat rute web yang lain
+                    require base_path('routes/web.php');
+                });
         });
     }
 

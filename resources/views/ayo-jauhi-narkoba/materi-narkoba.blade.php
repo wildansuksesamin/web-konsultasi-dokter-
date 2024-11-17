@@ -16,7 +16,22 @@
 </div>
 {{-- END VIDEO CONTAINER --}}
 
-<h1 class="text-xl mt-9">Soal Narkoba</h1>
+<h1 class="text-xl mt-9">Soal Narkoba </h1>
+
+
+@if ($errors->any())
+    <div class="">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+@if (session('error'))
+                      <div class="alert alert-danger">{{ session('error') }}</div>
+                    @endif
 
 <form action="{{ route('ayo-jauhi-narkoba.store') }}" method="POST" class="space-y-5">
     @csrf

@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\DetailJawaban;
+use App\Models\JawabanSoalEmosi;
 use Illuminate\Http\Request;
 
 class AyoMengenaliAku extends Controller
@@ -22,7 +23,7 @@ class AyoMengenaliAku extends Controller
                 'studi_kasus' => 'Ali adalah seorang siswa SMP yang sangat ambisius dan selalu ingin mencapai nilai tinggi di sekolah. Suatu hari, saat mengikuti ujian matematika, ia merasa telah mempersiapkan diri dengan baik dan yakin akan mendapatkan nilai sempurna. Namun, ketika hasil ujian keluar, Ali mendapatkan nilai lebih rendah daripada harapannya karena ada beberapa soal yang salah ia jawab. Ali merasasangat kecewa dan marah pada dirinya sendiri serta menganggap bahwa soal-soal tersebut tidak adil. Dia merasa seharusnya mendapatkan nilai lebih tinggi dan menilai bahwa keadaan tersebut tidak seharusnya terjadi. <br> Karena rasa marahnya, Ali mulai menggertakkan giginya, mengepalkan tangan, dan merasakan wajahnya memerah. Ia merasa akan "meledak" dan mulai menyalahkan guru yang membuat soal serta merasa bahwa temantemannya tidak seharusnya mendapatkan nilai lebih baik darinya. Setelah kejadian ini, Ali tidak bisa fokus belajar selama beberapa hari  dan menjadi sangat sensitif terhadap komentar orang lain.',
                 'pertanyaan' => [
                     '1' => [
-                        'pertanyaan' =>  'Apa penyebab utama kemarahan Ali dalam situasi ini?',
+                        'pertanyaan' => 'Apa penyebab utama kemarahan Ali dalam situasi ini?',
                         'pilihan' => [
                             'a' => 'Ali merasa nilai yang didapatkan tidak sesuai dengan usahanya',
                             'b' => 'Ali tidak mempersiapkan ujian dengan baik',
@@ -1119,8 +1120,25 @@ class AyoMengenaliAku extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        // $detail_jawaban_user = DetailJawaban::create()
+
         $jawaban = $request->jawaban;
 
+        // Prepare data array for the create method
+        $detailData = []; // Add the emosi field
+
+        foreach ($jawaban as $index => $answer) {
+            // Dynamically create keys like 'soal1', 'soal2', etc.
+            $detailData['soal' . ($index + 1)] = $answer;
+        }
+
+        // Create the DetailJawaban record with the dynamically prepared data
+        $detail_jawaban_user = DetailJawaban::create($detailData);
+        JawabanSoalEmosi::create(
+            ['user_id' => auth()->user()->id,
+             'kategori_emosi' => $request->emosi, 
+             'id_detail_jawaban'=> $detail_jawaban_user->id]
+        );
         // modif key $request->jawaban + 1
         $jawaban = array_combine(range(1, count($jawaban)), array_values($jawaban));
 

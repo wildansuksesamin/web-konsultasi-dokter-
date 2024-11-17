@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JawabanMateriNarkoba;
 use Illuminate\Http\Request;
 
 class AyoJauhiNarkoba extends Controller
@@ -267,12 +268,35 @@ class AyoJauhiNarkoba extends Controller
 
     public function store(Request $request)
     {
+        //$rules = [
 
-        // dd($request->all());
+        $rules = array_fill_keys(
+            array_map(fn($i) => "soal_$i", range(1, 25)),
+            'required|string' // Aturan validasi
+        );
 
+        //dd($request->all());
+
+        // Loop untuk membuat aturan validasi untuk kolom soal_1 hingga soal_25
+        // for ($i = 1; $i <= 25; $i++) {
+        //$rules["soal_$i"] = 'required|string'; // Sesuaikan aturan validasi sesuai kebutuhan
+        // }
+
+
+        // $validasi = $request->validate($rules);
+        $validator = \Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $data = $request->except('_token'); // Mengambil semua data kecuali _token
+        $data['user_id'] = auth()->user()->id;
+        JawabanMateriNarkoba::create(
+            $data
+        );
         // modif soal_jawaban, tambahkan key 'jawaban_user' dan 'benar' pada setiap soal
 
         $soal_jawaban = [
+
             'soal_1' => [
                 'pertanyaan' => 'Apa yang dimaksud dengan narkoba menurut Badan Narkotika Nasional (BNN)?',
                 'pilihan' => [
