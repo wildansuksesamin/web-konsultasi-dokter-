@@ -15,12 +15,12 @@ class roleController extends Controller
     {
         $user = $request->user();
 
-        if ($request->role != 'pengguna' && $request->role != 'dokter') {
+        if ($request->role != 'user' && $request->role != 'dokter') {
             return redirect()->back();
         } else {
             $user->assignRole($request->role);
             // dd($user->assignRole($request->role));
-            return redirect()->intended('/apa-itu-tbc');
+            return redirect()->intended('/ayo-jauhi-narkoba');
         }
     }
 }

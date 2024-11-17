@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccurateSelfAssesment;
 use App\Models\page;
 use App\Models\User;
 use App\Models\admin;
@@ -20,7 +21,12 @@ use App\Http\Controllers\konsultasiController;
 use App\Http\Controllers\rumahsakitController;
 use App\Http\Controllers\pagePenyebabController;
 use App\Http\Controllers\artikelDokterController;
+use App\Http\Controllers\AyoJauhiNarkoba;
+use App\Http\Controllers\AyoMengenaliAku;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\JurnalEmosi;
+use App\Http\Controllers\JurnalMindfulness;
+use App\Http\Controllers\SelfConfidence;
 use App\Models\Post; //tambahkan/ import model post yang akan digunakan
 
 /*
@@ -147,9 +153,6 @@ Route::get('/storage-link', function () {
 });
 
 
-
-
-
 Route::post('upload', [pageController::class, 'upload'])->name('ckeditor.upload');
 
 
@@ -173,3 +176,17 @@ Route::get('/detail-konsultasi', function () {
 // Route::get('/landingpage', function () {
 //     return view('detail-konsultasi');
 // });
+
+// ARJUN UPDATE
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::resources([
+        '/ayo-jauhi-narkoba' => AyoJauhiNarkoba::class,
+        '/ayo-mengenali-aku' => AyoMengenaliAku::class,
+        '/accurate-self-assesment' => AccurateSelfAssesment::class,
+        '/self-confidence' => SelfConfidence::class,
+        '/jurnal-emosi' => JurnalEmosi::class,
+        '/jurnal-mindfulness' => JurnalMindfulness::class,
+    ]);
+
+    Route::post('/accurate-self-assesment/tes-instrumen', [AccurateSelfAssesment::class, 'tesInstrumen'])->name('accurate-self-assesment.tes-instrumen');
+});

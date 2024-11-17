@@ -16,8 +16,8 @@ class CheckRoleUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user()->hasRole(['pengguna', 'dokter'])) {
-            return redirect('/apa-itu-tbc');
+        if ($request->user()->hasRole(['user', 'dokter'])) {
+            return redirect('/ayo-jauhi-narkoba');
         }
         return $next($request);
     }

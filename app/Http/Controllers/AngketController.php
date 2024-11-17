@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Angket;
+
 use Illuminate\Http\Request;
 
 class AngketController extends Controller
 {
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([

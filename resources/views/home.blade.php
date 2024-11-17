@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
-    <link rel="icon" href="img/virus.png">
-    <title>Aceptor</title>
+    <link rel="icon" href="{{ asset('img/game-icons--self-love.svg') }}">
+    <title>Mengenal aku : Platform Belajar Self Awareness sebagai Pencegahan Penggunaan Narkoba</title>
 
     <!-- @TODO: replace SET_YOUR_CLIENT_KEY_HERE with your client key -->
     <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
@@ -29,7 +29,7 @@
     <script type="text/javascript">
         window.$crisp = [];
         window.CRISP_WEBSITE_ID = "e7c4c045-66e7-4947-badc-3999e6c90c9e";
-        (function () {
+        (function() {
             d = document;
             s = d.createElement("script");
             s.src = "https://client.crisp.chat/l.js";
@@ -46,55 +46,54 @@
     <nav class="bg-white px-2 sm:px-4 md:px-28  py-2.5  fixed w-full z-20 top-0 left-0 border-b border-gray-200 ">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
             <a href="" class="flex items-center font-Poppins">
-                <img src="img/virus.png" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo">
-                <span class="self-center text-xl font-semibold whitespace-nowrap text-teal-600 ">Aceptor</span>
+                <img src="{{ asset('img/game-icons--self-love.svg') }}" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo">
+                <span class="self-center text-xl font-semibold whitespace-nowrap text-teal-600 ">Mengenal Aku</span>
             </a>
             <div class="flex md:order-2">
 
                 @auth
 
 
-                <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
-                    data-dropdown-placement="bottom-start" class="w-10 h-10 rounded-full cursor-pointer"
-                    src="img/profile.jpg" alt="User dropdown">
+                    <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
+                        data-dropdown-placement="bottom-start" class="w-10 h-10 rounded-full cursor-pointer"
+                        src="img/profile.jpg" alt="User dropdown">
 
-                <!-- Dropdown menu -->
-                <div id="userDropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow  ">
-                    <div class="py-3 px-4 text-sm text-gray-900 ">
-                        <div>{{ auth()->user()->name }}</div>
-                        <div class="font-medium truncate">{{ auth()->user()->email }}</div>
+                    <!-- Dropdown menu -->
+                    <div id="userDropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow  ">
+                        <div class="py-3 px-4 text-sm text-gray-900 ">
+                            <div>{{ auth()->user()->name }}</div>
+                            <div class="font-medium truncate">{{ auth()->user()->email }}</div>
+                        </div>
+                        <ul class="py-1 text-sm text-gray-700 " aria-labelledby="avatarButton">
+                            <li>
+                                <a href="{{ route('ayo-jauhi-narkoba.index') }}"
+                                    class="block py-2 px-4 hover:bg-gray-100 ">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 ">Settings</a>
+                            </li>
+                            <li>
+                                <a href="/profile" class="block py-2 px-4 hover:bg-gray-100 ">Profile</a>
+                            </li>
+                        </ul>
+                        <div class="py-1">
+
+                            <form action="/logout" method="post">
+                                @csrf
+
+                                <button class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100  "
+                                    type="submit">Sign
+                                    out</button>
+
+
+                            </form>
+
+
+                        </div>
                     </div>
-                    <ul class="py-1 text-sm text-gray-700 " aria-labelledby="avatarButton">
-                        <li>
-                            <a href="/apa-itu-tbc" class="block py-2 px-4 hover:bg-gray-100 ">Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block py-2 px-4 hover:bg-gray-100 ">Settings</a>
-                        </li>
-                        <li>
-                            <a href="/profile" class="block py-2 px-4 hover:bg-gray-100 ">Profile</a>
-                        </li>
-                    </ul>
-                    <div class="py-1">
-
-                        <form action="/logout" method="post">
-                            @csrf
-
-                            <button class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100  " type="submit">Sign
-                                out</button>
-
-
-                        </form>
-
-
-                    </div>
-                </div>
-
-
                 @else
-
-                <a href="/login"> <button type="button"
-                        class="text-white bg-[#44B564]  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 ">Login</button></a>
+                    <a href="/login"> <button type="button"
+                            class="text-white bg-[#44B564]  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 ">Login</button></a>
 
                 @endauth
 
@@ -123,16 +122,16 @@
                     </li>
                     <li>
                         <a href="#gejala"
-                            class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Gejala</a>
+                            class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Tentang Kami</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#pencegahan"
                             class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Pencegahan</a>
                     </li>
                     <li>
                         <a href="#harga"
                             class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Harga</a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a href="#kontak"
                             class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Kontak</a>
@@ -154,23 +153,20 @@
                 <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16" />
                 </svg>
-                Tuberkulosis
+                Jauhi Narkoba
             </h5>
             <h2 class="text-[30px]  md:text-6xl  px-3 md:px-0 text-[#333333] font-bold font-Poppins md:text-left">
-                Ayo Cegah
-                Penularan TBC</h2>
+                Mengenal Aku</h2>
 
-            <p class="text-[#333333] px-5  md:px-0 text-base md:text-lg font-Inter md:text-left md:pt-3"> Tuberkulosis
-                (TBC) atau TB
-                adalah
-                penyakit menular akibat infeksi bakteri. TBC umumnya menyerang paru-paru, tetapi juga dapat menyerang
-                organ tubuh lain, seperti ginjal, tulang belakang, dan otak.</p>
+            <p class="text-[#333333] px-5  md:px-0 text-base md:text-lg font-Inter md:text-left md:pt-3"> Adalah
+                Platform Pembelajaran Self Awareness sebagai Upaya Pencegahan Dini terhadap Penggunaan Narkoba dan
+                Penguatan Kesehatan Mental di Kalangan Remaja dan Dewasa Muda</p>
 
 
             <button type="button"
                 class="mt-2 md:-ml-[355px] text-white bg-[#44B564] transition duration-700 ease-in-out focus:ring-4 focus:ring-blue-300 font-medium rounded-full px-5 py-2.5 mr-2 mb-2 ">
-                <a href="/login" role="button" class="btn btn-primary btn-lg " {{ auth()->check() ? 'disabled' : ''
-                    }}>Read More</a>
+                <a href="/login" role="button" class="btn btn-primary btn-lg "
+                    {{ auth()->check() ? 'disabled' : '' }}>Read More</a>
             </button>
 
 
@@ -178,7 +174,7 @@
         </div>
 
         <div class="">
-            <img src="img/amico.png" class="hidden md:block" alt="" />
+            <img src="{{ asset('img/Self confidence-amico.svg') }}" class="hidden md:block" alt="" />
         </div>
     </div>
     <div>
@@ -237,23 +233,28 @@
                 mengalami gejala. Umumnya, penderita baru menyadari dirinya menderita tuberkulosis setelah menjalani
                 pemeriksaan untuk penyakit lain.Sementara bagi penderita TBC aktif, gejala yang muncul dapat berupa:</p>
             <ul class="text-[#555555] font-Inter">
-                <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span class="pl-2 pt-1">Batuk yang
+                <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span
+                        class="pl-2 pt-1">Batuk yang
                         berlangsung lama </span></li>
-                <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span class="pl-2 pt-1">Batuk
+                <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span
+                        class="pl-2 pt-1">Batuk
                         batuk darah</span></li>
-                <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span class="pl-2 pt-1">Nyeri dada
+                <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span
+                        class="pl-2 pt-1">Nyeri dada
                         saat bernapas atau batuk</span></li>
                 <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span
                         class="pl-2 pt-1">Berkeringat di malam hari</span></li>
-                <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span class="pl-2 pt-1">Hilang
+                <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span
+                        class="pl-2 pt-1">Hilang
                         nafsu makan</span></li>
-                <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span class="pl-2 pt-1">Penurunan
+                <li class="flex pt-2"><img src="img/virus.png" width="30px" alt="" /> <span
+                        class="pl-2 pt-1">Penurunan
                         berat badan</span></li>
                 <li class="flex pt-5 pl-2">
-                    <img src="img/circle.png" class="absolute" width="30px" alt="" /> <span class="pl-4 pt-1"><a
-                            href="/login" role="button" class="btn btn-primary btn-lg" {{ auth()->check() ? 'disabled' :
-                            ''
-                            }}>Detail Informasi</a></span><svg class="pt-2" style="width: 24px; height: 24px"
+                    <img src="img/circle.png" class="absolute" width="30px" alt="" /> <span
+                        class="pl-4 pt-1"><a href="/login" role="button" class="btn btn-primary btn-lg"
+                            {{ auth()->check() ? 'disabled' : '' }}>Detail
+                            Informasi</a></span><svg class="pt-2" style="width: 24px; height: 24px"
                         viewBox="0 0 24 24">
                         <path fill="currentColor" d="M14 16.94V12.94H5.08L5.05 10.93H14V6.94L19 11.94Z" />
                     </svg>
@@ -264,7 +265,8 @@
 
     <div id="pencegahan" class="text-center font-Poppins mb-20 md:mb-0">
         <h1 class="text-[30px]  md:text-4xl text-[#333333] font-semibold">Pencegahan TBC (Tuberkulosis)</h1>
-        <p class=" text-[#555555] font-Inter text-[20px] md:w-[840px] mx-auto px-3 md:px-0">Lindungi diri Anda dan orang
+        <p class=" text-[#555555] font-Inter text-[20px] md:w-[840px] mx-auto px-3 md:px-0">Lindungi diri Anda dan
+            orang
             lain di
             sekitar Anda dengan mengetahui fakta dan mengambil tindakan pencegahan yang tepat</p>
     </div>
@@ -287,7 +289,8 @@
             style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px">
             <img src="img/distance.png" class="absolute mx-16 -top-14" alt="" />
             <h1 class="pt-48 text-center font-Inter text-[20px] font-semibold">Physical distancing</h1>
-            <p class="px-5 text-center">Maintain a safe distance especially from anyone who is coughinf or sneezing.</p>
+            <p class="px-5 text-center">Maintain a safe distance especially from anyone who is coughinf or sneezing.
+            </p>
         </div>
     </div>
 
@@ -338,7 +341,8 @@
                                 <span
                                     class="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 text-neutral-600">
                                     <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3"
+                                        viewBox="0 0 24 24">
                                         <path d="M20 6L9 17l-5-5"></path>
                                     </svg>
                                 </span>
@@ -348,7 +352,8 @@
                                 <span
                                     class="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 text-neutral-600">
                                     <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3"
+                                        viewBox="0 0 24 24">
                                         <path d="M20 6L9 17l-5-5"></path>
                                     </svg>
                                 </span>
@@ -359,7 +364,8 @@
                                 <span
                                     class="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 text-neutral-600 text-opacity-70">
                                     <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3"
+                                        viewBox="0 0 24 24">
                                         <line x1="18" y1="6" x2="6" y2="18"></line>
                                         <line x1="6" y1="6" x2="18" y2="18"></line>
                                     </svg>
@@ -371,7 +377,8 @@
                                 <span
                                     class="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 text-neutral-600 text-opacity-70">
                                     <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3"
+                                        viewBox="0 0 24 24">
                                         <line x1="18" y1="6" x2="6" y2="18"></line>
                                         <line x1="6" y1="6" x2="18" y2="18"></line>
                                     </svg>
@@ -383,7 +390,8 @@
                                 <span
                                     class="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 text-neutral-600 text-opacity-70">
                                     <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3"
+                                        viewBox="0 0 24 24">
                                         <line x1="18" y1="6" x2="6" y2="18"></line>
                                         <line x1="6" y1="6" x2="18" y2="18"></line>
                                     </svg> </span>Free Updates
@@ -399,7 +407,8 @@
                 <div class="w-full xl:w-1/4 md:w-2/6">
                     <div class="relative flex flex-col h-full p-8 bg-blue-600 rounded-xl hover:border-white">
                         <span class="mb-4 text-base font-medium tracking-widest text-white uppercase"> Bundle </span>
-                        <span class="flex items-center mb-8 text-base font-medium tracking-tight text-white"> No need to
+                        <span class="flex items-center mb-8 text-base font-medium tracking-tight text-white"> No need
+                            to
                             subscribe </span>
                         <div class="flex items-end text-3xl font-black leading-none text-white lg:text-4xl">
                             <span>
@@ -412,7 +421,8 @@
                                 <span
                                     class="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 text-white">
                                     <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3"
+                                        viewBox="0 0 24 24">
                                         <path d="M20 6L9 17l-5-5"></path>
                                     </svg>
                                 </span>
@@ -422,7 +432,8 @@
                                 <span
                                     class="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 text-white">
                                     <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3"
+                                        viewBox="0 0 24 24">
                                         <path d="M20 6L9 17l-5-5"></path>
                                     </svg>
                                 </span>
@@ -432,7 +443,8 @@
                                 <span
                                     class="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 text-white">
                                     <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3"
+                                        viewBox="0 0 24 24">
                                         <path d="M20 6L9 17l-5-5"></path>
                                     </svg>
                                 </span>
@@ -442,7 +454,8 @@
                                 <span
                                     class="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 text-white">
                                     <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3"
+                                        viewBox="0 0 24 24">
                                         <path d="M20 6L9 17l-5-5"></path>
                                     </svg>
                                 </span>
@@ -452,7 +465,8 @@
                                 <span
                                     class="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 text-white">
                                     <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                        stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3"
+                                        viewBox="0 0 24 24">
                                         <path d="M20 6L9 17l-5-5"></path>
                                     </svg>
                                 </span>
@@ -563,7 +577,8 @@
 
                 <ul class="flex justify-start gap-6 mt-8 sm:mt-0 sm:justify-end">
                     <li>
-                        <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+                        <a href="/" rel="noreferrer" target="_blank"
+                            class="text-gray-700 transition hover:opacity-75">
                             <span class="sr-only">Facebook</span>
 
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -575,7 +590,8 @@
                     </li>
 
                     <li>
-                        <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+                        <a href="/" rel="noreferrer" target="_blank"
+                            class="text-gray-700 transition hover:opacity-75">
                             <span class="sr-only">Instagram</span>
 
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -587,7 +603,8 @@
                     </li>
 
                     <li>
-                        <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+                        <a href="/" rel="noreferrer" target="_blank"
+                            class="text-gray-700 transition hover:opacity-75">
                             <span class="sr-only">Twitter</span>
 
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -598,7 +615,8 @@
                     </li>
 
                     <li>
-                        <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+                        <a href="/" rel="noreferrer" target="_blank"
+                            class="text-gray-700 transition hover:opacity-75">
                             <span class="sr-only">GitHub</span>
 
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -610,7 +628,8 @@
                     </li>
 
                     <li>
-                        <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+                        <a href="/" rel="noreferrer" target="_blank"
+                            class="text-gray-700 transition hover:opacity-75">
                             <span class="sr-only">Dribbble</span>
 
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -748,7 +767,7 @@
             </div>
 
             <p class="text-xs text-gray-500">
-                &copy; 2022. Aceptor . All rights reserved.
+                &copy; 2024. Mengenal Aku . All rights reserved.
             </p>
         </div>
     </footer>
@@ -759,32 +778,30 @@
 
     <script src="../public/js/script.js"></script>
     <script>
-        function requestCheckout()
-        {
+        function requestCheckout() {
             axios.post('/checkout')
-            .then((response)=>{
-                window.snap.pay(response.data.snap_token);
-                // For example trigger on button clicked, or any time you need
-                // var payButton = document.getElementById('pay-button');
-                // payButton.addEventListener('click', function () {
-                //     // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-                   
-                    
-                    
-                //     // customer will be redirected after completing payment pop-up
-                // });
-            })
+                .then((response) => {
+                    window.snap.pay(response.data.snap_token);
+                    // For example trigger on button clicked, or any time you need
+                    // var payButton = document.getElementById('pay-button');
+                    // payButton.addEventListener('click', function () {
+                    //     // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+
+
+
+                    //     // customer will be redirected after completing payment pop-up
+                    // });
+                })
         }
-        
     </script>
     <script>
-        let counts=setInterval(updated);
-        let upto=0;
-        function updated(){
-            var count= document.getElementById("counter");
-            count.innerHTML=++upto;
-            if(upto===300)
-            {
+        let counts = setInterval(updated);
+        let upto = 0;
+
+        function updated() {
+            var count = document.getElementById("counter");
+            count.innerHTML = ++upto;
+            if (upto === 300) {
                 clearInterval(counts);
             }
         }
