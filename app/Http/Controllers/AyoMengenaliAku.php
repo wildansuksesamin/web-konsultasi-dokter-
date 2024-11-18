@@ -254,7 +254,7 @@ class AyoMengenaliAku extends Controller
             'nama_emosi' => 'Kebahagiaan',
             'jenis_emosi' => 'Emosi Positif',
             'penjelasan' => 'Kebahagiaan (Happiness) adalah salah satu jenis emosi positif yang muncul ketika seseorang merasa senang, tenang, dan puas terhadap sesuatu hal atau seseorang. Emosi ini sering terjadi saat seseorang menerima kejutan yang menyenangkan, mendapatkan hasil yang diinginkan setelah berusaha keras, atau mendapatkan kasih sayang dari orang-orang di sekitar mereka.',
-            'penyebab' => "- Mendapatkan hasil yang memuaskan dari usaha atau kerja keras, - Menerima kejutan yang luar biasa, <br> - Mendapatkan kasih sayang dan perhatian",
+            'penyebab' => "- Mendapatkan hasil yang memuaskan dari usaha atau kerja keras,<br> - Menerima kejutan yang luar biasa, <br> - Mendapatkan kasih sayang dan perhatian",
             'reaksi' => "<br> - Wajah cerah dan tersenyum, <br> - Merasa tenang dan damai, <br> - Berbicara dengan nada positif dan penuh antusiasme",
             'dampak' => "<br> - Meningkatkan rasa percaya diri dan optimisme, <br> - Meningkatkan kesejahteraan fisik dan mental, <br> - Membuat seseorang lebih terbuka dan ramah terhadap orang lain",
             'pengelolaan' => "<br> - Bersyukur kepada Tuhan atas segala hal yang membuat bahagia, <br> - Menghargai dan menyadari bahwa kebahagiaan mungkin tidak selalu bertahan selamanya, dan itu adalah hal yang wajar, <br> - Berbagi kebahagiaan dengan orang lain, misalnya melalui tindakan kebaikan atau sedekah",

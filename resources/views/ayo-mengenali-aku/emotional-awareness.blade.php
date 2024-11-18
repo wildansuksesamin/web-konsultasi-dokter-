@@ -39,10 +39,8 @@
         mengenali emosi pada diri sendiri dan pengaruhnya. Emosi
         sendiri merupakan perasaan yang timbul sebagai respons
         terhadap sesuatu. Kali ini kita akan belajar mengenai 10 emosi,
-        yaitu Amarah (Anger), Cemburu (Jealousy), Cinta (Love), Iri
-        (Envy), Kebahagiaan (Happiness), Kesedihan (Sadness), Malu
-        (Shame), Menjijikkan (Disgust), Rasa Bersalah (Guilt), dan Takut
-        (Fear).</p>
+        yaitu Amarah <span class="italic">(Anger)</span>, Cemburu <span class="italic">(Jealousy)</span>, Cinta <span class="italic">(Love)</span>, Iri <span class="italic">(Envy)</span>, Kebahagiaan <span class="italic">(Happiness)</span>, Kesedihan <span class="italic">(Sadness)</span>, Malu <span class="italic">(Shame)</span>, Menjijikkan <span class="italic">(Disgust)</span>, Rasa Bersalah <span class="italic">(Guilt)</span>, dan Takut <span class="italic">(Fear)</span>
+        .</p>
 
 
     {{-- pilih jenis emosi --}}
