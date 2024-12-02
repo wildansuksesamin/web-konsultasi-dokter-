@@ -79,6 +79,49 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(JawabanMateriNarkoba::class);
     }
+    public function JurnalEmosi()
+    {
+        return $this->hasMany(JurnalEmosi::class);
+    }
+
+    public function JurnalMindfulness()
+    {
+        return $this->hasMany(JurnalMindfulness::class);
+    }
+
+    public function AccurateSelfAssesmentSK()
+    {
+        return $this->hasMany(AccurateSelfAssesmentSK::class);
+    }
+
+    public function AccurateSelfAssesmentIT()
+    {
+        return $this->hasMany(AccurateSelfAssesmentIT::class);
+    }
+
+    public function AccurateSelfAssesmentRD()
+    {
+        return $this->hasMany(AccurateSelfAssesmentRD::class);
+    }
+
+
+
+    public function LKSelfConfidence()
+    {
+        return $this->hasMany(LKSelfConfidence::class);
+    }
+    
+    
+    public function SelfConfidentPKD()
+    {
+        return $this->hasMany(SelfConfidentPKD::class);
+    }
+
+    public function SelfConfidentSK()
+    {
+        return $this->hasMany(SelfConfidentSK::class);
+    }
+
 }
 
 

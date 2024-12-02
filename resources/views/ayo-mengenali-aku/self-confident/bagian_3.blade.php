@@ -4,7 +4,11 @@
             <h1 class="text-3xl font-bold text-center "> {{ $lk['bagian_3']['nama'] }}
             </h1>
 
-            <form class="space-y-6">
+            <form class="space-y-6" action="{{ route('self-confidence.self-confidence') }}" method="post">
+                @csrf
+                @php
+                $urutan3 = 0;
+                @endphp
                 <ol class="space-y-5 list-decimal list-inside">
                     @foreach ($lk['bagian_3'] as $item)
                         @isset($item['judul'])
@@ -18,14 +22,18 @@
                                 <label for="{{ $item['pertanyaan'] . 'bagian3' }}" class="text-sm font-medium  mb-2">
                                     {!! $item['pertanyaan'] !!}
                                 </label>
-                                <textarea id="{{ $item['pertanyaan'] . 'bagian3' }}" name="{{ $item['pertanyaan'] . 'bagian3' }}" rows="3"
+                                <textarea id="{{ $item['pertanyaan'] . 'bagian3' }}" name="{{ 'Soal_'.$urutan3 }}" rows="3"
                                     class="w-full px-3 py-2  border rounded-lg  " placeholder="Silakan dijawab"></textarea>
                             </li>
                         @endisset
+                        @php
+                            $urutan3++;
+                        @endphp
                     @endforeach
 
                 </ol>
-
+                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                <input type="hidden" name="Kategori_Bagian" value="3">
                 <button type="submit"
                     class="w-full text-white rounded-lg px-4 py-2 transition duration-300 ease-in-out bg-blue-700 hover:bg-blue-800">
                     Submit

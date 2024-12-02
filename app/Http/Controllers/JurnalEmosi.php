@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\JurnalEmosi as JurnalEmosiModels; 
 use Illuminate\Http\Request;
 
 class JurnalEmosi extends Controller
@@ -34,7 +34,16 @@ class JurnalEmosi extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->except('_token');
+        // dd($request->all());
+        $simpan = JurnalEmosiModels::create($data);
+        // if ($simpan) {
+        //     dd("berhasil");
+
+        // } else {
+            // dd("gagal");
+        // }
+         return redirect()->route('jurnal-emosi.index');   
     }
 
     /**

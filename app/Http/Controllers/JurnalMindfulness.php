@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\JurnalMindfulness as JurnalMindfulnessModels;
 use Illuminate\Http\Request;
 
 class JurnalMindfulness extends Controller
@@ -13,7 +13,8 @@ class JurnalMindfulness extends Controller
      */
     public function index()
     {
-        return view('ayo-mengenali-aku.jurnal-mindfulness.index');
+        $jurnal_mindfulness = JurnalMindfulnessModels::orderBy('id', 'DESC')->get();
+        return view('ayo-mengenali-aku.jurnal-mindfulness.index',compact('jurnal_mindfulness'));
     }
 
     /**
@@ -34,7 +35,10 @@ class JurnalMindfulness extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $data = $request->except('_token');
+        //  dd($request->all());
+         $simpan = JurnalMindfulnessModels::create($data);
+         return redirect()->route('jurnal-mindfulness.index');   
     }
 
     /**

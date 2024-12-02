@@ -189,4 +189,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ]);
 
     Route::post('/accurate-self-assesment/tes-instrumen', [AccurateSelfAssesment::class, 'tesInstrumen'])->name('accurate-self-assesment.tes-instrumen');
+    Route::post('/accurate-self-assesment/refleksi-diri', [AccurateSelfAssesment::class, 'refleksiDiri'])->name('accurate-self-assesment.refleksi-diri');
+    Route::post('/self-confidence/penguatan-diri', [SelfConfidence::class, 'storelkpenguatandiri'])->name('self-confidence.penguatan-diri');
+    Route::post('/self-confidence/self-confidence', [SelfConfidence::class, 'storelkselfconfidence'])->name('self-confidence.self-confidence');
+    
 });

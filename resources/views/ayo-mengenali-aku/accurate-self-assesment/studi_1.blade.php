@@ -23,7 +23,8 @@
                             </div>
                         @endforeach
                     @endforeach
-
+                    <!-- <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"> -->
+                    <!-- <input type="hidden" name="Kategori_SK" value="1"> -->
                     <button type="submit" class="bg-green-500 text-white p-2 rounded-lg">Submit</button>
                 </form>
             </div>
@@ -55,7 +56,7 @@
 
             axios.post("{{ route('accurate-self-assesment.store') }}", {
                     jawaban: jawaban,
-                    studi_kasus: 1
+                    studi_kasus: 1, user_id : {{ Auth::user()->id }}
                 })
                 .then((response) => {
                     swal("Success!", response.data.message, "success");

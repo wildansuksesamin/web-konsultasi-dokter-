@@ -39,36 +39,43 @@
                         </ol>
                     </div>
                     <div>
-                        <h4 class="font-medium text-gray-800">Refleksi (5 Menit)</h4>
-                        <p class="text-gray-700">Setelah setiap sesi latihan, jawab pertanyaan refleksi berikut di bawah
-                            ini</p>
-                        <ol class="list-decimal list-inside text-gray-700 ml-4">
-                            <li>Bagaimana perasaanmu setelah melakukan latihan pengulangan ini? <input type="text"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                            </li>
-                            <li>Apa kemajuan terbesar yang kamu rasakan dari latihan pengulangan ini? <input
-                                    type="text"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                            </li>
-                            <li>Apa tantangan terbesar yang kamu hadapi selama latihan pengulangan ini? <input
-                                    type="text"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                            </li>
-                            <li>Apa yang kamu pelajari tentang dirimu selama proses latihan ini? <input type="text"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                            </li>
-                            <li>Bagaimana kamu akan terus meningkatkan keterampilanmu di minggu berikutnya? <input
-                                    type="text"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                            </li>
-                        </ol>
+                        <form action="{{ route('self-confidence.penguatan-diri') }}" method="post">
+                            @csrf
+                            <h4 class="font-medium text-gray-800">Refleksi (5 Menit)</h4>
+                            <p class="text-gray-700">Setelah setiap sesi latihan, jawab pertanyaan refleksi berikut di
+                                bawah
+                                ini</p>
+                            <ol class="list-decimal list-inside text-gray-700 ml-4">
+                                <li>Bagaimana perasaanmu setelah melakukan latihan pengulangan ini?
+                                    <input name="Soal_1" type="text"
+                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                </li>
+                                <li>Apa kemajuan terbesar yang kamu rasakan dari latihan pengulangan ini?
+                                    <input name="Soal_2" type="text"
+                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                </li>
+                                <li>Apa tantangan terbesar yang kamu hadapi selama latihan pengulangan ini?
+                                    <input name="Soal_3" type="text"
+                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                </li>
+                                <li>Apa yang kamu pelajari tentang dirimu selama proses latihan ini?
+                                    <input name="Soal_4" type="text"
+                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                </li>
+                                <li>Bagaimana kamu akan terus meningkatkan keterampilanmu di minggu berikutnya?
+                                    <input name="Soal_5" type="text"
+                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                </li>
+                            </ol>
 
-                        <div class="mt-4">
-                            <button
-                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline">
-                                Submit
-                            </button>
-                        </div>
+                            <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+                            <div class="mt-4">
+                                <button
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

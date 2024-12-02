@@ -1,7 +1,7 @@
 <div>
     <h1 class="text-3xl font-bold mb-6">Refleksi Diri</h1>
     <p class="mb-4">Setelah mengisi penilaian diri ini, renungkan hasilnya:</p>
-    <form action="#" method="POST">
+    <form action="{{ route('accurate-self-assesment.refleksi-diri') }}" method="POST">
         @csrf
         <div class="mb-6">
             @foreach ($acc_self_as as $studi)
@@ -55,6 +55,7 @@
         </div>
 
         <div class="flex">
+            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
             <button type="submit"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 Submit

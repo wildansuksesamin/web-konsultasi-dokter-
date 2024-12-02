@@ -55,7 +55,7 @@
 
             axios.post("{{ route('accurate-self-assesment.store') }}", {
                     jawaban: jawaban,
-                    studi_kasus: 2
+                    studi_kasus: 2,  user_id : {{ Auth::user()->id }}
                 })
                 .then((response) => {
                     swal("Success!", response.data.message, "success");

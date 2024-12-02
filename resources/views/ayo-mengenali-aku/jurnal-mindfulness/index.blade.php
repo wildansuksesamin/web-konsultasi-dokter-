@@ -1,5 +1,5 @@
 @extends('user.layout.layout')
-
+<!-- @dd($jurnal_mindfulness)  -->
 @section('content')
     <div class="font-poppins font-Poppins">
         <div class=" p-4 rounded-2xl lg:mx-auto mx-5 mt-5 ">
@@ -7,7 +7,7 @@
                 <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">Daily Journal</h1>
 
                 {{-- add journal --}}
-                <a href="{{ route('jurnal-emosi.create') }}"
+                <a href="{{ route('jurnal-mindfulness.create') }}"
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Journal</a>
 
             </div>

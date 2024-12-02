@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AccurateSelfAssesmentIT;
+use App\Models\AccurateSelfAssesmentRD;
+use App\Models\AccurateSelfAssesmentSK;
 use Illuminate\Http\Request;
 
 class AccurateSelfAssesment extends Controller
@@ -35,7 +38,11 @@ class AccurateSelfAssesment extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        //  dd(vars: $request->all());
+        // dd('masuk');
+
+        // Ambil data dari request
+
         $jawaban = $request->jawaban;
 
         // modif key $request->jawaban + 1
@@ -78,6 +85,22 @@ class AccurateSelfAssesment extends Controller
         ];
 
         if ($request->studi_kasus == 1) {
+            $simpan = $request->all();
+
+            // Inisialisasi array mappedData
+            $mappedData = [
+                'user_id' => $simpan['user_id'],
+                'Kategori_SK' => $simpan['studi_kasus'],
+            ];
+
+            // Mapping jawaban ke soal1, soal2, ...
+            foreach ($simpan['jawaban'] as $index => $value) {
+                $mappedData['soal_' . ($index + 1)] = $value; // soal1, soal2, ...
+            }
+
+            //submit ke db
+            AccurateSelfAssesmentSK::create($mappedData);
+
             foreach ($jawaban as $key => $value) {
                 if ($value == $jwb_stud_kas_1[$key]) {
                     $score += 1;
@@ -97,7 +120,26 @@ class AccurateSelfAssesment extends Controller
                 'score' => $score,
                 'message' => $message
             ]);
-        } else  if ($request->studi_kasus == 2) {
+        } else if ($request->studi_kasus == 2) {
+
+            $simpan = $request->all();
+
+            // Inisialisasi array mappedData
+            $mappedData = [
+                'user_id' => $simpan['user_id'],
+                'Kategori_SK' => $simpan['studi_kasus'],
+            ];
+
+            // Mapping jawaban ke soal1, soal2, ...
+            foreach ($simpan['jawaban'] as $index => $value) {
+                $mappedData['soal_' . ($index + 1)] = $value; // soal1, soal2, ...
+            }
+
+            //submit ke db
+            AccurateSelfAssesmentSK::create($mappedData);
+
+
+
             foreach ($jawaban as $key => $value) {
                 if ($value == $jwb_stud_kas_2[$key]) {
                     $score += 1;
@@ -117,7 +159,24 @@ class AccurateSelfAssesment extends Controller
                 'score' => $score,
                 'message' => $message
             ]);
-        } else  if ($request->studi_kasus == 3) {
+        } else if ($request->studi_kasus == 3) {
+
+            $simpan = $request->all();
+
+            // Inisialisasi array mappedData
+            $mappedData = [
+                'user_id' => $simpan['user_id'],
+                'Kategori_SK' => $simpan['studi_kasus'],
+            ];
+
+            // Mapping jawaban ke soal1, soal2, ...
+            foreach ($simpan['jawaban'] as $index => $value) {
+                $mappedData['soal_' . ($index + 1)] = $value; // soal1, soal2, ...
+            }
+
+            //submit ke db
+            AccurateSelfAssesmentSK::create($mappedData);
+
             foreach ($jawaban as $key => $value) {
                 if ($value == $jwb_stud_kas_3[$key]) {
                     $score += 1;
@@ -208,11 +267,28 @@ class AccurateSelfAssesment extends Controller
     public function tesInstrumen(Request $request)
     {
         // dd('tes instrumen');
-        // dd($request->all());
+        //  dd($request->all());
         // dd($request->data);
         $score = array_sum(array_map('intval', $request->data));
         $message = "";
 
+        // Ambil semua request data
+        $data = $request->data;
+
+        // Potong array dari key 1
+        $filteredData = array_slice($data, 1);
+        // dd($filteredData);
+        // Inisialisasi array baru untuk menyimpan data dengan key yang dimodifikasi
+        $mappedData = [];
+
+        // Foreach untuk menambahkan prefix ke key
+        foreach ($filteredData as $key => $value) {
+            $mappedData['soal_' . ($key+1)] = $value; // Contoh: soal_1, soal_2, ...
+        }
+        $mappedData ['user_id']=auth()->user()->id;
+        $mappedData ['score'] = $score;
+        // dd($mappedData);
+        AccurateSelfAssesmentIT::create($mappedData);
         // if score 60 - 80, if 40 - 59, if 20 - 39, if < 20
 
         if ($score >= 60 && $score <= 80) {
@@ -235,4 +311,10 @@ class AccurateSelfAssesment extends Controller
             'message' => $message
         ]);
     }
+    public function refleksiDiri(Request $request) 
+{
+    // dd($request->all());
+    AccurateSelfAssesmentRD::create($request->all()); 
+    return redirect()->back();
+}
 }
