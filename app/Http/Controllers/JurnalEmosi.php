@@ -13,7 +13,9 @@ class JurnalEmosi extends Controller
      */
     public function index()
     {
-        return view('ayo-mengenali-aku.jurnal-emosi.index');
+        $jurnal = JurnalEmosiModels::where('user_id', auth()->user()->id)->orderBy("created_at","desc")->get();
+        // dd($jurnal);
+        return view('ayo-mengenali-aku.jurnal-emosi.index', compact('jurnal'));
     }
 
     /**

@@ -1,5 +1,4 @@
 @extends('user.layout.layout')
-<!-- @dd($jurnal_mindfulness)  -->
 @section('content')
     <div class="font-poppins font-Poppins">
         <div class=" p-4 rounded-2xl lg:mx-auto mx-5 mt-5 ">

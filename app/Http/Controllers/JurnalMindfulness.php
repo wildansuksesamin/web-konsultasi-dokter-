@@ -13,8 +13,10 @@ class JurnalMindfulness extends Controller
      */
     public function index()
     {
-        $jurnal_mindfulness = JurnalMindfulnessModels::orderBy('id', 'DESC')->get();
-        return view('ayo-mengenali-aku.jurnal-mindfulness.index',compact('jurnal_mindfulness'));
+        $jurnal = JurnalMindfulnessModels::where('user_id', auth()->user()->id)->orderBy("created_at","desc")->get();
+        // $jurnal_mindfulness = JurnalMindfulnessModels::orderBy('id', 'DESC')->get();
+        dd ($jurnal);
+        return view('ayo-mengenali-aku.jurnal-mindfulness.index', compact('jurnal'));
     }
 
     /**
