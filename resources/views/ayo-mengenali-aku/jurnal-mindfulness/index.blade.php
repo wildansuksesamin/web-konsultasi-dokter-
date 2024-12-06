@@ -1,7 +1,7 @@
 @extends('user.layout.layout')
 @section('content')
     <div class="font-poppins font-Poppins">
-        <div class=" p-4 rounded-2xl lg:mx-auto mx-5 mt-5 ">
+        <div class=" p-4 rounded-2xl lg:mx-auto md:mx-5 mt-5 ">
             <div class="flex justify-between">
                 <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">Daily Journal</h1>
 
@@ -27,7 +27,46 @@
                     </thead>
 
                     <tbody>
-                        <tr class="border-b border-gray-200">
+                        @forelse ($jurnal_mindfulness as $item)
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">
+                                    {{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}
+                                </td>
+                                <td class="py-3 px-4">
+                                    {{ Str::limit($item->perasaan_bangun_tidur, 50, '...') }}
+                                </td>
+                                <td class="py-3 px-4">
+                                    {{ Str::limit($item->kamu_menghadapi_situasi_yang_sulit, 50, '...') }}
+                                </td>
+                                <td class="py-3 px-4">
+                                    {{ Str::limit($item->yang_kamu_pelajari_hari_ini, 50, '...') }}
+                                </td>
+                                <td class="py-3 px-4">
+                                    {{ Str::limit($item->kamu_dapatkan_dari_latihan_mindfulness, 50, '...') }}
+                                </td>
+
+                                <td class="py-3 px-4">
+                                    <a href="{{ route('jurnal-emosi.show', $item->id) }}"
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded block mb-2">Detail</a>
+                                    <a href="{{ route('jurnal-emosi.edit', $item->id) }}"
+                                        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded block mb-2">Edit</a>
+                                    <form action="{{ route('jurnal-emosi.destroy', $item->id) }}" method="POST"
+                                        class="inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"
+                                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded block mb-2">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr class="border-b border-gray-200">
+                                <td colspan="6">
+                                    <p class="text-center py-3 px-4">Belum ada data</p>
+                                </td>
+                            </tr>
+                        @endforelse
+                        {{-- <tr class="border-b border-gray-200">
                             <td class="py-3 px-4">2023-05-01</td>
                             <td class="py-3 px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
                                 voluptates.</td>
@@ -49,7 +88,7 @@
                                         class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded block mb-2">Delete</button>
                                 </form>
                             </td>
-                        </tr>
+                        </tr> --}}
                     </tbody>
                 </table>
             </div>
