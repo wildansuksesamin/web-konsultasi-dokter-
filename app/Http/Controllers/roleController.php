@@ -8,7 +8,11 @@ class roleController extends Controller
 {
     public function index()
     {
-        return view('role');
+        $user = auth()->user();
+        $user->assignRole('user');
+        // dd($user);
+        // return view('role');
+        return redirect()->intended('/ayo-jauhi-narkoba');
     }
 
     public function chooseRole(Request $request)

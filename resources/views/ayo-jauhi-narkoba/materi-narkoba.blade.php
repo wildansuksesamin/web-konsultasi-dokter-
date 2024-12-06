@@ -5,7 +5,7 @@
     istilah yang digunakan untuk menyebut
     narkotika, psikotropika, dan zat-zat berbahaya lainnya. Selain istilah
     narkoba, dikenal juga singkatan NAPZA, yakni narkotika, alkohol,
-    psikotropika, dan zat berbahaya lainnya. . Kali ini, kita akan belajar
+    psikotropika, dan zat berbahaya lainnya. Kali ini, kita akan belajar
     mengenai narkoba, jenis-jenis narkoba, hingga bahayanya bagi kita!</p>
 
 {{-- VIDEO CONTAINER --}}
