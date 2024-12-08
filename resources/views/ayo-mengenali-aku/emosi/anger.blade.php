@@ -46,6 +46,14 @@
             <div class="my-4 -translate-x-8">
                 <h1 class="font-semibold text-lg">Jawablah Soal Di bawah ini</h1>
 
+                {{-- @dd($emosi['jawaban_emosi']->detailJawaban) --}}
+
+                @isset($emosi['jawaban_emosi'])
+                    <p class="text-red-500 text-3xl font-semibold my-5">
+                        Anda sudah pernah mengisi soal ini sebelumnya.
+                    </p>
+                @endisset
+
                 <form action="{{ route('ayo-mengenali-aku.index') }}" class="space-y-5" id="form-anger">
                     @foreach ($emosi['pertanyaan'] as $key => $soal)
                         <p class="text-base  text-gray-500 mt-5">{{ $loop->iteration }}. {{ $soal['pertanyaan'] }}</p>
@@ -54,7 +62,11 @@
                             <div class="flex items-center mt-3 rounded-md">
                                 <input type="radio" id="{{ $key . '_' . $key2 . '_anger' }}"
                                     name="{{ $key }}" value="{{ $key2 }}"
+                                    {{ isset($emosi['jawaban_emosi']) && $emosi['jawaban_emosi']['soal' . $key] == $key2 ? 'checked' : '' }}
                                     {{ isset($show_jawaban) && $soal['jawaban_user'] == $key2 ? 'checked' : '' }}>
+
+                                {{-- key : {{ $key }}
+                                key2 : {{ $key2 }} --}}
                                 <label for="{{ $key . '_' . $key2 . '_anger' }}" class="ml-2">
                                     {{ $key2 }}. {{ $pilihan }}
                                 </label>
@@ -89,6 +101,12 @@
                 swal("Error!", "Please answer all question!", "error");
                 return;
             }
+
+            // jika data dari database tidak sama dengan jawaban benar
+            // maka berikan warna merah
+            // jika data dari database sama dengan jawaban benar
+            // maka berikan warna hijau
+            
 
             axios.post("{{ route('ayo-mengenali-aku.store') }}", {
                     jawaban: jawaban,

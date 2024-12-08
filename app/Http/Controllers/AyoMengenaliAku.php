@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\DetailJawaban;
 use App\Models\JawabanSoalEmosi;
 use Illuminate\Http\Request;
@@ -9,8 +10,114 @@ class AyoMengenaliAku extends Controller
 {
     public function index()
     {
+        // find jawaban soal emosi based on user id
+        // $jawaban_emosi = JawabanSoalEmosi::where('user_id', auth()->user()->id)->get();
+
+        $jawaban_user_amarah = JawabanSoalEmosi::where('kategori_emosi', 'Amarah')
+            ->orderBy('created_at', 'desc')
+            ->first() ?
+            JawabanSoalEmosi::where('kategori_emosi', 'Amarah')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ->detailJawaban
+            ->toArray() : null;
+
+        $jawaban_user_cemburu = JawabanSoalEmosi::where('kategori_emosi', 'Cemburu')
+            ->orderBy('created_at', 'desc')
+            ->first() ?
+            JawabanSoalEmosi::where('kategori_emosi', 'Cemburu')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ->detailJawaban
+            ->toArray() : null;
+
+        $jawaban_user_cinta = JawabanSoalEmosi::where('kategori_emosi', 'Cinta')
+            ->orderBy('created_at', 'desc')
+            ->first() ?
+            JawabanSoalEmosi::where('kategori_emosi', 'Cinta')->orderBy('created_at', 'desc')
+            ->first()->detailJawaban->toArray()
+            : null;
+
+        $jawaban_user_iri = JawabanSoalEmosi::where('kategori_emosi', 'Iri')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ?
+            JawabanSoalEmosi::where('kategori_emosi', 'Iri')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ->detailJawaban
+            ->toArray()
+            : null;
+
+        $jawaban_user_kebahagiaan = JawabanSoalEmosi::where('kategori_emosi', 'Kebahagiaan')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ?
+            JawabanSoalEmosi::where('kategori_emosi', 'Kebahagiaan')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ->detailJawaban
+            ->toArray()
+            : null;
+
+        // kesedihan, malu, menjijikkan, bersalah, takut
+        $jawaban_user_kesedihan = JawabanSoalEmosi::where('kategori_emosi', 'Kesedihan')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ? JawabanSoalEmosi::where('kategori_emosi', 'Kesedihan')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ->detailJawaban
+            ->toArray()
+            : null;
+
+        $jawaban_user_malu = JawabanSoalEmosi::where('kategori_emosi', 'Malu')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ?
+            JawabanSoalEmosi::where('kategori_emosi', 'Malu')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ->detailJawaban
+            ->toArray()
+            : null;
+
+        $jawaban_user_menjijikkan = JawabanSoalEmosi::where('kategori_emosi', 'Menjijikkan')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ?
+            JawabanSoalEmosi::where('kategori_emosi', 'Menjijikkan')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ->detailJawaban
+            ->toArray()
+            : null;
+
+        $jawaban_user_bersalah = JawabanSoalEmosi::where('kategori_emosi', 'Bersalah')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ?
+            JawabanSoalEmosi::where('kategori_emosi', 'Bersalah')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ->detailJawaban
+            ->toArray() : null;
+
+        $jawaban_user_takut = JawabanSoalEmosi::where('kategori_emosi', 'Takut')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ?
+            JawabanSoalEmosi::where('kategori_emosi', 'Takut')
+            ->orderBy('created_at', 'desc')
+            ->first()
+            ->detailJawaban
+            ->toArray()
+
+            : null;
+
         $amarah =
             [
+                'jawaban_emosi' => $jawaban_user_amarah,
                 'nama_emosi' => 'Amarah',
                 'jenis_emosi' => 'Emosi Negatif',
                 'penjelasan' => 'Amarah muncul sebagai respons terhadap terhalangnya tujuan atau aktivitas penting.',
@@ -82,6 +189,7 @@ class AyoMengenaliAku extends Controller
 
 
         $cemburu = [
+            'jawaban_emosi' => $jawaban_user_cemburu,
             'nama_emosi' => 'Cemburu',
             'jenis_emosi' => 'Emosi Negatif',
             'penjelasan' => 'Cemburu (Jealousy) merupakan salah satu emosi negatif yang muncul ketika seseorang merasa ada ancaman terhadap hal penting yang dimilikinya, baik itu hubungan, perhatian, atau barang yang disukai.',
@@ -133,6 +241,7 @@ class AyoMengenaliAku extends Controller
         ];
 
         $cinta = [
+            'jawaban_emosi' => $jawaban_user_cinta,
             'nama_emosi' => 'Cinta',
             'jenis_emosi' => 'Emosi Positif',
             'penjelasan' => 'Cinta (Love) merupakan salah satu emosi positif yang menggambarkan perasaan keterikatan, kasih sayang, dan kepedulian yang kuat terhadap seseorang atau sesuatu. Emosi ini bisa diarahkan kepada orang terdekat, seperti keluarga dan teman, maupun aktivitas atau hobi yang disukai. Cinta menghasilkan perasaan bahagia, nyaman, dan damai. Ketika merasakan cinta, seseorang biasanya lebih bersemangat, optimis, dan merasa aman.',
@@ -192,6 +301,7 @@ class AyoMengenaliAku extends Controller
         ];
 
         $iri = [
+            'jawaban_emosi' => $jawaban_user_iri,
             'nama_emosi' => 'Iri',
             'jenis_emosi' => 'Emosi Negatif',
             'penjelasan' => 'Perasaan iri muncul ketika seseorang menginginkan apa yang dimiliki oleh orang lain, seperti kekayaan, prestasi, atau penampilan. Emosi ini sering muncul karena perbandingan diri sendiri dengan orang lain yang memiliki kelebihan tertentu',
@@ -252,6 +362,7 @@ class AyoMengenaliAku extends Controller
         ];
 
         $happiness = [
+            'jawaban_emosi' => $jawaban_user_kebahagiaan,
             'nama_emosi' => 'Kebahagiaan',
             'jenis_emosi' => 'Emosi Positif',
             'penjelasan' => 'Kebahagiaan (Happiness) adalah salah satu jenis emosi positif yang muncul ketika seseorang merasa senang, tenang, dan puas terhadap sesuatu hal atau seseorang. Emosi ini sering terjadi saat seseorang menerima kejutan yang menyenangkan, mendapatkan hasil yang diinginkan setelah berusaha keras, atau mendapatkan kasih sayang dari orang-orang di sekitar mereka.',
@@ -311,6 +422,7 @@ class AyoMengenaliAku extends Controller
         ];
 
         $sadness = [
+            'jawaban_emosi' => $jawaban_user_kesedihan,
             'nama_emosi' => 'Kesedihan',
             'jenis_emosi' => 'Emosi Negatif',
             'penjelasan' => 'Kesedihan muncul ketika seseorang kehilangan sesuatu atau seseorang yang sangat berarti dalam hidupnya. Perasaan ini juga bisa muncul ketika tujuan yang diharapkan tidak tercapai, atau ketika menghadapi situasi yang tidak berjalan sesuai harapan. Selain itu, kesedihan bisa dipicu oleh kehilangan hubungan atau kematian seseorang yang dekat, serta akibat dari situasi yang menyakitkan secara emosional, seperti diabaikan atau di bully.',
@@ -370,6 +482,7 @@ class AyoMengenaliAku extends Controller
         ];
 
         $shame = [
+            'jawaban_emosi' => $jawaban_user_malu,
             'nama_emosi' => 'Malu',
             'jenis_emosi' => 'Emosi Negatif',
             'penjelasan' => 'Emosi malu adalah perasaan tidak nyaman yang muncul ketika kita merasa tidak sesuai dengan standar sosial atau ketika tindakan, perilaku, atau kondisi kita diketahui oleh orang lain. Perasaan malu seringkali berkaitan dengan kesadaran diri yang tinggi tentang kesalahan atau kegagalan yang kita alami di hadapan orang lain. Malu juga bisa dipicu oleh rasa takut ditolak, merasa kurang atau berbeda dari orang lain, atau mengalami kegagalan dalam hal yang dirasa penting.',
@@ -429,6 +542,7 @@ class AyoMengenaliAku extends Controller
         ];
 
         $disgust = [
+            'jawaban_emosi' => $jawaban_user_menjijikkan,
             'nama_emosi' => 'Menjijikkan',
             'jenis_emosi' => 'Emosi Negatif',
             'penjelasan' => 'Emosi menjijikkan adalah salah satu jenis emosi negatif yang muncul ketika seseorang merasa tidak nyaman terhadap objek, peristiwa, atau situasi tertentu yang dianggap kotor, tercemar, atau tidak pantas. Perasaan ini bisa dipicu oleh berbagai hal, seperti melihat kotoran, mencium bau yang tidak sedap, atau menyaksikan perilaku yang dianggap merendahkan atau menjijikkan.',
@@ -486,6 +600,7 @@ class AyoMengenaliAku extends Controller
         ];
 
         $guilty = [
+            'jawaban_emosi' => $jawaban_user_bersalah,
             'nama_emosi' => 'Rasa Bersalah',
             'jenis_emosi' => 'Emosi Negatif',
             'penjelasan' => 'Rasa bersalah adalah salah satu bentuk emosi negatif yang muncul ketika seseorang merasa telah melakukan sesuatu yang salah atau melanggar nilai dan norma yang berlaku. Perasaan ini sering disertai dengan rasa tanggung jawab, penyesalan, dan kesedihan. Rasa bersalah biasanya muncul ketika seseorang merasa telah menyebabkan kerugian atau kerusakan pada orang lain, melanggar janji, atau ketika diingatkan tentang kesalahan yang dilakukan di masa lalu.',
@@ -544,6 +659,7 @@ class AyoMengenaliAku extends Controller
         ];
 
         $fear = [
+            'jawaban_emosi' => $jawaban_user_takut,
             'nama_emosi' => 'Takut',
             'jenis_emosi' => 'Emosi Negatif',
             'penjelasan' => 'Perasaan takut adalah respons emosional terhadap situasi atau lingkungan yang dirasa membahayakan atau tidak diketahui. Ketakutan adalah mekanisme alami untuk melindungi diri dari ancaman. Rasa takut sering kali muncul ketika seseorang berada di tempat atau menghadapi situasi baru yang belum pernah dialami, seperti pindah ke lingkungan baru atau mencoba hal baru.',
@@ -1135,9 +1251,11 @@ class AyoMengenaliAku extends Controller
         // Create the DetailJawaban record with the dynamically prepared data
         $detail_jawaban_user = DetailJawaban::create($detailData);
         JawabanSoalEmosi::create(
-            ['user_id' => auth()->user()->id,
-             'kategori_emosi' => $request->emosi, 
-             'id_detail_jawaban'=> $detail_jawaban_user->id]
+            [
+                'user_id' => auth()->user()->id,
+                'kategori_emosi' => $request->emosi,
+                'id_detail_jawaban' => $detail_jawaban_user->id
+            ]
         );
         // modif key $request->jawaban + 1
         $jawaban = array_combine(range(1, count($jawaban)), array_values($jawaban));

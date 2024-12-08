@@ -10,15 +10,14 @@ class JawabanSoalEmosi extends Model
     use HasFactory;
     protected $table = 'jawaban_soal_emosi';
     protected $fillable = ['user_id', 'kategori_emosi', 'id_detail_jawaban'];
+
     public function detailJawaban()
     {
-        return $this->hasOne(DetailJawaban::class);
+        return $this->hasOne(DetailJawaban::class, 'id', 'id_detail_jawaban');
     }
 
-    public function user ()
+    public function user()
     {
-    return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
-
-
 }

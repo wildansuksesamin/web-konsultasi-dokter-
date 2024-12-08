@@ -1,14 +1,3 @@
-@php
-    function limitWords($text, $limit = 10)
-    {
-        $words = explode(' ', $text);
-        if (count($words) > $limit) {
-            return implode(' ', array_slice($words, 0, $limit)) . '...';
-        }
-        return $text;
-    }
-@endphp
-
 @extends('user.layout.layout')
 
 @section('content')
